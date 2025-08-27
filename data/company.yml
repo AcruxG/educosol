@@ -1,4 +1,4 @@
-SEO_options:
+seo_options:
   site_title: Fiction
   description: A template for Hugo, adapted from the MIT-licensed Fiction Bootstrap template from Theme Fisher.
   twitter_image: 
@@ -18,10 +18,7 @@ social_media:
   linkedin: "#"
   google: "#"
   instagram: "#"
-copyright_html: <p>&copy; 2013-2017 All rights reserved. <br>
-                                Design and Developed By <a href="https://themefisher.com">Themefisher.com</a></p>
+copyright_start_year: "2013"
+copyright_statement: "All rights reserved."
+developed_by_statement: Design and Developed By [Themefisher.com](https://themefisher.com)
 google_maps_api_key: ""
-
-_inputs:
-  google_maps_api_key:
-    comment: Add your key if you want to use google maps features within the site
