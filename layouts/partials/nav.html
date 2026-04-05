@@ -11,9 +11,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="{{ "/" | relURL }}">
-                <img src="{{ .Site.Data.nav.logo.image | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-dark" style="display: var(--display-dark-logo, block);">
-                <img src="{{ "/images/logo-educosol.png" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-light" style="display: var(--display-light-logo, none);">
+            <a class="navbar-brand logo" href="{{ "" | relURL }}">
+                <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-dark" style="display: var(--display-dark-logo, block);">
+                <img src="{{ "images/logo-educosol.png" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-light" style="display: var(--display-light-logo, none);">
             </a>
         </div>
 
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right menu">
               {{ range .Site.Data.nav.menu }}
-                <li><a href="{{ .url | relURL }}" {{ if .open_in_new_tab }}target="_blank"{{ end }}>{{ .name }}</a></li>
+                <li><a href="{{ .url | strings.TrimPrefix "/" | relURL }}" {{ if .open_in_new_tab }}target="_blank"{{ end }}>{{ .name }}</a></li>
               {{ end }}
               <li class="theme-toggle-container" style="display: flex; align-items: center; margin-left: 15px;">
                 <button id="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" style="background: none; border: none; font-size: 22px; color: var(--theme-color-text-main); cursor: pointer; padding: 15px; outline: none; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-main)'">

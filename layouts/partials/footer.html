@@ -5,7 +5,7 @@
             <!-- Column 1: Brand & Social -->
             <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
                 <div class="footer-logo" style="margin-bottom: 20px;">
-                    <img src="{{ "/images/logo-educosol.png" | relURL }}" alt="EduCoSol" style="max-width: 150px; display: block;">
+                    <img src="{{ "images/logo-educosol.png" | relURL }}" alt="EduCoSol" style="max-width: 150px; display: block;">
                 </div>
                 <!-- Optional: Use a short desc if available, else keep it broad -->
                 <p style="font-size: 14px; margin-bottom: 25px; line-height: 1.8;">Yurt dışı üniversite başvurularında ve lise eğitim programlarında premium danışmanlık ve rehberlik hizmeti.</p>
@@ -24,7 +24,7 @@
                 <h4 style="color: var(--theme-color-text-main); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 25px;">HIZLI LİNKLER</h4>
                 <ul style="list-style: none; padding: 0; line-height: 2.2;">
                     {{ range .Site.Data.footer.menu }}
-                        <li><a href="{{ .url | relURL }}" style="color: var(--theme-color-text-muted); transition: 0.3s; font-size: 14px;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
+                        <li><a href="{{ .url | strings.TrimPrefix "/" | relURL }}" style="color: var(--theme-color-text-muted); transition: 0.3s; font-size: 14px;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
                     {{ end }}
                 </ul>
             </div>

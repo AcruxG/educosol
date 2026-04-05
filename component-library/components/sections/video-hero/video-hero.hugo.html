@@ -1,6 +1,6 @@
-<header class="hero-video th-fullpage" data-parallax="scroll" data-vide-bg="{{ .background_video | relURL }}" data-vide-options="volume: 0, loop: true, muted: true, autoplay: true, position: 50% 50%, posterType: none, resizing: true, bgColor: transparent">
+<header class="hero-video th-fullpage" data-parallax="scroll" data-vide-bg="{{ .background_video | strings.TrimPrefix "/" | relURL }}" data-vide-options="volume: 0, loop: true, muted: true, autoplay: true, position: 50% 50%, posterType: none, resizing: true, bgColor: transparent">
     <video class="hero-video-element" autoplay muted loop playsinline preload="metadata">
-      <source src="{{ printf "%s.mp4" .background_video | relURL }}" type="video/mp4">
+      <source src="{{ printf "%s.mp4" .background_video | strings.TrimPrefix "/" | relURL }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="container">
@@ -9,7 +9,7 @@
           <h1 style="color: #fff; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">{{ .heading }} <br>
             {{ .subheading }}</h1>
           {{ if .cta_text }}
-            <a href="{{ .cta_url | relURL }}" class="btn btn-main" style="margin-top: 16px;">{{ .cta_text }}</a>
+            <a href="{{ .cta_url | strings.TrimPrefix "/" | relURL }}" class="btn btn-main" style="margin-top: 16px;">{{ .cta_text }}</a>
           {{ end }}
         </div>
       </div>

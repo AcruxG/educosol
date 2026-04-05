@@ -1,1 +1,1 @@
-<a href="{{ .Destination | relURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination | strings.TrimPrefix "/" | relURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

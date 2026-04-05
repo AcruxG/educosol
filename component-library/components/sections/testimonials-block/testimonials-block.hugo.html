@@ -1,6 +1,6 @@
 <!-- Clients Sections
 =========================-->
-<section class="clients" data-parallax="scroll" data-image-src="{{ .background_image | relURL }}">
+<section class="clients" data-parallax="scroll" data-image-src="{{ .background_image | strings.TrimPrefix "/" | relURL }}">
     <div class="section">
       <div class="container-fluid">
         <div class="row">

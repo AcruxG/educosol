@@ -64,13 +64,13 @@
                 <div class="col-md-12">
                     <div class="see-all-post text-center">
                     {{ if .Paginator.HasPrev }}
-                        <a class="btn btn-default th-btn solid-btn" href="{{ .Paginator.Prev.URL | relURL }}">Prev</a>
+                        <a class="btn btn-default th-btn solid-btn" href="{{ .Paginator.Prev.URL | strings.TrimPrefix "/" | relURL }}">Prev</a>
                     {{ end }}
                     <span aria-current="page" class="page-numbers current">
                         {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
                     </span>
                     {{ if .Paginator.HasNext }}
-                        <a class="btn btn-default th-btn solid-btn" href="{{ .Paginator.Next.URL | relURL }}">Next</a>
+                        <a class="btn btn-default th-btn solid-btn" href="{{ .Paginator.Next.URL | strings.TrimPrefix "/" | relURL }}">Next</a>
                     {{ end }}
                     </div>
                 </div>

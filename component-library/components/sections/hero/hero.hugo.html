@@ -1,4 +1,4 @@
-<section class="page-header services-header" data-parallax="scroll" data-image-src="{{ .image | relURL }}" style="position: relative;">
+<section class="page-header services-header" data-parallax="scroll" data-image-src="{{ .image | strings.TrimPrefix "/" | relURL }}" style="position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(15,15,18,0.3) 0%, rgba(15,15,18,0.7) 60%, rgba(15,15,18,0.95) 100%); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <div class="row">

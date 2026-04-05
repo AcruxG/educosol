@@ -1,1 +1,1 @@
-<a class="btn btn-default btn-main" href="{{ .url | relURL }}" role="link">{{ .content }}</a>
+<a class="btn btn-default btn-main" href="{{ .url | strings.TrimPrefix "/" | relURL }}" role="link">{{ .content }}</a>

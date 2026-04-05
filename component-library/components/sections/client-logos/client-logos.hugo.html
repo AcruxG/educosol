@@ -1,6 +1,6 @@
 <!-- Clients Logo Sections
   =========================-->
-  <section class="clients-logo" data-parallax="scroll" data-image-src="{{ .background_image | relURL }}">
+  <section class="clients-logo" data-parallax="scroll" data-image-src="{{ .background_image | strings.TrimPrefix "/" | relURL }}">
     <div class="section">
         <div class="container">
             <div class="row">
