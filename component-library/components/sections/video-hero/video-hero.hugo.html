@@ -9,7 +9,7 @@
           <h1 style="color: #fff; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">{{ .heading }} <br>
             {{ .subheading }}</h1>
           {{ if .cta_text }}
-            <a href="{{ .cta_url }}" class="btn btn-main" style="margin-top: 16px;">{{ .cta_text }}</a>
+            <a href="{{ .cta_url | relURL }}" class="btn btn-main" style="margin-top: 16px;">{{ .cta_text }}</a>
           {{ end }}
         </div>
       </div>

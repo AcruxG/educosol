@@ -24,7 +24,7 @@
                 <h4 style="color: var(--theme-color-text-main); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 25px;">HIZLI LİNKLER</h4>
                 <ul style="list-style: none; padding: 0; line-height: 2.2;">
                     {{ range .Site.Data.footer.menu }}
-                        <li><a href="{{ .url }}" style="color: var(--theme-color-text-muted); transition: 0.3s; font-size: 14px;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
+                        <li><a href="{{ .url | relURL }}" style="color: var(--theme-color-text-muted); transition: 0.3s; font-size: 14px;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
                     {{ end }}
                 </ul>
             </div>
@@ -70,7 +70,7 @@
             <div class="col-md-8 col-sm-12 text-right">
                 <ul style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 15px; flex-wrap: wrap; justify-content: flex-end;">
                     {{ range .Site.Data.footer.legal_links }}
-                        <li><a href="{{ .url }}" style="color: var(--theme-color-text-muted); font-size: 13px; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
+                        <li><a href="{{ .url | relURL }}" style="color: var(--theme-color-text-muted); font-size: 13px; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
                     {{ end }}
                 </ul>
             </div>
