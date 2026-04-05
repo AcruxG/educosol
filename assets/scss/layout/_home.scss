@@ -1,78 +1,87 @@
-/**********************************************
- Case Study Style
-***********************************************/
-	.case-study{
-		padding-top: 80px;
-		background: $service-bg;
-		.content {
-			h4 {
-				padding-bottom: 13px;
-				font-family: $roboto;
-				font-size: 18px;
-				text-transform: uppercase;
-				color: $primary-color;
-				font-weight:bold;
-			}
-			p {
-				font-size: 16px;
-				color: rgba(175, 175, 175, 0.8) ;
+/**
+ * Modern Homepage Sections
+ */
 
-			}
-			.btn {
-				margin-top: 30px;
-			}
+/* Case Study / Left-Right Blocks */
+.case-study {
+	padding-top: var(--section-spacing);
+	background: var(--theme-color-service-bg);
+	.content {
+		h4 {
+			padding-bottom: 16px;
+			font-family: $inter;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: var(--theme-brand-primary);
+			font-weight: 600;
+		}
+		p {
+			font-size: 16px;
+			color: var(--theme-color-text-muted);
+			line-height: 1.8;
+		}
+		.btn {
+			margin-top: 30px;
 		}
 	}
+}
 
-	/* Case Study Title */
-	.box-subtitle,
-	.box-title{
-		margin: 0;
-	}
-	
-	.box-subtitle{
-	    letter-spacing: 2px;
-	    padding: 17px 0 20px;
-		font-family: $poppins;
-		text-transform: uppercase;
-	}
+.box-subtitle,
+.box-title {
+	margin: 0;
+}
 
-	/* Case Study Description Style */
+.box-subtitle {
+	letter-spacing: 3px;
+	padding: 17px 0 20px;
+	font-family: $inter;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 600;
+}
 
-	.case-study-content{
-	    padding-top: 58px;
-	    padding-bottom: 90px;
-	}
+/* Case Study Content Blocks */
+.case-study-content {
+	padding: var(--section-spacing) 0;
+	transition: background 0.3s ease;
+}
 
-	.case-study-content:nth-child(odd){
-		// background: #121212;
-		padding-top: 100px;
-		padding-bottom: 180px;
-	}
+.case-study-content:nth-child(odd) {
+	padding: var(--section-spacing) 0;
+}
 
+/* Alternate background pattern */
+.left-right-block--grey {
+	background: var(--theme-color-gray);
+}
+.left-right-block--black {
+	background: var(--theme-color-body-bg);
+}
 
-/**********************************************
- Clients Logo Style
-***********************************************/
-	.clients-logo{
-		padding: 100px 0;
-	    background-attachment: fixed;
-		.block{
-			padding: 40px 0;
-			background: rgba(0, 0, 0, 0.70);
-			transition: 0.5s;
-			height: 200px;
-			img {
-				height:auto;
-			}
-			&:hover{
-				background: $white;
-				img{
-				    -webkit-filter: invert(1);
-				}
-			}
+/**
+ * Client Logos Section
+ */
+.clients-logo {
+	padding: var(--section-spacing) 0;
+	background-attachment: fixed;
+
+	.block {
+		padding: 40px 0;
+		background: rgba(0, 0, 0, 0.60);
+		backdrop-filter: blur(10px);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--glass-border);
+		transition: all 0.4s ease;
+		height: 200px;
+
+		img {
+			height: auto;
+		}
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.08);
+			border-color: var(--glass-hover-border);
 		}
 	}
-
-
-
+}

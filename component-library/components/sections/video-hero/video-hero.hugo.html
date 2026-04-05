@@ -1,15 +1,16 @@
 <header class="hero-video th-fullpage" data-parallax="scroll" data-vide-bg="{{ .background_video | relURL }}" data-vide-options="volume: 0, loop: true, muted: true, autoplay: true, position: 50% 50%, posterType: none, resizing: true, bgColor: transparent">
-    <!-- Modern HTML5 video for better Safari support -->
     <video class="hero-video-element" autoplay muted loop playsinline preload="metadata">
       <source src="{{ printf "%s.mp4" .background_video | relURL }}" type="video/mp4">
-      <!-- Fallback message -->
       Your browser does not support the video tag.
     </video>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h1>{{ .heading }} <br>
+        <div class="col-md-12" style="max-width: 800px; margin: 0 auto;">
+          <h1 style="color: #fff; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">{{ .heading }} <br>
             {{ .subheading }}</h1>
+          {{ if .cta_text }}
+            <a href="{{ .cta_url }}" class="btn btn-main" style="margin-top: 16px;">{{ .cta_text }}</a>
+          {{ end }}
         </div>
       </div>
     </div>

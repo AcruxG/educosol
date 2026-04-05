@@ -1,65 +1,102 @@
-// EduCoSol Variables file
+// EduCoSol Variables — Modern Design System
 
-/* Font Familys */
+/* Font Families */
+$inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $poppins: 'Poppins', sans-serif;
-$roboto: 'Roboto', sans-serif;
-$playfair: 'Playfair Display', serif;
-$lora: 'Lora', serif;
+
+/* Legacy aliases */
+$roboto: $inter;
+$playfair: $inter;
+$lora: $inter;
 
 /* EduCoSol Brand Colors / CSS Variables for Theme Support */
 
 :root {
   --theme-brand-primary: #C63527;
-  --theme-color-body-bg: #2D2926;
-  --theme-color-header-bg: #2D2926;
-  --theme-color-text-main: #fff;
-  --theme-color-text-muted: rgba(255, 255, 255, 0.7);
-  --theme-color-gray: #323232;
-  --theme-color-service-bg: #171717;
-  
+  --theme-brand-primary-rgb: 198, 53, 39;
+  --theme-color-body-bg: #0f0f12;
+  --theme-color-header-bg: #0f0f12;
+  --theme-color-text-main: #f0f0f5;
+  --theme-color-text-muted: rgba(240, 240, 245, 0.6);
+  --theme-color-gray: #1a1a22;
+  --theme-color-service-bg: #13131a;
+
+  /* Glass effect tokens */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-hover-bg: rgba(255, 255, 255, 0.08);
+  --glass-hover-border: rgba(198, 53, 39, 0.4);
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 40px rgba(198, 53, 39, 0.15);
+
   --pagefind-ui-primary: #C63527;
-  --pagefind-ui-text: rgba(255, 255, 255, 0.8);
-  --pagefind-ui-background: #2D2926;
+  --pagefind-ui-text: rgba(240, 240, 245, 0.8);
+  --pagefind-ui-background: #0f0f12;
   --pagefind-ui-border: #C63527;
   --pagefind-ui-tag: #C63527;
-  
+
   --display-dark-logo: block;
   --display-light-logo: none;
+
+  /* Spacing scale */
+  --section-spacing: 120px;
+  --section-spacing-sm: 80px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
 }
 
 [data-theme="light"] {
-  --theme-brand-primary: #BDB2FF; /* Option 2 Dreamy Pastel Lavender */
-  --theme-color-body-bg: #FCFBF9; /* Pearl White background */
-  --theme-color-header-bg: #FFFFFF; /* Clean white header */
-  --theme-color-text-main: #2D2926; /* Dark readable root text */
-  --theme-color-text-muted: rgba(0, 0, 0, 0.6);
-  --theme-color-gray: #F0F0F5; /* Very subtle grey/lavender tint */
-  --theme-color-service-bg: #F5F5FA; /* Off-white for section splits */
-  
-  --pagefind-ui-primary: #BDB2FF;
-  --pagefind-ui-text: rgba(0, 0, 0, 0.8);
-  --pagefind-ui-background: #FCFBF9;
-  --pagefind-ui-border: #BDB2FF;
-  --pagefind-ui-tag: #BDB2FF;
-  
+  --theme-brand-primary: #C63527;
+  --theme-brand-primary-rgb: 198, 53, 39;
+  --theme-color-body-bg: #FAFAFA;
+  --theme-color-header-bg: #FFFFFF;
+  --theme-color-text-main: #1a1a2e;
+  --theme-color-text-muted: rgba(26, 26, 46, 0.6);
+  --theme-color-gray: #F0F0F5;
+  --theme-color-service-bg: #F5F5FA;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-hover-bg: rgba(255, 255, 255, 0.9);
+  --glass-hover-border: rgba(198, 53, 39, 0.3);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 40px rgba(198, 53, 39, 0.08);
+
+  --pagefind-ui-primary: #C63527;
+  --pagefind-ui-text: rgba(26, 26, 46, 0.8);
+  --pagefind-ui-background: #FAFAFA;
+  --pagefind-ui-border: #C63527;
+  --pagefind-ui-tag: #C63527;
+
   --display-dark-logo: none;
   --display-light-logo: block;
 }
 
 /* Re-map SCSS variables to the dynamic CSS variables */
-$font-fize: 14px;
+$font-fize: 15px;
 $primary-color: var(--theme-brand-primary);
 $brand-secondary: var(--theme-color-body-bg);
 $white: var(--theme-color-text-main);
 $gray: var(--theme-color-gray);
 
-$black: #0a0a0a; // Static solid black
+$black: #0a0a0a;
 $medium-dark: #0f0f0f;
-$pure-white: #fff; // Static solid white
+$pure-white: #fff;
 
 /* Header bg */
 $header-bg: var(--theme-color-header-bg);
-/*team overlay bg color */
+/* Team overlay bg color */
 $overlay-bg: var(--theme-brand-primary);
 /* Service section bg */
 $service-bg: var(--theme-color-service-bg);
@@ -69,7 +106,7 @@ $educosol-orange: #E56910;
 $educosol-dark: #2D2926;
 
 /* blog slider pagination img */
-$blog-owl-buttons:#3c3c3c;
+$blog-owl-buttons: #3c3c3c;
 
 body {
     --pagefind-ui-primary: var(--pagefind-ui-primary);
@@ -77,5 +114,5 @@ body {
     --pagefind-ui-background: var(--pagefind-ui-background);
     --pagefind-ui-border: var(--pagefind-ui-border);
     --pagefind-ui-tag: var(--pagefind-ui-tag);
-    --pagefind-ui-font: "roboto", sans-serif;
+    --pagefind-ui-font: "Inter", sans-serif;
 }

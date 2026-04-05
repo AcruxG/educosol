@@ -1,42 +1,66 @@
-
- /*----------  
- 	Google fonts  
- ----------*/
- /* Moved entirely to style.scss to guarantee it appears before styling blocks. */
-
 /* Global Body Style */
-body{
+body {
 	color: $white;
 	background: $brand-secondary;
-	font-family: $roboto;
+	font-family: $inter;
+	font-size: 15px;
+	line-height: 1.7;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Heading Fonts Size */
-h1,h2,h3{
-	font-family: $playfair;
-	color: $primary-color;
+/* Heading Fonts */
+h1, h2, h3 {
+	font-family: $inter;
+	color: var(--theme-color-text-main);
+	letter-spacing: -0.02em;
+	line-height: 1.15;
 }
-h1,h2{
+h1, h2 {
+	font-weight: 800;
+}
+h3, h4 {
 	font-weight: 700;
 }
 h4 {
-	font-family: $roboto;
+	font-family: $inter;
 }
-h1{
-	font-size: 65px;
+h1 {
+	font-size: clamp(40px, 5vw, 72px);
 }
-h2{
-	font-size: 40px;
+h2 {
+	font-size: clamp(28px, 3.5vw, 48px);
 }
-h3{
+h3 {
 	font-size: 22px;
 }
-h4{
+h4 {
 	font-size: 18px;
 }
 p {
-	font-family: $roboto;
+	font-family: $inter;
+	color: var(--theme-color-text-muted);
+	line-height: 1.8;
+}
+
+/* Accent text */
+.text-accent {
+	color: var(--theme-brand-primary);
+}
+
+/* Section titles */
+.section-title {
+	font-size: clamp(28px, 3.5vw, 48px);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	margin-bottom: 16px;
+}
+.section-subtitle {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 600;
+	color: var(--theme-brand-primary);
+	margin-bottom: 12px;
 }

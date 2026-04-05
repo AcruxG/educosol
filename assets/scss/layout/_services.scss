@@ -1,90 +1,92 @@
-/**********************************************
- Services Style
-***********************************************/
-	.services{
-		background: $service-bg;
-		padding: 53px 0 9px;
-	}
-	.service-item{
-		padding: 0 10px 26px;
-		margin-bottom: 26px;
-		position: relative;
-		&:before{
-			content: "";
-			position: absolute;
-			top: 35px;
-			left: 0px;
-			bottom: 0px;
-			right: 0px;
-			background: #facd8a;
-			opacity: 0;
-			transition: 0.5s;
-		}
-		&:hover{
-			&:before{
-				opacity: 1;
-			}
-			.services-icon{
-				background: $primary-color;
-				box-shadow: 0px 0px 0px 14px #191919;
-				i{
-					color: $service-bg;
-				}
-			}
-			.service-title{
-				&:before{
-					background: $header-bg;
-				}
-			}
-			.service-title,
-			.service-description{
-				color: $header-bg;
+/**
+ * Modern Services
+ */
+.services {
+	background: var(--theme-color-service-bg);
+	padding: var(--section-spacing) 0 var(--section-spacing-sm);
+}
+
+.service-item {
+	padding: 40px 30px;
+	margin-bottom: 30px;
+	position: relative;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius-md);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	text-align: center;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:hover {
+		background: var(--glass-hover-bg);
+		border-color: var(--glass-hover-border);
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-lg), var(--shadow-glow);
+
+		.services-icon {
+			background: var(--theme-brand-primary);
+			i {
+				color: #fff;
 			}
 		}
 	}
+}
 
-	.service-title{
-		font-family: $poppins;
-		text-transform: uppercase;
-		padding: 0 0 15px;
-		margin: 0 0 20px; 
-		position: relative;
-		color: $white;
-		letter-spacing: 1px;
-		transition: 0.5s;
-		color:$primary-color;
-		&:before{
-			content: "";
-			position: absolute;
-			left: 50%;
-			bottom: 0;
-			height: 3px;
-			width: 75px;
-			background: $primary-color;
-			transform: translateX(-50%);
-		}
+.service-title {
+	font-family: $inter;
+	text-transform: none;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 0 0 16px;
+	margin: 0 0 16px;
+	position: relative;
+	color: var(--theme-color-text-main);
+	letter-spacing: -0.01em;
+	transition: 0.3s;
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		height: 2px;
+		width: 40px;
+		background: var(--theme-brand-primary);
+		transform: translateX(-50%);
+		border-radius: 2px;
+		transition: width 0.3s ease;
 	}
+}
 
-	.services-icon{
-		width: 68px;
-		height: 68px;
-		background: $brand-secondary;
-		margin: 0 auto;
-		padding: 15px 0;
-		border-radius: 100%;
-		text-align: center;
-		margin-bottom: 30px;
-		transition: 0.5s;
-		position: relative;
-		i{
-			font-size: 35px;
-			line-height: 1;
-		}
+.service-item:hover .service-title:before {
+	width: 60px;
+}
+
+.services-icon {
+	width: 72px;
+	height: 72px;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	margin: 0 auto;
+	padding: 0;
+	border-radius: var(--radius-md);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 28px;
+	transition: all 0.3s ease;
+
+	i {
+		font-size: 30px;
+		line-height: 1;
+		color: var(--theme-brand-primary);
 	}
+}
 
-	.service-description{
-		color: rgba(255, 255, 255, 0.80);
-		line-height: 24px;
-		position: relative;
-	}
-
+.service-description {
+	color: var(--theme-color-text-muted);
+	line-height: 1.7;
+	font-size: 14px;
+	position: relative;
+}

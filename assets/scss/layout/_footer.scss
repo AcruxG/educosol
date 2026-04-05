@@ -1,46 +1,45 @@
 /**
- * ---------------------------------------------------------------------------
- * 0?. Footer Styles
- * ---------------------------------------------------------------------------
+ * Modern Footer
  */
 
-.footer{
-	padding: 65px 0 40px;
-	background: $brand-secondary;
-	font-size: 16px;
-	line-height: 29px;
-	color: rgba(255, 255, 255, 0.80);
-	a{
+.footer {
+	padding: 80px 0 40px;
+	background: var(--theme-color-service-bg);
+	border-top: 1px solid var(--glass-border);
+	font-size: 14px;
+	line-height: 1.8;
+	color: var(--theme-color-text-muted);
+
+	a {
 		display: block;
 	}
 }
-/* footer title section */
-.footer-title{
-	font-family: $poppins;
+
+.footer-title {
+	font-family: $inter;
 	text-transform: uppercase;
-	padding-bottom: 40px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	padding-bottom: 30px;
+	color: var(--theme-color-text-main);
 }
-/* footer nav section style */
-.footer-nav{
-	ul{
+
+.footer-nav {
+	ul {
 		padding: 49px 0 50px;
 	}
-	li{
+	li {
 		padding: 0 22px;
 		display: inline-block;
-		&:first-child{
-			padding-top: 0;
-		}
-		&:last-child{
-			padding-bottom: 0;
-		}
 	}
-	a{
-		color: rgba(255, 255, 255, 0.80);
-		transition: 0.5s;
-	    padding: 0 4px;
+	a {
+		color: var(--theme-color-text-muted);
+		transition: all 0.3s ease;
+		padding: 0 4px;
 		position: relative;
-		&:before{
+
+		&:before {
 			content: "";
 			position: absolute;
 			left: 50%;
@@ -48,13 +47,13 @@
 			opacity: 0;
 			width: 0;
 			height: 1px;
-			transition: 0.5s;
-			background: $primary-color;
+			transition: 0.3s;
+			background: var(--theme-brand-primary);
 		}
-		&:hover{
+		&:hover {
 			text-decoration: none;
-			color: $primary-color;
-			&:before{
+			color: var(--theme-brand-primary);
+			&:before {
 				opacity: 1;
 				width: 100%;
 				left: 0;
@@ -63,55 +62,50 @@
 	}
 }
 
-.contact-address{
-	a{
+.contact-address {
+	a {
 		display: inline-block;
-		color: rgba(255, 255, 255, 0.8);
-		transition: 0.5s;
-		&:hover{
-			color: $primary-color;
+		color: var(--theme-color-text-muted);
+		transition: all 0.3s ease;
+		&:hover {
+			color: var(--theme-brand-primary);
 		}
 	}
 }
 
-/* Footer Media Link */
-.footer-media-link{
-	li{
+.footer-media-link {
+	li {
 		display: inline-block;
-		&:last-child{
-			padding-bottom: 0;
-		}
 	}
-	a{
-		font-size: 28px;
+	a {
+		font-size: 20px;
 		line-height: 1;
-		padding:10px;
-		color: $white;
-		transition: 0.5s;
+		padding: 8px;
+		color: var(--theme-color-text-muted);
+		transition: all 0.3s ease;
 		display: inline-block;
-		&:hover{
-			color: $primary-color;
+		&:hover {
+			color: var(--theme-brand-primary);
 		}
 	}
 }
 
-.copyright{
-	border-top: 1px solid rgba(60, 60, 60, 0.60);
-    padding-top: 35px;
-    font-size:12px;
-    line-height: 18px;
-    a {
-    	color: #fff;
-    	display: inline-block;
-
-    }
+.copyright {
+	border-top: 1px solid var(--glass-border);
+	padding-top: 30px;
+	font-size: 13px;
+	line-height: 18px;
+	color: var(--theme-color-text-muted);
+	a {
+		color: var(--theme-color-text-main);
+		display: inline-block;
+	}
 }
 
-/* Footer Legal Links (KVKK, Açık Rıza etc.) */
 .footer-legal {
-	border-top: 1px solid rgba(60, 60, 60, 0.40);
-	padding-top: 35px;
-	margin-top: 50px;
+	border-top: 1px solid var(--glass-border);
+	padding-top: 30px;
+	margin-top: 40px;
 	ul {
 		padding: 0;
 		margin: 0;
@@ -121,13 +115,13 @@
 		display: inline-block;
 	}
 	a {
-		color: rgba(255, 255, 255, 0.50);
-		font-size: 11px;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		transition: 0.3s;
+		color: var(--theme-color-text-muted);
+		font-size: 12px;
+		text-transform: none;
+		letter-spacing: 0.5px;
+		transition: all 0.3s ease;
 		&:hover {
-			color: $primary-color;
+			color: var(--theme-brand-primary);
 			text-decoration: none;
 		}
 	}

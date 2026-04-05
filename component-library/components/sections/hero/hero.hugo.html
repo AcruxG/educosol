@@ -1,11 +1,10 @@
 <section class="page-header services-header" data-parallax="scroll" data-image-src="{{ .image | relURL }}" style="position: relative;">
-    <!-- Dark overlay for readability -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.65); z-index: 1;"></div>
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(15,15,18,0.3) 0%, rgba(15,15,18,0.7) 60%, rgba(15,15,18,0.95) 100%); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="text-center" style="color: #C63527; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 10px;">{{ .heading}}</h1>
-          <p class="text-center" style="color: #ffffff; font-size: 22px; font-weight: 300; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">{{ .subheading }}</p>
+          <h1 class="text-center" style="color: #fff; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px;">{{ .heading}}</h1>
+          <p class="text-center" style="color: rgba(255,255,255,0.7); font-size: 18px; font-weight: 400; max-width: 600px; margin: 0 auto;">{{ .subheading }}</p>
         </div>
       </div>
     </div>
