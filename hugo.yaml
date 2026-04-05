@@ -1,9 +1,7 @@
-baseURL: "https://acruxg.github.io/educosol/"
+baseURL: /
 languageCode: tr
 title: EduCoSol - Eğitim Danışmanlık Çözümleri
 defaultContentLanguage: tr
-canonifyURLs: false
-relativeURLs: true
 
 ignoreFiles:
   - public/js/build.js

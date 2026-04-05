@@ -58,7 +58,7 @@ jobs:
       - name: Build Hugo site
         env:
           HUGO_ENVIRONMENT: production
-        run: hugo --minify --baseURL "https://acruxg.github.io/educosol/"
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Build Pagefind search index
         run: npx pagefind --source public
