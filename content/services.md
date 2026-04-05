@@ -1,104 +1,47 @@
 ---
-title: Services
+title: Hizmetlerimiz
 seo_options:
-  description: The services that we offer
+  description: EduCoSol eğitim danışmanlık hizmetleri - Yurtiçi ve yurtdışı geziler, dil okulları, lise programları, bireysel hazırlık, afterschool ve yaz okulu.
   featured_image:
   og_type: 
   canonical_link:
 content_blocks:
   - _bookshop_name: sections/hero
-    heading: Our Services.
-    subheading: We ensure Quality Design.
+    heading: Hizmetlerimiz
+    subheading: Eğitimde fark yaratan çözümler.
     image: /images/header/services-folding-img.jpg
   - _bookshop_name: sections/services
     heading:
-      heading: Our Services
+      heading: Hizmetlerimiz
     service:
       - _bookshop_name: simple/icon-and-content
-        icon: tf-mobile
-        heading: Mobile App UI
+        icon: tf-globe
+        heading: Yurtiçi Geziler
         content: >-
-          We provide various  mobile app UI Design services Android, ios,windows
-          phone. As well as we follow latest trend in our molestie consequat.
+          Türkiye'nin tarihi ve kültürel zenginliklerini keşfeden, müfredat ile uyumlu eğitim gezileri. İstanbul, Kapadokya, Çanakkale ve daha birçok rota.
       - _bookshop_name: simple/icon-and-content
         icon: tf-telescope
-        heading: Mobile App UI
+        heading: Yurtdışı Geziler
         content: >-
-          We provide various  mobile app UI Design services Android, ios,windows
-          phone. As well as we follow latest trend in our molestie consequat.
+          Avrupa kültür turları, ABD kampüs ziyaretleri ve 25'ten fazla ülkede uluslararası eğitim ve kültür gezileri.
       - _bookshop_name: simple/icon-and-content
         icon: tf-presentation
-        heading: Mobile App UI
+        heading: Dil Okulları
         content: >-
-          We provide various  mobile app UI Design services Android, ios,windows
-          phone. As well as we follow latest trend in our molestie consequat.
+          İngilizce, Almanca, Fransızca ve İspanyolca dil programları. Cambridge, IELTS, TOEFL sınav hazırlık. İngiltere, ABD, Kanada, Malta ve daha fazlası.
       - _bookshop_name: simple/icon-and-content
         icon: tf-strategy
-        heading: Mobile App UI
+        heading: Lise Programları
         content: >-
-          We provide various  mobile app UI Design services Android, ios,windows
-          phone. As well as we follow latest trend in our molestie consequat.
+          Yurtdışında lise eğitimi ile uluslararası kariyer kapılarını aralayın. Tam yıl ve yarıyıl değişim programları, devlet ve özel lise seçenekleri.
       - _bookshop_name: simple/icon-and-content
         icon: tf-anchor2
-        heading: Mobile App UI
+        heading: Bireysel Hazırlık
         content: >-
-          We provide various  mobile app UI Design services Android, ios,windows
-          phone. As well as we follow latest trend in our molestie consequat.
+          IELTS, TOEFL, Cambridge, SAT sınav hazırlık programları. Birebir özel dersler, online ve yüz yüze eğitim seçenekleri.
       - _bookshop_name: simple/icon-and-content
-        icon: tf-globe
-        heading: Mobile App UI
+        icon: tf-mobile
+        heading: Afterschool & Yaz Okulu
         content: >-
-          We provide various  mobile app UI Design services Android, ios,windows
-          phone. As well as we follow latest trend in our molestie consequat.
-  - _bookshop_name: sections/pricing-table
-    heading:
-      _bookshop_name: generic/heading
-      heading: Our Pricing
-    pricing_plans:
-      - _bookshop_name: simple/pricing-plan
-        heading: Extended version
-        currency: '$'
-        price: '89.00'
-        plan_length: Month
-        features:
-          - _bookshop_name: simple/plan-feature
-            name: Web Design Service
-          - _bookshop_name: simple/plan-feature
-            name: Web Development
-          - _bookshop_name: simple/plan-feature
-            name: Mobile Application
-        button:
-          _bookshop_name: generic/button
-          content: Order Now
-      - _bookshop_name: simple/pricing-plan
-        heading: Standard version
-        currency: '$'
-        price: '109.00'
-        plan_length: Month
-        features:
-          - _bookshop_name: simple/plan-feature
-            name: Web Design Service
-          - _bookshop_name: simple/plan-feature
-            name: Web Development
-          - _bookshop_name: simple/plan-feature
-            name: Mobile Application
-        button:
-          _bookshop_name: generic/button
-          content: Order Now
-      - _bookshop_name: simple/pricing-plan
-        heading: Premium version
-        currency: '$'
-        price: '300.00'
-        plan_length: Month
-        features:
-          - _bookshop_name: simple/plan-feature
-            name: Web Design Service
-          - _bookshop_name: simple/plan-feature
-            name: Web Development
-          - _bookshop_name: simple/plan-feature
-            name: Mobile Application
-        button:
-          _bookshop_name: generic/button
-          content: Order Now
+          Okul sonrası akademik destek, yabancı dil atölyeleri, STEM, kodlama, sanat etkinlikleri. Yurtiçi ve yurtdışı yaz kampları.
 ---
-

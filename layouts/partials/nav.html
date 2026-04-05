@@ -2,7 +2,7 @@
 <!-- Navigation -section
   =========================-->
 <nav class="navbar navbar-fixed-top navigation">
-    <div class="container">
+    <div class="container-fluid" style="padding: 0 5%;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -12,7 +12,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand logo" href="/">
-                <img src="{{ .Site.Data.nav.logo.image }}" alt="{{ .Site.Data.nav.logo.alt }}">
+                <img src="{{ .Site.Data.nav.logo.image }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-dark" style="display: var(--display-dark-logo, block);">
+                <img src="/images/logo-educosol.png" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-light" style="display: var(--display-light-logo, none);">
             </a>
         </div>
 
@@ -22,8 +23,39 @@
               {{ range .Site.Data.nav.menu }}
                 <li><a href="{{ .url }}" {{ if .open_in_new_tab }}target="_blank"{{ end }}>{{ .name }}</a></li>
               {{ end }}
+              <li class="theme-toggle-container" style="display: flex; align-items: center; margin-left: 15px;">
+                <button id="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" style="background: none; border: none; font-size: 22px; color: var(--theme-color-text-main); cursor: pointer; padding: 15px; outline: none; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-main)'">
+                  <i class="tf-ion-ios-sunny" id="theme-icon"></i>
+                </button>
+              </li>
             </ul>
         </div><!-- /.navbar-collapse -->
+        
+        <!-- Toggle Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var toggleBtn = document.getElementById("theme-toggle-btn");
+                if(!toggleBtn) return;
+                var icon = document.getElementById("theme-icon");
+                var currentTheme = localStorage.getItem("educosol-theme") || "dark";
+                
+                // Initialize icon
+                icon.className = currentTheme === "light" ? "tf-ion-ios-moon" : "tf-ion-ios-sunny";
+
+                toggleBtn.addEventListener("click", function() {
+                    var isLight = document.documentElement.getAttribute("data-theme") === "light";
+                    if (isLight) {
+                        document.documentElement.removeAttribute("data-theme");
+                        localStorage.setItem("educosol-theme", "dark");
+                        icon.className = "tf-ion-ios-sunny";
+                    } else {
+                        document.documentElement.setAttribute("data-theme", "light");
+                        localStorage.setItem("educosol-theme", "light");
+                        icon.className = "tf-ion-ios-moon";
+                    }
+                });
+            });
+        </script>
     </div>
 </nav>
 {{ end }}

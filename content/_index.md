@@ -1,237 +1,83 @@
 ---
-title: Home
+title: Ana Sayfa
 content_blocks:
   - _bookshop_name: sections/video-hero
-    heading: We’re Creative
-    subheading: We Ensure Quality Design
+    heading: "Eğitimde Dönüşümün"
+    subheading: "Güvenilir Adresi"
     background_video: /video/ocean
   - _bookshop_name: sections/case-study
     background: grey
     heading:
-      heading: Case Study
+      heading: Hizmetlerimiz
     left_right_blocks:
       - _bookshop_name: simple/left-right-block
         image_alignment: right
         background: grey
-        heading: E Banks That Accept Us Casino Players
+        heading: Yurtiçi Geziler
         content_html: >-
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euiyd tincidunt ut laoreet dolore magna aliquam nibh
-          utpat.Ullamcorper suscipit lobo nibh euiyd tinci- dunt ut
-          laoreet.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Rem impedit molestias cumque dolorum, sunt, provident blanditiis
-          tempora, aut explicabo error ipsa repudiandae. Dolores eius eaque eum
-          mollitia esse nisi necessitatibus distinctio ea, dolorem non, optio
-          minima temporibus blanditiis, quidem aperiam!</p>
-        image: /images/case-study/case-study-img1.png
-        image_alt:
+          <p>Türkiye'nin tarihi ve kültürel zenginliklerini keşfeden, müfredat ile uyumlu eğitim gezileri düzenliyoruz. İstanbul, Kapadokya, Çanakkale ve daha birçok rotada öğrencilerinize unutulmaz deneyimler sunuyoruz.</p><p>Uzman rehberler eşliğinde, güvenli ve organize ulaşım ile her detayı sizin için planlıyoruz.</p>
+        image: /images/portfolio/ankara-gezi.png
+        image_alt: Yurtiçi Geziler
         link:
           _bookshop_name: generic/link
-          url: '#'
-          content: View More
+          url: '/yurtici-geziler/'
+          content: Detaylı Bilgi
       - _bookshop_name: simple/left-right-block
         image_alignment: left
         background: black
-        heading: E Banks That Accept Us Casino Players
+        heading: Yurtdışı Geziler
         content_html: >-
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euiyd tincidunt ut laoreet dolore magna aliquam nibh
-          utpat.Ullamcorper suscipit lobo nibh euiyd tinci- dunt ut
-          laoreet.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Rem impedit molestias cumque dolorum, sunt, provident blanditiis
-          tempora, aut explicabo error ipsa repudiandae. Dolores eius eaque eum
-          mollitia esse nisi necessitatibus distinctio ea, dolorem non, optio
-          minima temporibus blanditiis, quidem aperiam!</p>
-        image: /images/case-study/case-study-img2.png
-        image_alt:
+          <p>25'ten fazla ülkede güçlü eğitim ortaklıklarımız sayesinde, güvenli ve zengin içerikli uluslararası gezi deneyimleri sunuyoruz. Avrupa kültür turları, ABD kampüs ziyaretleri ve daha fazlası.</p><p>Öğrencileriniz farklı kültürleri tanıyarak, küresel bir bakış açısı kazanır.</p>
+        image: /images/portfolio/yurtdisi-geziler-card.png
+        image_alt: Yurtdışı Geziler
         link:
           _bookshop_name: generic/link
-          url: '#'
-          content: View More
-  - _bookshop_name: sections/testimonials-block
-    background_image: /images/slider/bg-3.jpg
-    heading:
-      _bookshop_name: generic/heading
-      heading: Clients Opinion
-    testimonials:
-      - _bookshop_name: simple/testimonial
-        content: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna. ipsum dolor
-          sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-          ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Nemo vitae natus odio quasi recusandae, esse! Libero ipsum cum
-          aliquid, nisi, maiores animi iste vel consectetur error facilis quae
-          ducimus sint beatae vitae nesciunt explicabo esse nam. Soluta harum
-          ipsa officia nam adipisci velit debitis! Dolore a ducimus, assumenda
-          aspernatur fugit!
-        author_image: /images/clients-img1.png
-        author_image_alt: Clients
-        author_name: Paul Lapkin
-        author_designation: CEO at DeviserWeb
-      - _bookshop_name: simple/testimonial
-        content: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna. ipsum dolor
-          sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-          ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Nemo vitae natus odio quasi recusandae, esse! Libero ipsum cum
-          aliquid, nisi, maiores animi iste vel consectetur error facilis quae
-          ducimus .
-        author_image: /images/clients-img1.png
-        author_image_alt: Clients
-        author_name: Paul Lapkin
-        author_designation: CEO at DeviserWeb
+          url: '/yurtdisi-geziler/'
+          content: Detaylı Bilgi
+      - _bookshop_name: simple/left-right-block
+        image_alignment: right
+        background: grey
+        heading: Yurtdışı Eğitim Programları
+        content_html: >-
+          <p>Lise ve üniversite öğrencilerinin akademik kariyerlerini yurt dışında şekillendirmeleri için profesyonel danışmanlık hizmeti sunuyoruz. Yaz okulları, dil okulları ve üniversite yerleştirme süreçlerinde yanınızdayız.</p><p>Geleceğinizi en iyi kampüslerde inşa etmenin tam zamanı.</p>
+        image: /images/portfolio/yurtdisi-egitim-card.png
+        image_alt: Yurtdışı Eğitim
+        link:
+          _bookshop_name: generic/link
+          url: '/yurtdisi-egitim/'
+          content: Detaylı Bilgi
+      - _bookshop_name: simple/left-right-block
+        image_alignment: left
+        background: black
+        heading: Bireysel Hazırlık
+        content_html: >-
+          <p>Potansiyelinizi ortaya çıkarmak ve hedeflerinize emin adımlarla yürümeniz için kişiye özel akademik çalışma, portfolyo desteği ve motivasyon odaklı mentörlük programları sunuyoruz.</p><p>Kendi hızınızda, size özel tasarlanmış planlarla başarıya ulaşın.</p>
+        image: /images/portfolio/bireysel-hazirlik-card.png
+        image_alt: Bireysel Hazırlık
+        link:
+          _bookshop_name: generic/link
+          url: '/bireysel-hazirlik/'
+          content: Detaylı Bilgi
   - _bookshop_name: sections/client-logos
-    background_image: /images/slider/bg-1.jpg
+    background_image: ""
+    heading: Referanslarımız
     client_logos:
-      - _bookshop_name: generic/client-logo
-        image: /images/clients-logo/client-logo-1.png
-        image_alt: Client Logo
-      - _bookshop_name: generic/client-logo
-        image: /images/clients-logo/client-logo-2.png
-        image_alt: Client Logo
-      - _bookshop_name: generic/client-logo
-        image: /images/clients-logo/client-logo-3.png
-        image_alt: Client Logo
-      - _bookshop_name: generic/client-logo
-        image: /images/clients-logo/client-logo-4.png
-        image_alt: Client Logo
-      - _bookshop_name: generic/client-logo
-        image: /images/clients-logo/client-logo-5.png
-        image_alt: Client Logo
-      - _bookshop_name: generic/client-logo
-        image: /images/clients-logo/client-logo-6.png
-        image_alt: Client Logo
-  - _bookshop_name: sections/staff-block
-    heading:
-      _bookshop_name: generic/heading
-      heading: Our Specialized Team
-    team_members:
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic1.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic2.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic3.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic4.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic5.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic6.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic7.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-      - _bookshop_name: generic/team-member
-        image: /images/team/team-pic1.jpg
-        image_alt: Team img
-        name: aurelien salomo
-        job_title: Creative Director
-        description: >-
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim.
-        facebook_url: '#'
-        twitter_url: '#'
-        linkedin_url: '#'
-        google_url: '#'
-        instagram_url: '#'
-    link:
-      _bookshop_name: generic/link
-      url: '#'
-      content: Join Our Team
+      - image: /images/a-koleji.svg
+        image_alt: A Koleji
+      - image: /images/b-okullari.svg
+        image_alt: B Okulları
+      - image: /images/c-universitesi.svg
+        image_alt: C Üniversitesi
   - _bookshop_name: sections/contact
-    heading: Get In Touch
+    heading: Bize Ulaşın
     content: >-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero fugiat
-      cum ad officia, harum, et voluptas quia vel voluptatem aliquam, facilis
-      corporis nam tempore ullam doloribus iusto sequi ipsum. Fugiat non culpa
-      ad beatae sed dolorem doloribus accusamus
+      Eğitim danışmanlığı hizmetlerimiz hakkında detaylı bilgi almak, gezi programlarımızı öğrenmek veya bireysel hazırlık süreçleriniz için uzman desteğimizden yararlanmak istiyorsanız, bizimle iletişime geçin.
     link:
       _bookshop_name: generic/link
       url: '/contact/'
-      content: Contact Us
+      content: İletişime Geçin
     map:
       _bookshop_name: generic/map
-      latitude: "51.507351"
-      longitude: "-0.127758"
+      latitude: "41.0378"
+      longitude: "28.9853"
 ---
-

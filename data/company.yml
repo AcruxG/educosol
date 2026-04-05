@@ -1,24 +1,24 @@
 seo_options:
-  site_title: Fiction
-  description: A template for Hugo, adapted from the MIT-licensed Fiction Bootstrap template from Theme Fisher.
+  site_title: EduCoSol
+  description: EduCoSol - Eğitim Danışmanlık Çözümleri. Yurtiçi ve yurtdışı geziler, eğitim programları, bireysel hazırlık ve yaz okulu hizmetleri.
   twitter_image: 
   twitter_site: 
   image: 
 favicon: /images/favicon.ico
-company_name: REDCODDER SOLUTION
+company_name: EduCoSol
 contact:
-  address: "DeviserWeb 24/A,Jalalabad amborkhana amagnina, Sylhet."
-  phone: "+61 (0) 3 8366 6274"
-  mobile: 01771-299299
-  web_address: deviserweb.com
-  email: "info@info.com"
+  address: "İstanbul, Türkiye"
+  phone: ""
+  mobile: ""
+  web_address: educosol.com
+  email: "info@educosol.com"
 social_media:
-  facebook: "#"
-  twitter: "#"
+  facebook: ""
+  twitter: ""
   linkedin: "#"
-  google: "#"
+  google: ""
   instagram: "#"
-copyright_start_year: "2013"
-copyright_statement: "All rights reserved."
-developed_by_statement: Design and Developed By [Themefisher.com](https://themefisher.com)
+copyright_start_year: "2024"
+copyright_statement: "Tüm Hakları Saklıdır."
+developed_by_statement: "[EduCoSol](https://educosol.com) - Eğitim Danışmanlık Çözümleri"
 google_maps_api_key: ""

@@ -29,7 +29,17 @@
           height: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
-      </style>
+    </style>
+    
+    <script>
+        // Init theme early to prevent FOUC
+        (function() {
+            var theme = localStorage.getItem('educosol-theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <script src="/plugins/modernizr.min.js" defer></script>
 
     <title>{{ .Page.Title }} | {{ .Site.Data.company.seo_options.site_title }}</title>

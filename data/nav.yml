@@ -1,19 +1,22 @@
 menu:
-  - name: "Home"
-    url: "/"
+  - name: "Yurtiçi Geziler"
+    url: "/yurtici-geziler/"
     open_in_new_tab: false
-  - name: "Services"
-    url: "/services/"
+  - name: "Yurtdışı Geziler"
+    url: "/yurtdisi-geziler/"
     open_in_new_tab: false
-  - name: "Portfolio"
-    url: "/portfolio/"
+  - name: "Yurtdışı Eğitim Programları"
+    url: "/yurtdisi-egitim/"
     open_in_new_tab: false
-  - name: "Blog"
-    url: "/blog/"
+  - name: "Bireysel Hazırlık"
+    url: "/bireysel-hazirlik/"
     open_in_new_tab: false
-  - name: "Contact"
+  - name: "Afterschool ve Yaz Okulu"
+    url: "/afterschool/"
+    open_in_new_tab: false
+  - name: "İletişim"
     url: "/contact/"
     open_in_new_tab: false
 logo:
-  image: "/images/logo-yellow.png"
-  alt: ""
+  image: "/images/logo-educosol.png"
+  alt: "EduCoSol"

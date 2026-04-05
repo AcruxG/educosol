@@ -1,17 +1,28 @@
-about: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia magni dolores eos qui ratione. ed quia magni dolores
+about: EduCoSol olarak, eğitimde dönüşüm yaratma hedefiyle yola çıktık. Yurtiçi ve yurtdışı eğitim gezileri, dil okulları, bireysel hazırlık ve yaz okulu programları ile öğrencilere ve kurumlara en kaliteli eğitim danışmanlığı hizmeti sunuyoruz.
 menu:
-  - name: "Home"
+  - name: "Ana Sayfa"
     url: "/"
     open_in_new_tab: false
-  - name: "Services"
-    url: "/services/"
+  - name: "Yurtiçi Geziler"
+    url: "/yurtici-geziler/"
     open_in_new_tab: false
-  - name: "Portfolio"
-    url: "/portfolio/"
+  - name: "Yurtdışı Geziler"
+    url: "/yurtdisi-geziler/"
     open_in_new_tab: false
-  - name: "Our Team"
-    url: "/"
+  - name: "Yurtdışı Eğitim"
+    url: "/yurtdisi-egitim/"
     open_in_new_tab: false
-  - name: "Contact"
+  - name: "İletişim"
     url: "/contact/"
     open_in_new_tab: false
+legal_links:
+  - name: "KVKK Aydınlatma Metni"
+    url: "/kvkk/"
+  - name: "Açık Rıza Beyanı"
+    url: "/acik-riza/"
+  - name: "Çerez Politikası"
+    url: "/cerez-politikasi/"
+  - name: "Gizlilik Politikası"
+    url: "/gizlilik-politikasi/"
+  - name: "Kullanım Koşulları"
+    url: "/kullanim-kosullari/"

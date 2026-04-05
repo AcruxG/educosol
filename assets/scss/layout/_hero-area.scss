@@ -50,7 +50,7 @@
   overflow: hidden;
   &:before {
     content: "";
-    background: rgba(0, 0, 0, 0.67);
+    background: rgba(0, 0, 0, 0.3); /* Lighter overlay so video is visible */
     position: absolute;
     right: 0;
     left: 0;
@@ -121,7 +121,7 @@
   z-index: 9;
   height: 70px;
   width: 70px;
-  background: rgba($color: $primary-color, $alpha: 0.5);
+  background: var(--theme-brand-primary); /* SASS compilation fix */
   color: $white;
   border: 0;
   line-height: 70px;

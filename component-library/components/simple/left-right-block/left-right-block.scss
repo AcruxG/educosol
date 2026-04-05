@@ -3,12 +3,12 @@
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     text-transform: uppercase;
-    color: #facd8a;
+    color: var(--theme-brand-primary);
     font-weight: bold;
 }
 .content p {
     font-size: 16px;
-    color: rgba(175, 175, 175, 0.8);
+    color: var(--theme-color-text-muted);
 }
 
 .content .btn {
@@ -16,10 +16,10 @@
 }
 
 .left-right-block--black {
-    background-color: #121212;
+    background-color: var(--theme-color-body-bg);
 }
 .left-right-block--grey {
-    background-color: #171717;
+    background-color: var(--theme-color-service-bg);
 }
 
 .left-right-block--right {

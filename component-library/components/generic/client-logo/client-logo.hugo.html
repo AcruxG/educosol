@@ -1,3 +1,14 @@
-<div class="col-md-4 block text-center">
-    <img src="{{ .image }}" alt="{{ .image_alt }}">
+<div class="col-md-3 block text-center" style="
+    background: var(--theme-glass-bg);
+    border: 1px solid var(--theme-glass-border);
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* balanced shadow for light and dark */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    flex: 1 1 300px;
+    max-width: 350px;
+" onmouseover="this.style.transform='translateY(-15px)'; this.style.borderColor='var(--theme-brand-primary)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='var(--theme-glass-bg)'; this.style.borderColor='var(--theme-glass-border)';">
+    <img src="{{ .image }}" alt="{{ .image_alt }}" style="max-width: 100%; height: auto; display: block; margin: 0 auto; transition: 0.4s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
 </div>

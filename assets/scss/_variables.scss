@@ -1,4 +1,4 @@
-// Themefisher Variables file
+// EduCoSol Variables file
 
 /* Font Familys */
 $poppins: 'Poppins', sans-serif;
@@ -6,34 +6,76 @@ $roboto: 'Roboto', sans-serif;
 $playfair: 'Playfair Display', serif;
 $lora: 'Lora', serif;
 
+/* EduCoSol Brand Colors / CSS Variables for Theme Support */
 
+:root {
+  --theme-brand-primary: #C63527;
+  --theme-color-body-bg: #2D2926;
+  --theme-color-header-bg: #2D2926;
+  --theme-color-text-main: #fff;
+  --theme-color-text-muted: rgba(255, 255, 255, 0.7);
+  --theme-color-gray: #323232;
+  --theme-color-service-bg: #171717;
+  
+  --pagefind-ui-primary: #C63527;
+  --pagefind-ui-text: rgba(255, 255, 255, 0.8);
+  --pagefind-ui-background: #2D2926;
+  --pagefind-ui-border: #C63527;
+  --pagefind-ui-tag: #C63527;
+  
+  --display-dark-logo: block;
+  --display-light-logo: none;
+}
+
+[data-theme="light"] {
+  --theme-brand-primary: #BDB2FF; /* Option 2 Dreamy Pastel Lavender */
+  --theme-color-body-bg: #FCFBF9; /* Pearl White background */
+  --theme-color-header-bg: #FFFFFF; /* Clean white header */
+  --theme-color-text-main: #2D2926; /* Dark readable root text */
+  --theme-color-text-muted: rgba(0, 0, 0, 0.6);
+  --theme-color-gray: #F0F0F5; /* Very subtle grey/lavender tint */
+  --theme-color-service-bg: #F5F5FA; /* Off-white for section splits */
+  
+  --pagefind-ui-primary: #BDB2FF;
+  --pagefind-ui-text: rgba(0, 0, 0, 0.8);
+  --pagefind-ui-background: #FCFBF9;
+  --pagefind-ui-border: #BDB2FF;
+  --pagefind-ui-tag: #BDB2FF;
+  
+  --display-dark-logo: none;
+  --display-light-logo: block;
+}
+
+/* Re-map SCSS variables to the dynamic CSS variables */
 $font-fize: 14px;
-$light: #fff;
-$primary-color: #facd8a;
+$primary-color: var(--theme-brand-primary);
+$brand-secondary: var(--theme-color-body-bg);
+$white: var(--theme-color-text-main);
+$gray: var(--theme-color-gray);
 
-/* Themefisher Colors */
-
-$primary-color: #facd8a;
-$brand-secondary: #111111;
-$white: #fff;
-$gray: #323232;
-$black: #0a0a0a;
+$black: #0a0a0a; // Static solid black
 $medium-dark: #0f0f0f;
+$pure-white: #fff; // Static solid white
+
 /* Header bg */
-$header-bg: #212121;
+$header-bg: var(--theme-color-header-bg);
 /*team overlay bg color */
-$overlay-bg: #e7be82;
+$overlay-bg: var(--theme-brand-primary);
 /* Service section bg */
-$service-bg: #171717;
+$service-bg: var(--theme-color-service-bg);
+
+/* EduCoSol accent */
+$educosol-orange: #E56910;
+$educosol-dark: #2D2926;
 
 /* blog slider pagination img */
 $blog-owl-buttons:#3c3c3c;
 
 body {
---pagefind-ui-primary: #facd8a;
---pagefind-ui-text: rgba(255, 255, 255, 0.8);
---pagefind-ui-background: #111111;
---pagefind-ui-border: #facd8a;
---pagefind-ui-tag: #facd8a;
---pagefind-ui-font: "roboto", sans-serif;
+    --pagefind-ui-primary: var(--pagefind-ui-primary);
+    --pagefind-ui-text: var(--pagefind-ui-text);
+    --pagefind-ui-background: var(--pagefind-ui-background);
+    --pagefind-ui-border: var(--pagefind-ui-border);
+    --pagefind-ui-tag: var(--pagefind-ui-tag);
+    --pagefind-ui-font: "roboto", sans-serif;
 }
