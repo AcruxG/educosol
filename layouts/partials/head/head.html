@@ -40,11 +40,11 @@
             }
         })();
     </script>
-    <script src="/plugins/modernizr.min.js" defer></script>
+    <script src="{{ "/plugins/modernizr.min.js" | relURL }}" defer></script>
 
     <title>{{ .Page.Title }} | {{ .Site.Data.company.seo_options.site_title }}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ .Site.Data.company.favicon }}">
+    <link rel="icon" type="image/x-icon" href="{{ .Site.Data.company.favicon | relURL }}">
 
     {{/*  Add the description meta tags  */}}
     {{ if eq .RelPermalink "/" }}

@@ -12,20 +12,20 @@
         {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
-    <script src="/plugins/jquery.min.js"></script>
+    <script src="{{ "/plugins/jquery.min.js" | relURL }}"></script>
 
-    <script src="/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="{{ "/plugins/bootstrap/bootstrap.min.js" | relURL }}"></script>
     <!-- slick slider -->
-    <script src="/plugins/slick/slick.min.js"></script> 
+    <script src="{{ "/plugins/slick/slick.min.js" | relURL }}"></script>
     <!-- filter -->
-    <script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+    <script src="{{ "/plugins/filterizr/jquery.filterizr.min.js" | relURL }}"></script>
     <!-- Lightbox -->
-    <script src="/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="{{ "/plugins/magnific-popup/jquery.magnific-popup.min.js" | relURL }}"></script>
     <!-- Parallax -->
-    <script src="/plugins/parallax.min.js"></script>
+    <script src="{{ "/plugins/parallax.min.js" | relURL }}"></script>
     <!-- Video -->
-    <script src="/plugins/jquery.vide.js"></script>
-    <script src="/js/script.js" defer></script>
+    <script src="{{ "/plugins/jquery.vide.js" | relURL }}"></script>
+    <script src="{{ "/js/script.js" | relURL }}" defer></script>
 </body>
 
 </html>

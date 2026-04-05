@@ -6,7 +6,7 @@
             </div>
             <div class="flex">
                 <div class="col-md-12 col-lg-6  padding-0">
-                    <img src="{{ .Params.image }}" alt="{{ .image_alt }}">
+                    <img src="{{ .Params.image | relURL }}" alt="{{ .image_alt }}">
                 </div>
                 <div class="col-md-12 col-lg-6 portfolio-single-description padding-0">
                     <div class="portfolio-single-info">
