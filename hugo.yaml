@@ -2,6 +2,7 @@ baseURL: /
 languageCode: tr
 title: EduCoSol - Eğitim Danışmanlık Çözümleri
 defaultContentLanguage: tr
+relativeURLs: true
 
 ignoreFiles:
   - public/js/build.js
