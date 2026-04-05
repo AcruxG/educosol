@@ -17,7 +17,7 @@ blueprint:
 preview:
   heading: We’re Creative
   subheading: We Ensure Quality Design
-  background_video: /video/ocean
+  background_video: /video/education
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:

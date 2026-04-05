@@ -91,7 +91,7 @@
     /* Popup Video */
     $('#th-video').magnificPopup({
       items: [{
-        src: 'video/ocean.mp4',
+        src: 'video/education.mp4',
         type: 'iframe' // this overrides default type
       }],
       gallery: {
