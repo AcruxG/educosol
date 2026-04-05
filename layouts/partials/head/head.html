@@ -29,6 +29,11 @@
           height: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
+        
+        /* Fix client logos being invisible in light mode */
+        [data-theme="light"] .client-logo-render {
+            filter: invert(1);
+        }
     </style>
     
     <script>
