@@ -1,11 +1,11 @@
 <!-- Clients Logo Sections
   =========================-->
-  <section class="clients-logo" data-parallax="scroll" data-image-src="{{ .background_image | strings.TrimPrefix "/" | relURL }}">
+  <section class="clients-logo" {{ if .background_image }}data-parallax="scroll" data-image-src="{{ .background_image | strings.TrimPrefix "/" | relURL }}"{{ end }}>
     <div class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center" style="margin-bottom: 60px;">
-                    <h2 style="color: #fff; font-size: 36px; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">{{ .heading }}</h2>
+                    <h2 style="color: var(--theme-color-text-main); font-size: 36px; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">{{ .heading }}</h2>
                     <div style="width: 60px; height: 3px; background: #C63527; margin: 15px auto 0;"></div>
                 </div>
             </div>
