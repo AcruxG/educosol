@@ -52,10 +52,13 @@ jobs:
       - name: Build JavaScript
         run: npm run javascript
 
+      - name: Debug base_url
+        run: echo "Base URL is ${{ steps.pages.outputs.base_url }}"
+
       - name: Build Hugo site
         env:
           HUGO_ENVIRONMENT: production
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}"
+        run: hugo --minify --baseURL "https://acruxg.github.io/educosol/"
 
       - name: Build Pagefind search index
         run: npx pagefind --source public
