@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "run-p javascript dev",
-    "dev": "hugo server",
+    "dev": "\"C:/Users/PC/AppData/Local/Microsoft/WinGet/Packages/Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe/hugo.exe\" server",
     "build": "hugo --source ./ --destination public --baseURL /",
     "javascript": "esbuild assets/js/index.js --bundle --outfile=assets/js/build.js",
     "bookshop-update": "npx @bookshop/up@latest",
