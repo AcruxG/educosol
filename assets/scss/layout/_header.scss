@@ -158,13 +158,19 @@ div.loading {
 	.navbar-toggle { display: none !important; }
 	.navbar-collapse { display: none !important; }
 
-	/* Logo left, hamburger right */
+	/* Logo flush left, hamburger flush right */
 	.navbar-header {
 		display: flex !important;
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 		float: none;
+	}
+
+	/* Override the 5% inline padding so items sit at the screen edges */
+	.navigation .container-fluid {
+		padding-left: 14px !important;
+		padding-right: 14px !important;
 	}
 }
 
