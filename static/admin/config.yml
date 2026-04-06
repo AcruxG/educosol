@@ -1,0 +1,104 @@
+backend:
+  name: github
+  repo: AcruxG/educosol
+  branch: main
+
+media_folder: static/images/portfolio
+public_folder: /images/portfolio
+
+locale: tr
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ── Yurtici Geziler ──────────────────────────────
+  - name: yurtici-geziler
+    label: "Yurtici Geziler"
+    label_singular: "Yurtici Gezi"
+    folder: content/yurtici-geziler
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!Yurtiçi Geziler$)" }
+    fields:
+      - { label: "Baslik", name: title, widget: string }
+      - { label: "Tarih", name: date, widget: datetime }
+      - { label: "Gorsel", name: image, widget: image }
+      - { label: "Sure", name: duration, widget: string, hint: "Orn: 2 Gun 1 Gece" }
+      - { label: "Konum", name: location, widget: string }
+      - { label: "Hedef Kitle", name: target_group, widget: string, hint: "Orn: Ortaokul ve Lise Ogrencileri" }
+      - { label: "Icerik", name: body, widget: markdown }
+
+  # ── Yurtdisi Geziler ─────────────────────────────
+  - name: yurtdisi-geziler
+    label: "Yurtdisi Geziler"
+    label_singular: "Yurtdisi Gezi"
+    folder: content/yurtdisi-geziler
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!Yurtdışı Geziler$)" }
+    fields:
+      - { label: "Baslik", name: title, widget: string }
+      - { label: "Tarih", name: date, widget: datetime }
+      - { label: "Gorsel", name: image, widget: image }
+      - { label: "Sure", name: duration, widget: string, hint: "Orn: 5 Gun 4 Gece" }
+      - { label: "Konum", name: location, widget: string }
+      - { label: "Hedef Kitle", name: target_group, widget: string }
+      - { label: "Icerik", name: body, widget: markdown }
+
+  # ── Yurtdisi Egitim Programlari ──────────────────
+  - name: yurtdisi-egitim
+    label: "Yurtdisi Egitim Programlari"
+    label_singular: "Yurtdisi Egitim Programi"
+    folder: content/yurtdisi-egitim
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!Yurtdışı Eğitim Programları$)" }
+    fields:
+      - { label: "Baslik", name: title, widget: string }
+      - { label: "Tarih", name: date, widget: datetime }
+      - { label: "Gorsel", name: image, widget: image }
+      - { label: "Sure", name: duration, widget: string, hint: "Orn: 4 Hafta" }
+      - { label: "Konum", name: location, widget: string }
+      - { label: "Hedef Kitle", name: target_group, widget: string }
+      - { label: "Icerik", name: body, widget: markdown }
+
+  # ── Afterschool & Yaz Okulu ──────────────────────
+  - name: afterschool
+    label: "Afterschool & Yaz Okulu"
+    label_singular: "Afterschool Program"
+    folder: content/afterschool
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!Afterschool & Yaz Okulu$)" }
+    fields:
+      - { label: "Baslik", name: title, widget: string }
+      - { label: "Tarih", name: date, widget: datetime }
+      - { label: "Gorsel", name: image, widget: image }
+      - { label: "Sure", name: duration, widget: string, hint: "Orn: 2-4 Hafta" }
+      - { label: "Konum", name: location, widget: string }
+      - { label: "Hedef Kitle", name: target_group, widget: string }
+      - { label: "Icerik", name: body, widget: markdown }
+
+  # ── Bireysel Hazirlik ────────────────────────────
+  - name: bireysel-hazirlik
+    label: "Bireysel Hazirlik"
+    label_singular: "Bireysel Hazirlik Programi"
+    folder: content/bireysel-hazirlik
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!Bireysel Hazırlık Programları$)" }
+    fields:
+      - { label: "Baslik", name: title, widget: string }
+      - { label: "Tarih", name: date, widget: datetime }
+      - { label: "Gorsel", name: image, widget: image }
+      - { label: "Sure", name: duration, widget: string, hint: "Orn: 8 Hafta" }
+      - { label: "Konum", name: location, widget: string }
+      - { label: "Hedef Kitle", name: target_group, widget: string }
+      - { label: "Icerik", name: body, widget: markdown }
