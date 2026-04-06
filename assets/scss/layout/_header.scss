@@ -196,6 +196,21 @@ div.loading {
 		margin: 0 !important;
 		padding: 8px !important;
 	}
+
+	.mobile-nav-theme-btn {
+		position: absolute !important;
+		right: calc(6% + 44px) !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+		margin: 0 !important;
+		padding: 8px !important;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 20px;
+		color: var(--theme-color-text-main);
+		transition: color 0.3s ease;
+	}
 }
 
 /* Custom hamburger button */
@@ -261,7 +276,7 @@ div.loading {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 70px;
+	height: 62px;
 	flex-shrink: 0;
 
 	.mobile-nav-logo img {

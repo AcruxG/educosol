@@ -49,7 +49,8 @@
 
     <title>{{ .Page.Title }} | {{ .Site.Data.company.seo_options.site_title }}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ .Site.Data.company.favicon | strings.TrimPrefix "/" | relURL }}">
+    <link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}">
+    <link rel="alternate icon" type="image/x-icon" href="{{ .Site.Data.company.favicon | strings.TrimPrefix "/" | relURL }}">
 
     {{/*  Add the description meta tags  */}}
     {{ if eq .RelPermalink "/" }}
