@@ -5,7 +5,7 @@ backend:
   name: github
   repo: AcruxG/educosol
   branch: main
-  # base_url: https://auth.educosol.com # (Requires a separate proxy)
+  base_url: https://educosol-cms-proxy.vercel.app
 
 media_folder: "static/images/portfolio"
 public_folder: "/educosol/images/portfolio"
