@@ -5,8 +5,8 @@
             <!-- Brand & Social -->
             <div class="footer-brand">
                 <a href="{{ "" | relURL }}" class="footer-logo-link">
-                    <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="EduCoSol" class="logo-dark footer-logo">
-                    <img src="{{ "images/logo-educosol.png" | relURL }}" alt="EduCoSol" class="logo-light footer-logo">
+                    <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="EduCoSol" class="logo-dark footer-logo" style="display: var(--display-dark-logo, block);">
+                    <img src="{{ "images/logo-educosol.png" | relURL }}" alt="EduCoSol" class="logo-light footer-logo" style="display: var(--display-light-logo, none);">
                 </a>
                 <p class="footer-tagline">Yurt dışı üniversite başvurularında ve lise eğitim programlarında premium danışmanlık ve rehberlik hizmeti.</p>
                 <div class="footer-socials">

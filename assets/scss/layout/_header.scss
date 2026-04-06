@@ -167,10 +167,10 @@ div.loading {
 		float: none;
 	}
 
-	/* Override the 5% inline padding so items sit at the screen edges */
+	/* Override the 5% inline padding — logo/hamburger flush to screen edges */
 	.navigation .container-fluid {
-		padding-left: 14px !important;
-		padding-right: 14px !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
 	}
 }
 
