@@ -4,10 +4,15 @@ backend:
   name: github
   repo: AcruxG/educosol
   branch: main
-  # base_url: https://auth.educosol.com # (Setup required for live site)
+  # base_url: https://auth.educosol.com # (Requires a separate proxy)
 
 media_folder: "static/images/portfolio"
-public_folder: "/images/portfolio"
+public_folder: "/educosol/images/portfolio"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
   - name: "yurtici-geziler"
