@@ -1,3 +1,139 @@
+/* =============================================
+   Contact CTA Section (homepage)
+   ============================================= */
+
+.contact-cta {
+	padding: var(--section-spacing) 0;
+	background: var(--theme-color-body-bg);
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(ellipse at 80% 50%, rgba(198, 53, 39, 0.06) 0%, transparent 65%);
+		pointer-events: none;
+	}
+}
+
+.contact-cta-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 64px;
+	align-items: center;
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+}
+
+.contact-cta-eyebrow {
+	display: inline-block;
+	font-family: $inter;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	color: var(--theme-brand-primary);
+	margin-bottom: 16px;
+}
+
+.contact-cta-heading {
+	font-size: clamp(28px, 3.5vw, 44px);
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	color: var(--theme-color-text-main);
+	margin-bottom: 16px;
+}
+
+.contact-cta-text {
+	font-size: 16px;
+	line-height: 1.75;
+	color: var(--theme-color-text-muted);
+	margin-bottom: 32px;
+	max-width: 480px;
+}
+
+.contact-cta-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.contact-card {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 18px 22px;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius-md);
+	text-decoration: none;
+	transition: all 0.3s ease;
+
+	&:hover {
+		border-color: rgba(198, 53, 39, 0.4);
+		background: rgba(198, 53, 39, 0.04);
+		transform: translateX(5px);
+		text-decoration: none;
+	}
+}
+
+.contact-card-icon {
+	width: 46px;
+	height: 46px;
+	border-radius: var(--radius-sm);
+	background: rgba(198, 53, 39, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+	i {
+		font-size: 22px;
+		color: var(--theme-brand-primary);
+	}
+}
+
+.contact-card-body {
+	flex: 1;
+}
+
+.contact-card-label {
+	font-family: $inter;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: var(--theme-color-text-muted);
+	margin: 0 0 3px;
+}
+
+.contact-card-value {
+	font-family: $inter;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--theme-color-text-main);
+	margin: 0;
+}
+
+.contact-card-arrow {
+	font-size: 18px;
+	color: var(--theme-color-text-muted);
+	flex-shrink: 0;
+	transition: transform 0.25s ease, color 0.25s;
+
+	.contact-card:hover & {
+		transform: translateX(3px);
+		color: var(--theme-brand-primary);
+	}
+}
+
+/* ============================================= */
+
 .contact-form{
     padding: 56px 0 60px;
     .form-group {

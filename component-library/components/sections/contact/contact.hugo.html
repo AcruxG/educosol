@@ -1,18 +1,43 @@
-<!-- Contact Us Sections
-=========================-->
-<section class="contact-call-to-action">
-    <div class="shadow-block vh-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="block">
-              <h2>{{ .heading }}</h2>
-              <p>{{ .content }}</p>
-              {{ partial "bookshop" (slice "generic/link" .link )}}
-            </div>
-          </div>
-        </div>
+<section class="contact-cta">
+  <div class="container">
+    <div class="contact-cta-grid">
+
+      <div class="contact-cta-left">
+        <span class="contact-cta-eyebrow">İletişim</span>
+        <h2 class="contact-cta-heading">{{ .heading }}</h2>
+        <p class="contact-cta-text">{{ .content }}</p>
+        {{ partial "bookshop" (slice "generic/link" .link )}}
       </div>
+
+      <div class="contact-cta-cards">
+        <a href="mailto:{{ default "info@educosol.com" .Site.Data.company.contact.email }}" class="contact-card">
+          <div class="contact-card-icon"><i class="tf-ion-ios-email-outline"></i></div>
+          <div class="contact-card-body">
+            <p class="contact-card-label">E-posta</p>
+            <p class="contact-card-value">{{ default "info@educosol.com" .Site.Data.company.contact.email }}</p>
+          </div>
+          <i class="contact-card-arrow tf-ion-ios-arrow-right"></i>
+        </a>
+
+        <a href="tel:{{ default "+905000000000" .Site.Data.company.contact.phone }}" class="contact-card">
+          <div class="contact-card-icon"><i class="tf-ion-ios-telephone-outline"></i></div>
+          <div class="contact-card-body">
+            <p class="contact-card-label">Telefon</p>
+            <p class="contact-card-value">{{ default "+90 5XX XXX XX XX" .Site.Data.company.contact.phone }}</p>
+          </div>
+          <i class="contact-card-arrow tf-ion-ios-arrow-right"></i>
+        </a>
+
+        <a href="{{ default "https://wa.me/905000000000" .Site.Data.company.contact.whatsapp }}" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon"><i class="tf-ion-social-whatsapp-outline"></i></div>
+          <div class="contact-card-body">
+            <p class="contact-card-label">WhatsApp</p>
+            <p class="contact-card-value">Hemen Yazın</p>
+          </div>
+          <i class="contact-card-arrow tf-ion-ios-arrow-right"></i>
+        </a>
+      </div>
+
     </div>
-    {{ partial "bookshop" (slice "generic/map" .map )}}
-  </section>
+  </div>
+</section>

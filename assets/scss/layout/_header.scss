@@ -157,6 +157,15 @@ div.loading {
 @media (max-width: 767px) {
 	.navbar-toggle { display: none !important; }
 	.navbar-collapse { display: none !important; }
+
+	/* Logo left, hamburger right */
+	.navbar-header {
+		display: flex !important;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		float: none;
+	}
 }
 
 /* Custom hamburger button */

@@ -35,7 +35,10 @@
         .row {
             grid-template-columns: 1fr;
             .col-md-6:last-child {
-                grid-row: 2;
+                grid-row: 1; /* image first on mobile */
+            }
+            .col-md-6:first-child {
+                grid-row: 2; /* text below image on mobile */
             }
         }
     }

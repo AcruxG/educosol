@@ -3,16 +3,16 @@
 <nav class="navbar navbar-fixed-top navigation">
     <div class="container-fluid" style="padding: 0 5%;">
         <div class="navbar-header">
-            <!-- Custom mobile hamburger (replaces Bootstrap toggle) -->
+            <a class="navbar-brand logo" href="{{ "" | relURL }}">
+                <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-dark" style="display: var(--display-dark-logo, block);">
+                <img src="{{ "images/logo-educosol.png" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-light" style="display: var(--display-light-logo, none);">
+            </a>
+            <!-- Custom mobile hamburger — right side -->
             <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menüyü Aç">
                 <span class="ham-bar"></span>
                 <span class="ham-bar"></span>
                 <span class="ham-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="{{ "" | relURL }}">
-                <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-dark" style="display: var(--display-dark-logo, block);">
-                <img src="{{ "images/logo-educosol.png" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-light" style="display: var(--display-light-logo, none);">
-            </a>
         </div>
 
         <!-- Desktop nav (hidden on mobile via CSS) -->

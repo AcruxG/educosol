@@ -1,76 +1,72 @@
-<footer class="footer">
-    <!-- Main Footer Grid -->
-    <div class="container" style="padding-top: 50px;">
-        <div class="row" style="display: flex; flex-wrap: wrap;">
-            <!-- Column 1: Brand & Social -->
-            <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
-                <div class="footer-logo" style="margin-bottom: 20px;">
-                    <img src="{{ "images/logo-educosol.png" | relURL }}" alt="EduCoSol" style="max-width: 150px; display: block;">
-                </div>
-                <!-- Optional: Use a short desc if available, else keep it broad -->
-                <p style="font-size: 14px; margin-bottom: 25px; line-height: 1.8;">Yurt dışı üniversite başvurularında ve lise eğitim programlarında premium danışmanlık ve rehberlik hizmeti.</p>
-                <div class="footer-social-media">
-                    <ul class="footer-media-link" style="padding: 0; margin: 0; display: flex; gap: 8px;">
-                        <li><a href="#" style="background: rgba(128,128,128,0.1); border-radius: 5px; padding: 8px 12px; font-size: 16px; transition: 0.3s; display: inline-block; line-height: 1; color: var(--theme-color-text-main);" onmouseover="this.style.background='var(--theme-brand-primary)'; this.style.color='#fff';" onmouseout="this.style.background='rgba(128,128,128,0.1)'; this.style.color='var(--theme-color-text-main)';"><i class="tf-ion-social-instagram-outline" aria-hidden="true"></i></a></li>
-                        <li><a href="#" style="background: rgba(128,128,128,0.1); border-radius: 5px; padding: 8px 12px; font-size: 16px; transition: 0.3s; display: inline-block; line-height: 1; color: var(--theme-color-text-main);" onmouseover="this.style.background='var(--theme-brand-primary)'; this.style.color='#fff';" onmouseout="this.style.background='rgba(128,128,128,0.1)'; this.style.color='var(--theme-color-text-main)';"><i class="tf-ion-social-linkedin-outline" aria-hidden="true"></i></a></li>
-                        <li><a href="#" style="background: rgba(128,128,128,0.1); border-radius: 5px; padding: 8px 12px; font-size: 16px; transition: 0.3s; display: inline-block; line-height: 1; color: var(--theme-color-text-main);" onmouseover="this.style.background='var(--theme-brand-primary)'; this.style.color='#fff';" onmouseout="this.style.background='rgba(128,128,128,0.1)'; this.style.color='var(--theme-color-text-main)';"><i class="tf-ion-social-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#" style="background: rgba(128,128,128,0.1); border-radius: 5px; padding: 8px 12px; font-size: 16px; transition: 0.3s; display: inline-block; line-height: 1; font-weight: bold; font-family: sans-serif; color: var(--theme-color-text-main);" onmouseover="this.style.background='var(--theme-brand-primary)'; this.style.color='#fff';" onmouseout="this.style.background='rgba(128,128,128,0.1)'; this.style.color='var(--theme-color-text-main)';"><i class="tf-ion-social-youtube-outline" aria-hidden="true"></i></a></li>
-                    </ul>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <!-- Brand & Social -->
+            <div class="footer-brand">
+                <a href="{{ "" | relURL }}" class="footer-logo-link">
+                    <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="EduCoSol" class="logo-dark footer-logo">
+                    <img src="{{ "images/logo-educosol.png" | relURL }}" alt="EduCoSol" class="logo-light footer-logo">
+                </a>
+                <p class="footer-tagline">Yurt dışı üniversite başvurularında ve lise eğitim programlarında premium danışmanlık ve rehberlik hizmeti.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Instagram"><i class="tf-ion-social-instagram-outline"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="tf-ion-social-linkedin-outline"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="Twitter"><i class="tf-ion-social-twitter"></i></a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube"><i class="tf-ion-social-youtube-outline"></i></a>
                 </div>
             </div>
 
-            <!-- Column 2: Quick Links -->
-            <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
-                <h4 style="color: var(--theme-color-text-main); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 25px;">HIZLI LİNKLER</h4>
-                <ul style="list-style: none; padding: 0; line-height: 2.2;">
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h5 class="footer-col-title">Hızlı Linkler</h5>
+                <ul class="footer-links">
                     {{ range .Site.Data.footer.menu }}
-                        <li><a href="{{ .url | strings.TrimPrefix "/" | relURL }}" style="color: var(--theme-color-text-muted); transition: 0.3s; font-size: 14px;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
+                        <li><a href="{{ .url | strings.TrimPrefix "/" | relURL }}">{{ .name }}</a></li>
                     {{ end }}
                 </ul>
             </div>
 
-            <!-- Column 3: Contact -->
-            <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
-                <h4 style="color: var(--theme-color-text-main); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 25px;">İLETİŞİM</h4>
-                <ul style="list-style: none; padding: 0; line-height: 2.2; display: flex; flex-direction: column; gap: 10px;">
-                    <li style="display: flex; align-items: center; gap: 10px;">
-                        <i class="tf-ion-ios-email-outline" style="font-size: 18px; color: var(--theme-color-text-main);"></i> 
-                        <a href="mailto:{{ default "bilgi@educosol.com" .Site.Data.company.contact.email }}" style="color: var(--theme-color-text-muted); font-size: 14px; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ default "bilgi@educosol.com" .Site.Data.company.contact.email }}</a>
+            <!-- Contact -->
+            <div class="footer-col">
+                <h5 class="footer-col-title">İletişim</h5>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="tf-ion-ios-email-outline"></i>
+                        <a href="mailto:{{ default "info@educosol.com" .Site.Data.company.contact.email }}">{{ default "info@educosol.com" .Site.Data.company.contact.email }}</a>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 10px;">
-                        <i class="tf-ion-ios-telephone-outline" style="font-size: 18px; color: var(--theme-color-text-main);"></i> 
-                        <a href="tel:{{ default "+90 5XX XXX XX XX" .Site.Data.company.contact.phone }}" style="color: var(--theme-color-text-muted); font-size: 14px; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ default "+90 5XX XXX XX XX" .Site.Data.company.contact.phone }}</a>
+                    <li>
+                        <i class="tf-ion-ios-telephone-outline"></i>
+                        <a href="tel:{{ default "+905000000000" .Site.Data.company.contact.phone }}">{{ default "+90 5XX XXX XX XX" .Site.Data.company.contact.phone }}</a>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 10px;">
-                        <i class="tf-ion-social-whatsapp-outline" style="font-size: 18px; color: var(--theme-color-text-main);"></i> 
-                        <a href="{{ default "https://wa.me/905XXXXXXXXX" .Site.Data.company.contact.whatsapp }}" style="color: var(--theme-color-text-muted); font-size: 14px; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">WhatsApp</a>
+                    <li>
+                        <i class="tf-ion-social-whatsapp-outline"></i>
+                        <a href="{{ default "https://wa.me/905000000000" .Site.Data.company.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Column 4: Newsletter -->
-            <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
-                <h4 style="color: var(--theme-color-text-main); text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 25px;">BÜLTEN</h4>
-                <p style="font-size: 14px; margin-bottom: 15px; line-height: 1.6; color: var(--theme-color-text-main);">Eğitim fırsatları, başvuru tarihleri ve yurt dışı eğitim haberleri doğrudan e-postanıza gelsin.</p>
-                <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 10px;">
-                    <input type="email" placeholder="E-posta adresiniz" style="padding: 12px 15px; border-radius: 5px; border: 1px solid rgba(128,128,128,0.2); background: rgba(128,128,128,0.05); color: var(--theme-color-text-main); width: 100%; outline: none;" required>
-                    <button type="submit" class="btn btn-main" style="width: 100%; border-radius: 5px; padding: 12px; font-weight: 500; text-transform: none; letter-spacing: normal;">Abone Ol</button>
-                    <small style="font-size: 11px; opacity: 0.6; margin-top: 5px; color: var(--theme-color-text-main);">İstediğiniz zaman aboneliğinizi iptal edebilirsiniz.</small>
+            <!-- Newsletter -->
+            <div class="footer-col">
+                <h5 class="footer-col-title">Bülten</h5>
+                <p class="footer-newsletter-text">Eğitim fırsatları, başvuru tarihleri ve yurt dışı eğitim haberleri doğrudan e-postanıza gelsin.</p>
+                <form action="#" method="POST" class="footer-newsletter-form">
+                    <input type="email" placeholder="E-posta adresiniz" required>
+                    <button type="submit">Abone Ol</button>
+                    <small>İstediğiniz zaman aboneliğinizi iptal edebilirsiniz.</small>
                 </form>
             </div>
-        </div>
 
-        <!-- Bottom Copyright Row -->
-        <div class="row" style="border-top: 1px solid rgba(128, 128, 128, 0.2); margin-top: 20px; padding-top: 25px; padding-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <div class="col-md-4 col-sm-12 text-left" style="font-size: 13px; color: var(--theme-color-text-muted);">
-                <p style="margin: 0;">
-                    &#169; {{ time.Now.Year }} {{ .Site.Data.company.company_name }}. Tüm hakları saklıdır.
-                </p>
-            </div>
-            <div class="col-md-8 col-sm-12 text-right">
-                <ul style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 15px; flex-wrap: wrap; justify-content: flex-end;">
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <p>&#169; {{ time.Now.Year }} {{ default "EduCoSol" .Site.Data.company.company_name }}. Tüm hakları saklıdır.</p>
+                <ul class="footer-legal">
                     {{ range .Site.Data.footer.legal_links }}
-                        <li><a href="{{ .url | relURL }}" style="color: var(--theme-color-text-muted); font-size: 13px; transition: 0.3s;" onmouseover="this.style.color='var(--theme-brand-primary)'" onmouseout="this.style.color='var(--theme-color-text-muted)'">{{ .name }}</a></li>
+                        <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
                     {{ end }}
                 </ul>
             </div>
