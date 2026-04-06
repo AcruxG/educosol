@@ -158,19 +158,43 @@ div.loading {
 	.navbar-toggle { display: none !important; }
 	.navbar-collapse { display: none !important; }
 
-	/* Logo flush left, hamburger flush right */
-	.navbar-header {
-		display: flex !important;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-		float: none;
+	/* Logo flush left, hamburger flush right —
+	   Absolutely position both items to bypass Bootstrap's
+	   float, margin:-15px, and flex quirks entirely */
+	.navigation .container-fluid {
+		padding: 0 !important;
+		position: relative;
+		height: 62px;
 	}
 
-	/* Override the 5% inline padding — logo/hamburger flush to screen edges */
-	.navigation .container-fluid {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
+	.navigation .navbar-header {
+		position: absolute !important;
+		inset: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		float: none !important;
+		width: auto !important;
+	}
+
+	.navigation .navbar-brand {
+		position: absolute !important;
+		left: 0 !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+		float: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		display: flex !important;
+		align-items: center;
+	}
+
+	.mobile-menu-toggle {
+		position: absolute !important;
+		right: 0 !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+		margin: 0 !important;
+		padding: 8px !important;
 	}
 }
 
