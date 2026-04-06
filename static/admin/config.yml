@@ -1,0 +1,141 @@
+backend:
+  name: github
+  repo: AcruxG/educosol
+  branch: main
+  base_url: https://auth.educosol.com # Placeholder proxy (you can change this later)
+
+media_folder: "static/images/portfolio"
+public_folder: "/images/portfolio"
+
+collections:
+  - name: "yurtici-geziler"
+    label: "🏔️ Yurtiçi Geziler"
+    folder: "content/yurtici-geziler"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Görsel", name: "image", widget: "image" }
+      - { label: "Süre", name: "duration", widget: "string", placeholder: "Örn: 2 Gün 1 Gece" }
+      - { label: "Konum", name: "location", widget: "string" }
+      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "yurtdisi-geziler"
+    label: "✈️ Yurtdışı Geziler"
+    folder: "content/yurtdisi-geziler"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Görsel", name: "image", widget: "image" }
+      - { label: "Süre", name: "duration", widget: "string" }
+      - { label: "Konum", name: "location", widget: "string" }
+      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "yurtdisi-egitim"
+    label: "🎓 Yurtdışı Eğitim"
+    folder: "content/yurtdisi-egitim"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Görsel", name: "image", widget: "image" }
+      - { label: "Süre", name: "duration", widget: "string" }
+      - { label: "Konum", name: "location", widget: "string" }
+      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "afterschool"
+    label: "☀️ Afterschool & Yaz Okulu"
+    folder: "content/afterschool"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Görsel", name: "image", widget: "image" }
+      - { label: "Süre", name: "duration", widget: "string" }
+      - { label: "Konum", name: "location", widget: "string" }
+      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "bireysel-hazirlik"
+    label: "📋 Bireysel Hazırlık"
+    folder: "content/bireysel-hazirlik"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Görsel", name: "image", widget: "image" }
+      - { label: "Süre", name: "duration", widget: "string" }
+      - { label: "Konum", name: "location", widget: "string" }
+      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "📄 Sayfalar"
+    files:
+      - file: "content/contact.md"
+        label: "İletişim Sayfası"
+        name: "contact"
+        fields:
+          - { label: "Başlık", name: "title", widget: "string" }
+          - label: "SEO Ayarları"
+            name: "seo_options"
+            widget: "object"
+            fields:
+              - { label: "Açıklama", name: "description", widget: "text" }
+              - { label: "Öne Çıkan Görsel", name: "featured_image", widget: "image", required: false }
+          - { label: "İçerik", name: "body", widget: "markdown" }
+      - file: "content/hakkimizda.md"
+        label: "Hakkımızda"
+        name: "about"
+        fields:
+          - { label: "Başlık", name: "title", widget: "string" }
+          - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "⚙️ Global Ayarlar"
+    files:
+      - file: "data/company.yml"
+        label: "Şirket Bilgileri & SEO"
+        name: "company"
+        fields:
+          - label: "SEO"
+            name: "seo_options"
+            widget: "object"
+            fields:
+              - { label: "Site Başlığı", name: "site_title", widget: "string" }
+              - { label: "Site Açıklaması", name: "description", widget: "text" }
+              - { label: "Sosyal Paylaşım Görseli", name: "image", widget: "image", required: false }
+          - { label: "Şirket Adı", name: "company_name", widget: "string" }
+          - label: "İletişim"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Adres", name: "address", widget: "string" }
+              - { label: "E-posta", name: "email", widget: "string" }
+              - { label: "Telefon", name: "phone", widget: "string" }
+              - { label: "WhatsApp Linki", name: "whatsapp", widget: "string", required: false }
+      - file: "data/nav.yml"
+        label: "Navigasyon (Menü)"
+        name: "nav"
+        fields:
+          - label: "Menü Öğeleri"
+            name: "menu"
+            widget: "list"
+            fields:
+              - { label: "İsim", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Logo Ayarları"
+            name: "logo"
+            widget: "object"
+            fields:
+              - { label: "Logo Görseli", name: "image", widget: "image" }
+              - { label: "Alt Metin", name: "alt", widget: "string" }
