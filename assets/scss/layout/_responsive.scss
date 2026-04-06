@@ -347,7 +347,53 @@ $lg-desktop: 1200px;
 
  }
 
-/* Extra Small Devices, Phones */ 
+/* ==============================
+   Phone Hero & General Layout
+   ============================== */
+@media only screen and (max-width: 767px) {
+	/* Center hero content on phones */
+	.hero-video {
+		text-align: center;
+		align-items: center;
+
+		.col-md-7,
+		.col-sm-10 {
+			width: 100%;
+			float: none;
+			padding: 0 24px;
+		}
+
+		h1 {
+			font-size: clamp(30px, 9vw, 48px);
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.hero-eyebrow {
+			font-size: 11px;
+			letter-spacing: 2px;
+		}
+
+		.hero-sub {
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 15px;
+		}
+
+		.btn-main {
+			display: inline-block;
+		}
+	}
+
+	/* Reduce section spacing */
+	.section {
+		padding: 64px 0;
+	}
+}
+
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : $phone) and (max-width : $tables){
 	.protfolio-list{
 		.colon{

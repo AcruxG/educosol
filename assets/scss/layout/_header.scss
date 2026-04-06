@@ -149,6 +149,218 @@ div.loading {
 	100% { opacity: 0; transform: rotate(900deg); }
 }
 
+/* =============================================
+   Mobile Navigation
+   ============================================= */
+
+/* Hide Bootstrap's built-in collapse on mobile */
+@media (max-width: 767px) {
+	.navbar-toggle { display: none !important; }
+	.navbar-collapse { display: none !important; }
+}
+
+/* Custom hamburger button */
+.mobile-menu-toggle {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	margin-right: 4px;
+
+	@media (max-width: 767px) {
+		display: flex;
+	}
+
+	.ham-bar {
+		display: block;
+		width: 22px;
+		height: 2px;
+		background: var(--theme-color-text-main);
+		border-radius: 2px;
+		transition: all 0.3s ease;
+	}
+}
+
+/* Full-screen mobile overlay */
+.mobile-nav-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 99999;
+	background: rgba(8, 8, 13, 0.98);
+	backdrop-filter: blur(28px);
+	-webkit-backdrop-filter: blur(28px);
+
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px);
+	transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s ease;
+
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+
+[data-theme="light"] .mobile-nav-overlay {
+	background: rgba(248, 248, 252, 0.98);
+}
+
+.mobile-nav-inner {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0 6%;
+}
+
+/* Overlay header row: logo + close button */
+.mobile-nav-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+	flex-shrink: 0;
+
+	.mobile-nav-logo img {
+		max-height: 46px;
+		width: auto;
+	}
+}
+
+/* X close button */
+.mobile-nav-close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	border-radius: 50%;
+	transition: background 0.2s;
+
+	&:hover {
+		background: var(--glass-hover-bg);
+	}
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 20px;
+		height: 2px;
+		background: var(--theme-color-text-main);
+		border-radius: 2px;
+
+		&:first-child { transform: translate(-50%, -50%) rotate(45deg); }
+		&:last-child  { transform: translate(-50%, -50%) rotate(-45deg); }
+	}
+}
+
+/* Vertical nav links */
+.mobile-nav-links {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+
+	li {
+		opacity: 0;
+		transform: translateY(18px);
+		transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+		@for $i from 1 through 10 {
+			&:nth-child(#{$i}) {
+				transition-delay: #{0.08 + $i * 0.055}s;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		font-family: $inter;
+		font-size: clamp(28px, 7vw, 40px);
+		font-weight: 700;
+		letter-spacing: -0.03em;
+		color: var(--theme-color-text-main);
+		padding: 10px 0;
+		text-decoration: none;
+		position: relative;
+		transition: color 0.25s ease;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 4px;
+			left: 0;
+			height: 3px;
+			width: 0;
+			background: var(--theme-brand-primary);
+			border-radius: 2px;
+			transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		&:hover {
+			color: var(--theme-brand-primary);
+			&::after { width: 36px; }
+		}
+	}
+}
+
+/* Stagger links when overlay is open */
+.mobile-nav-overlay.is-open .mobile-nav-links li {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Footer: theme toggle */
+.mobile-nav-footer {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 20px 0 44px;
+	border-top: 1px solid var(--glass-border);
+	flex-shrink: 0;
+
+	#mobile-theme-toggle {
+		background: var(--glass-bg);
+		border: 1px solid var(--glass-border);
+		border-radius: var(--radius-full);
+		padding: 10px 20px;
+		color: var(--theme-color-text-main);
+		font-size: 20px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: var(--theme-brand-primary);
+			border-color: var(--theme-brand-primary);
+			color: #fff;
+		}
+	}
+
+	.mobile-nav-theme-label {
+		font-family: $inter;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--theme-color-text-muted);
+	}
+}
+
+/* Lock body scroll when menu is open */
+body.mobile-menu-open {
+	overflow: hidden;
+}
+
 /* Header background images (legacy support) */
 .header {
 	position: relative;
