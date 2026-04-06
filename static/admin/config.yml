@@ -1,8 +1,10 @@
+local_backend: true
+
 backend:
   name: github
   repo: AcruxG/educosol
   branch: main
-  base_url: https://auth.educosol.com # Placeholder proxy (you can change this later)
+  # base_url: https://auth.educosol.com # (Setup required for live site)
 
 media_folder: "static/images/portfolio"
 public_folder: "/images/portfolio"
