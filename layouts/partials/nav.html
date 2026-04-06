@@ -7,10 +7,6 @@
                 <img src="{{ .Site.Data.nav.logo.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-dark" style="display: var(--display-dark-logo, block);">
                 <img src="{{ "images/logo-educosol.png" | relURL }}" alt="{{ .Site.Data.nav.logo.alt }}" class="logo-light" style="display: var(--display-light-logo, none);">
             </a>
-            <!-- Mobile theme toggle (visible on mobile only) -->
-            <button type="button" class="mobile-nav-theme-btn" id="mobile-nav-theme-btn" aria-label="Tema Değiştir">
-                <i id="mobile-nav-theme-icon" class="tf-ion-ios-sunny"></i>
-            </button>
             <!-- Custom mobile hamburger — right side -->
             <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menüyü Aç">
                 <span class="ham-bar"></span>
@@ -25,6 +21,11 @@
               {{ range .Site.Data.nav.menu }}
                 <li><a href="{{ .url | strings.TrimPrefix "/" | relURL }}" {{ if .open_in_new_tab }}target="_blank"{{ end }}>{{ .name }}</a></li>
               {{ end }}
+              <li class="nav-theme-toggle-item">
+                  <button type="button" id="theme-toggle-btn" class="nav-theme-btn" aria-label="Tema Değiştir">
+                      <i id="theme-icon" class="tf-ion-ios-sunny"></i>
+                  </button>
+              </li>
             </ul>
         </div>
     </div>
@@ -69,7 +70,6 @@
         var isLight = document.documentElement.getAttribute("data-theme") === "light";
         var desktopIcon = document.getElementById("theme-icon");
         var mobileIcon = document.getElementById("mobile-theme-icon");
-        var navbarIcon = document.getElementById("mobile-nav-theme-icon");
         var mobileLabel = document.getElementById("mobile-theme-label");
 
         if (isLight) {
@@ -77,14 +77,12 @@
             localStorage.setItem("educosol-theme", "dark");
             if (desktopIcon) desktopIcon.className = "tf-ion-ios-sunny";
             if (mobileIcon) mobileIcon.className = "tf-ion-ios-sunny";
-            if (navbarIcon) navbarIcon.className = "tf-ion-ios-sunny";
             if (mobileLabel) mobileLabel.textContent = "Koyu Mod";
         } else {
             document.documentElement.setAttribute("data-theme", "light");
             localStorage.setItem("educosol-theme", "light");
             if (desktopIcon) desktopIcon.className = "tf-ion-ios-moon";
             if (mobileIcon) mobileIcon.className = "tf-ion-ios-moon";
-            if (navbarIcon) navbarIcon.className = "tf-ion-ios-moon";
             if (mobileLabel) mobileLabel.textContent = "Açık Mod";
         }
     }
@@ -96,20 +94,14 @@
 
         var desktopIcon = document.getElementById("theme-icon");
         var mobileIcon = document.getElementById("mobile-theme-icon");
-        var navbarIcon = document.getElementById("mobile-nav-theme-icon");
         var mobileLabel = document.getElementById("mobile-theme-label");
         if (desktopIcon) desktopIcon.className = iconClass;
         if (mobileIcon) mobileIcon.className = iconClass;
-        if (navbarIcon) navbarIcon.className = iconClass;
         if (mobileLabel) mobileLabel.textContent = labelText;
 
         // Desktop theme toggle
         var toggleBtn = document.getElementById("theme-toggle-btn");
         if (toggleBtn) toggleBtn.addEventListener("click", educosolToggleTheme);
-
-        // Mobile navbar theme toggle
-        var navbarThemeBtn = document.getElementById("mobile-nav-theme-btn");
-        if (navbarThemeBtn) navbarThemeBtn.addEventListener("click", educosolToggleTheme);
 
         // Mobile overlay theme toggle
         var mobileToggleBtn = document.getElementById("mobile-theme-toggle");
