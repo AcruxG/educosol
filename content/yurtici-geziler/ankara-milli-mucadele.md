@@ -1,10 +1,10 @@
 ---
-title: "Ankara ve Kurtuluş Savaşı Destanı Gezisi"
+title: Ankara ve Kurtuluş Savaşı Destanı Gezisi Deneme
 date: 2026-04-01T09:00:00+03:00
 image: /images/portfolio/ankara-gezi.png
-duration: "2 Gün 1 Gece"
-location: "Ankara"
-target_group: "Ortaokul ve Lise Öğrencileri"
+duration: 2 Gün 1 Gece
+location: Ankara
+target_group: Ortaokul ve Lise Öğrencileri
 ---
 
 Milli Mücadele'nin izlerini sürmeye, Cumhuriyet'in doğduğu başkent Ankara'yı keşfetmeye hazır mısınız? 
