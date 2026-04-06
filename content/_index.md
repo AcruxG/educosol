@@ -4,7 +4,7 @@ content_blocks:
   - _bookshop_name: sections/video-hero
     heading: "Eğitimde Dönüşümün"
     subheading: "Güvenilir Adresi"
-    background_video: /video/education
+    background_video: /video/altvideo
   - _bookshop_name: sections/case-study
     background: grey
     heading:
