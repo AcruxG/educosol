@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" style="max-width: 800px; margin: 0 auto;">
-          <h1 style="color: #fff; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">{{ .heading }} <br>
+          <h1 style="font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">{{ .heading }} <br>
             {{ .subheading }}</h1>
           {{ if .cta_text }}
             <a href="{{ .cta_url | strings.TrimPrefix "/" | relURL }}" class="btn btn-main" style="margin-top: 16px;">{{ .cta_text }}</a>
