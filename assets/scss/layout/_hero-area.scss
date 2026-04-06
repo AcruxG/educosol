@@ -95,6 +95,22 @@
 	}
 }
 
+[data-theme="light"] .hero-video {
+	&:before {
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.25) 0%,
+			rgba(240, 245, 255, 0.55) 50%,
+			rgba(220, 230, 255, 0.80) 100%
+		);
+	}
+
+	h1 {
+		color: #1a1a2e;
+		text-shadow: 0 2px 20px rgba(255, 255, 255, 0.5);
+	}
+}
+
 .hero-video-element {
 	position: absolute;
 	top: 0;
