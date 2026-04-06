@@ -1,8 +1,8 @@
 ---
-title: Avrupa Müzeler ve Sanat Turu Deneme
+title: Avrupa Müzeler ve Sanat Turu Text
 date: 2026-04-01T09:00:00+03:00
 image: /images/portfolio/yurtdisi-geziler-card.png
-duration: "7 Gün 6 Gece "
+duration: 7 Gün 6 Gece Deneme
 location: Paris ve Londra
 target_group: Lise Öğrencileri ve Benzerleri
 ---
