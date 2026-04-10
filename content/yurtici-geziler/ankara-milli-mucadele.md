@@ -1,5 +1,5 @@
 ---
-title: Ankara ve Kurtuluş Savaşı Destanı Gezisi TEST
+title: "Ankara ve Kurtuluş Savaşı Destanı Gezisi "
 date: 2026-04-01T09:00:00+03:00
 image: /images/portfolio/ankara-gezi.png
 duration: 2 Gün 1 Gece
