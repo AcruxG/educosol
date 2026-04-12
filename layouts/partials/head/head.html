@@ -38,8 +38,18 @@
     
     <script>
         // Init theme early to prevent FOUC
+        // For first-time visitors: respect OS color-scheme preference.
+        // For returning visitors: restore their manually chosen theme.
         (function() {
-            var theme = localStorage.getItem('educosol-theme') || 'dark';
+            var saved = localStorage.getItem('educosol-theme');
+            var theme;
+            if (saved) {
+                theme = saved;
+            } else {
+                theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
+                    ? 'light'
+                    : 'dark';
+            }
             if (theme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'light');
             }
