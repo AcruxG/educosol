@@ -32,6 +32,8 @@ _gezi_fields: &gezi_fields
   - { label: "Veli Bilgilendirme Formu", name: "veli_bilgilendirme", widget: "markdown" }
   - { label: "Önemli Notlar", name: "onemli_notlar", widget: "markdown" }
   - { label: "Ödeme Detayları", name: "odeme_detaylari", widget: "markdown" }
+  - { label: "Tally Form ID", name: "tally_id", widget: "string", required: false, hint: "Tally.so form ID'nizi girin. (Örn: tally.so/r/mOVQQo linkindeki mOVQQo kısmı)" }
+
 
 collections:
   - name: "yurtici-geziler"
