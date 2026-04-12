@@ -49,18 +49,10 @@
 </section>
 
 <!-- Program Detayları heading + Başvur -->
-<!-- Status Logic -->
-{{ $manualStatus := .Params.status }}
-{{ $isActive := false }}
-{{ if $manualStatus }}
-  {{/* CMS status explicitly set — trust it fully */}}
-  {{ $isActive = eq $manualStatus "aktif" }}
-{{ else }}
-  {{/* No status set — fall back to date-based logic */}}
-  {{ $isPast := false }}
-  {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
-  {{ $isActive = not $isPast }}
-{{ end }}
+<!-- Status Logic: date determines badge and form visibility.
+     The 'status' field (aktif/pasif) only controls visibility in the list. -->
+{{ $isPast := false }}
+{{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
 
 <section class="gezi-content">
   <div class="container">
@@ -70,13 +62,13 @@
         {{ with .Params.location }}
         <p class="gezi-location"><i class="tf-ion-ios-location"></i> {{ . }}</p>
         {{ end }}
-        {{ if not $isActive }}
+        {{ if $isPast }}
         <span class="gezi-status-badge status-past"><i class="tf-ion-android-time"></i> Geçmiş Program</span>
         {{ else }}
         <span class="gezi-status-badge status-active"><i class="tf-ion-android-checkmark-circle"></i> Aktif Program</span>
         {{ end }}
       </div>
-      {{ if $isActive }}
+      {{ if not $isPast }}
         {{ if .Site.Data.company.web3forms_access_key }}
         <a href="#basvuru-formu" class="gezi-apply-btn js-scroll-trigger">Başvur</a>
         {{ else }}

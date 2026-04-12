@@ -77,25 +77,18 @@
             <!-- Modern Grid -->
             <div class="row gezi-grid" id="gezi-grid-container">
                 {{ range .Pages }}
-                    {{ $manualStatus := .Params.status }}
-                    {{ $isActive := false }}
-                    {{ if $manualStatus }}
-                      {{/* CMS status explicitly set — trust it fully */}}
-                      {{ $isActive = eq $manualStatus "aktif" }}
-                    {{ else }}
-                      {{/* No status set — fall back to date-based logic */}}
-                      {{ $isPast := false }}
-                      {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
-                      {{ $isActive = not $isPast }}
-                    {{ end }}
-                    {{ $statusLabel := cond $isActive "aktif" "gecmis" }}
+                {{ if ne (.Params.status | default "aktif") "pasif" }}
+                    {{/* Date-based aktif/geçmiş badge */}}
+                    {{ $isPast := false }}
+                    {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
+                    {{ $statusLabel := cond $isPast "gecmis" "aktif" }}
                     <div class="col-lg-4 col-md-6 col-sm-12 gezi-grid-item" 
                          data-location="{{ .Params.location | default "" }}" 
                          data-school="{{ .Params.school | default "" }}" 
                          data-target="{{ .Params.target_group | default "" }}"
                          data-status="{{ $statusLabel }}">
                         
-                        <div class="gezi-card-modern {{ if not $isActive }}gezi-card-past{{ end }}">
+                        <div class="gezi-card-modern {{ if $isPast }}gezi-card-past{{ end }}">
                             <a href="{{ .RelPermalink }}" class="gezi-card-link">
                                 <!-- Image View -->
                                 <div class="gezi-card-img-wrap">
@@ -106,10 +99,10 @@
                                     </div>
                                     {{ end }}
                                     <!-- Status Badge -->
-                                    {{ if $isActive }}
-                                    <div class="gezi-badge-status badge-active">Aktif</div>
-                                    {{ else }}
+                                    {{ if $isPast }}
                                     <div class="gezi-badge-status badge-past">Geçmiş Program</div>
+                                    {{ else }}
+                                    <div class="gezi-badge-status badge-active">Aktif</div>
                                     {{ end }}
                                 </div>
                                 
@@ -146,6 +139,7 @@
                             </a>
                         </div>
                     </div>
+                {{ end }}
                 {{ end }}
             </div>
             
