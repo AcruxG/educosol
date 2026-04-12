@@ -232,3 +232,45 @@
 
 /* Legacy class aliases kept for other pages */
 .footer-title { @extend .footer-col-title; }
+
+/* ── Mobile Optimization ────────────────────── */
+@media (max-width: 575px) {
+	.site-footer {
+		text-align: center;
+		padding-top: 56px;
+	}
+
+	.footer-logo {
+		margin: 0 auto;
+	}
+
+	.footer-links {
+		align-items: center;
+	}
+
+	.footer-contact {
+		align-items: center;
+
+		li {
+			justify-content: center;
+			width: 100%;
+		}
+	}
+
+	.footer-newsletter-form {
+		align-items: center;
+
+		input[type="email"], button {
+			max-width: 320px;
+		}
+	}
+
+	.footer-bottom-inner {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.footer-legal {
+		justify-content: center;
+	}
+}
