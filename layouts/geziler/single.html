@@ -1,51 +1,171 @@
 {{ define "main" }}
-<!-- Global Page Section Start -->
-<section class="global-page-header" style="padding-top: 130px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <h2>{{ .Title }}</h2>
-          <div class="portfolio-meta">
-              <span>{{ with .Params.date }}{{ . | time.Format "02 Jan 2006" }}{{ end }}</span>
-          </div>
-        </div>
+<!-- Hero Image -->
+<section class="gezi-hero">
+  {{ with .Params.image }}
+  <div class="gezi-hero-img">
+    <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}">
+    <div class="gezi-hero-overlay">
+      <div class="container">
+        <h1>{{ $.Title }}</h1>
       </div>
     </div>
   </div>
+  {{ end }}
 </section>
-<!-- Global Page Section End -->
 
-<!--=============================================
-=            Gezi Single Work Section            =
-==============================================-->
-<section class="portfolio-single single-work">
+<!-- Info Cards -->
+<section class="gezi-info-bar">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        {{ with .Params.image }}
-          <div class="portfolio-single-img">
-            <img class="img-responsive w-100" src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}">
-          </div>
-        {{ end }}
-        <div class="work-content">
-          {{ .Content }}
+    <div class="gezi-info-grid">
+      <div class="gezi-info-card">
+        <div class="gezi-info-icon"><i class="tf-ion-ios-calendar-outline"></i></div>
+        <div class="gezi-info-body">
+          <span class="gezi-info-label">Program Tarihi</span>
+          <strong>{{ with .Params.date }}{{ . | time.Format "02 Ocak 2006" }}{{ end }}</strong>
         </div>
       </div>
-      <div class="col-md-4">
-        <!-- Sidebar details if needed -->
-        <div class="sidebar">
-          <div class="widget">
-            <h4 class="widget-title">Program Detayı</h4>
-            <ul class="list-unstyled">
-              {{ with .Params.duration }}<li><strong>Süre:</strong> {{ . }}</li>{{ end }}
-              {{ with .Params.location }}<li><strong>Lokasyon:</strong> {{ . }}</li>{{ end }}
-              {{ with .Params.target_group }}<li><strong>Hedef Kitle:</strong> {{ . }}</li>{{ end }}
-            </ul>
-          </div>
+      <div class="gezi-info-card">
+        <div class="gezi-info-icon"><i class="tf-ion-ios-people"></i></div>
+        <div class="gezi-info-body">
+          <span class="gezi-info-label">Kademe</span>
+          <strong>{{ .Params.target_group | default "—" }}</strong>
+        </div>
+      </div>
+      <div class="gezi-info-card">
+        <div class="gezi-info-icon"><i class="tf-ion-ios-home"></i></div>
+        <div class="gezi-info-body">
+          <span class="gezi-info-label">İlgili Okul</span>
+          <strong>{{ .Params.school | default "Tüm Okullar" }}</strong>
+        </div>
+      </div>
+      <div class="gezi-info-card">
+        <div class="gezi-info-icon"><i class="tf-ion-ios-alarm"></i></div>
+        <div class="gezi-info-body">
+          <span class="gezi-info-label">Son Başvuru</span>
+          <strong>{{ with .Params.deadline }}{{ . | time.Format "02 Ocak 2006" }}{{ end }}</strong>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Accordion Content -->
+<section class="gezi-content">
+  <div class="container">
+    <div class="gezi-accordion" id="geziAccordion">
+
+      {{ if .Params.program_amaci }}
+      <div class="gezi-accordion-item is-open">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Programın Amacı</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.program_amaci | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if .Params.gezi_plani }}
+      <div class="gezi-accordion-item">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Detaylı Gezi Planı</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.gezi_plani | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if .Params.dahil_hizmetler }}
+      <div class="gezi-accordion-item">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Programa Dahil Olan Hizmetler</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.dahil_hizmetler | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if .Params.dahil_olmayan_hizmetler }}
+      <div class="gezi-accordion-item">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Programa Dahil Olmayan Hizmetler</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.dahil_olmayan_hizmetler | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if .Params.veli_bilgilendirme }}
+      <div class="gezi-accordion-item">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Veli Bilgilendirme Formu</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.veli_bilgilendirme | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if .Params.onemli_notlar }}
+      <div class="gezi-accordion-item">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Önemli Notlar</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.onemli_notlar | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if .Params.odeme_detaylari }}
+      <div class="gezi-accordion-item">
+        <button class="gezi-accordion-toggle" onclick="toggleAccordion(this)">
+          <span>Ödeme Detayları</span>
+          <i class="tf-ion-chevron-down"></i>
+        </button>
+        <div class="gezi-accordion-body">
+          {{ .Params.odeme_detaylari | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+    </div>
+
+    <!-- Sidebar quick info + CTA -->
+    <div class="gezi-sidebar">
+      <div class="gezi-sidebar-card">
+        <h4>Program Özeti</h4>
+        <ul>
+          {{ with .Params.duration }}<li><i class="tf-ion-ios-time"></i> <span>Süre:</span> {{ . }}</li>{{ end }}
+          {{ with .Params.location }}<li><i class="tf-ion-ios-location"></i> <span>Konum:</span> {{ . }}</li>{{ end }}
+          {{ with .Params.target_group }}<li><i class="tf-ion-ios-people"></i> <span>Kademe:</span> {{ . }}</li>{{ end }}
+          {{ with .Params.school }}<li><i class="tf-ion-ios-home"></i> <span>Okul:</span> {{ . }}</li>{{ end }}
+        </ul>
+        <a href="{{ "contact" | relURL }}" class="gezi-apply-btn">Başvur</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleAccordion(btn) {
+  var item = btn.parentElement;
+  var wasOpen = item.classList.contains('is-open');
+  // Close all
+  document.querySelectorAll('.gezi-accordion-item').forEach(function(el) {
+    el.classList.remove('is-open');
+  });
+  // Toggle clicked
+  if (!wasOpen) item.classList.add('is-open');
+}
+</script>
 {{ end }}

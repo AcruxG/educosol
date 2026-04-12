@@ -15,76 +15,59 @@ slug:
   clean_accents: true
   sanitize_replacement: "-"
 
+# ── Shared field definitions ──────────────────
+_gezi_fields: &gezi_fields
+  - { label: "Başlık", name: "title", widget: "string" }
+  - { label: "Program Tarihi", name: "date", widget: "datetime" }
+  - { label: "Görsel", name: "image", widget: "image" }
+  - { label: "Süre", name: "duration", widget: "string", hint: "Örn: 2 Gün 1 Gece" }
+  - { label: "Konum", name: "location", widget: "string" }
+  - { label: "Kademe", name: "target_group", widget: "string", hint: "Örn: Ortaokul ve Lise Öğrencileri" }
+  - { label: "İlgili Okul", name: "school", widget: "string", default: "Tüm Okullar" }
+  - { label: "Son Başvuru", name: "deadline", widget: "datetime" }
+  - { label: "Programın Amacı", name: "program_amaci", widget: "markdown" }
+  - { label: "Detaylı Gezi Planı", name: "gezi_plani", widget: "markdown" }
+  - { label: "Dahil Olan Hizmetler", name: "dahil_hizmetler", widget: "markdown" }
+  - { label: "Dahil Olmayan Hizmetler", name: "dahil_olmayan_hizmetler", widget: "markdown" }
+  - { label: "Veli Bilgilendirme Formu", name: "veli_bilgilendirme", widget: "markdown" }
+  - { label: "Önemli Notlar", name: "onemli_notlar", widget: "markdown" }
+  - { label: "Ödeme Detayları", name: "odeme_detaylari", widget: "markdown" }
+
 collections:
   - name: "yurtici-geziler"
     label: "🏔️ Yurtiçi Geziler"
     folder: "content/yurtici-geziler"
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
-      - { label: "Görsel", name: "image", widget: "image" }
-      - { label: "Süre", name: "duration", widget: "string", placeholder: "Örn: 2 Gün 1 Gece" }
-      - { label: "Konum", name: "location", widget: "string" }
-      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
-      - { label: "İçerik", name: "body", widget: "markdown" }
+    fields: *gezi_fields
 
   - name: "yurtdisi-geziler"
     label: "✈️ Yurtdışı Geziler"
     folder: "content/yurtdisi-geziler"
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
-      - { label: "Görsel", name: "image", widget: "image" }
-      - { label: "Süre", name: "duration", widget: "string" }
-      - { label: "Konum", name: "location", widget: "string" }
-      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
-      - { label: "İçerik", name: "body", widget: "markdown" }
+    fields: *gezi_fields
 
   - name: "yurtdisi-egitim"
     label: "🎓 Yurtdışı Eğitim"
     folder: "content/yurtdisi-egitim"
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
-      - { label: "Görsel", name: "image", widget: "image" }
-      - { label: "Süre", name: "duration", widget: "string" }
-      - { label: "Konum", name: "location", widget: "string" }
-      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
-      - { label: "İçerik", name: "body", widget: "markdown" }
+    fields: *gezi_fields
 
   - name: "afterschool"
     label: "☀️ Afterschool & Yaz Okulu"
     folder: "content/afterschool"
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
-      - { label: "Görsel", name: "image", widget: "image" }
-      - { label: "Süre", name: "duration", widget: "string" }
-      - { label: "Konum", name: "location", widget: "string" }
-      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
-      - { label: "İçerik", name: "body", widget: "markdown" }
+    fields: *gezi_fields
 
   - name: "bireysel-hazirlik"
     label: "📋 Bireysel Hazırlık"
     folder: "content/bireysel-hazirlik"
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
-      - { label: "Görsel", name: "image", widget: "image" }
-      - { label: "Süre", name: "duration", widget: "string" }
-      - { label: "Konum", name: "location", widget: "string" }
-      - { label: "Hedef Kitle", name: "target_group", widget: "string" }
-      - { label: "İçerik", name: "body", widget: "markdown" }
+    fields: *gezi_fields
 
   - name: "pages"
     label: "📄 Sayfalar"
