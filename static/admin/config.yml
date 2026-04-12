@@ -108,6 +108,7 @@ collections:
               - { label: "Site Açıklaması", name: "description", widget: "text" }
               - { label: "Sosyal Paylaşım Görseli", name: "image", widget: "image", required: false }
           - { label: "Şirket Adı", name: "company_name", widget: "string" }
+          - { label: "Öntanımlı Tally Form ID", name: "default_tally_id", widget: "string", required: false, hint: "Tally form ID'nizi buraya bir kez girerseniz, tüm geziler otomatik olarak bu formu kullanır." }
           - label: "İletişim"
             name: "contact"
             widget: "object"
