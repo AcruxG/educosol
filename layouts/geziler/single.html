@@ -165,53 +165,54 @@
 
 <!-- Başvuru Formu (Native Web3Forms) -->
 {{ if .Site.Data.company.web3forms_access_key }}
-<section class="gezi-apply-form contact-form" id="basvuru-formu" style="padding: 60px 0; background: var(--theme-color-service-bg); margin-top: 40px; border-top: 1px solid var(--glass-border);">
+<section class="gezi-apply-section" id="basvuru-formu">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2" style="margin: 0 auto;">
-        <div class="text-center" style="margin-bottom: 40px;">
-          <h2 class="gezi-section-title">Hemen Başvur</h2>
-          <p style="color: var(--theme-color-text-muted); margin-top: 10px;">Aşağıdaki formu doldurarak <strong>{{ .Title }}</strong> programına başvurabilirsiniz.</p>
-        </div>
-        
-        <form action="https://api.web3forms.com/submit" method="POST" class="native-apply-form">
-          <!-- Web3Forms Access Key & Config -->
-          <input type="hidden" name="access_key" value="{{ .Site.Data.company.web3forms_access_key }}">
-          <input type="hidden" name="Başvurulan_Program" value="{{ .Title }}">
-          <input type="hidden" name="subject" value="Yeni Başvuru: {{ .Title }}">
-          <!-- Honeypot Spam Protection -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    <div class="gezi-apply-card">
+      <div class="gezi-apply-header">
+        <h2 class="gezi-section-title">Hemen Başvur</h2>
+        <p>Aşağıdaki formu doldurarak <strong>{{ .Title }}</strong> programına başvurabilirsiniz.</p>
+      </div>
+      
+      <form action="https://api.web3forms.com/submit" method="POST" class="gezi-modern-form">
+        <!-- Web3Forms Access Key & Config -->
+        <input type="hidden" name="access_key" value="{{ .Site.Data.company.web3forms_access_key }}">
+        <input type="hidden" name="Başvurulan_Program" value="{{ .Title }}">
+        <input type="hidden" name="subject" value="Yeni Başvuru: {{ .Title }}">
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Öğrenci Adı Soyadı" required>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="tel" name="phone" class="form-control" placeholder="Telefon Numarası" required>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group margin-top-20">
-                <input type="email" name="email" class="form-control" placeholder="E-posta Adresi" required>
-              </div>
-            </div>
-            <div class="col-md-12" style="margin-top: 20px;">
-              <div class="form-group">
-                <textarea name="message" class="form-control" rows="4" placeholder="Eklemek istedikleriniz / Sorularınız..."></textarea>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="contact-btn text-center" style="margin-top: 30px;">
-                <button type="submit" class="btn btn-default btn-main">Başvuruyu Gönder</button>
-              </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group-modern">
+              <label>Öğrenci Adı Soyadı</label>
+              <input type="text" name="name" class="form-control-modern" placeholder="Ad Soyad giriniz" required>
             </div>
           </div>
-        </form>
-
-      </div>
+          <div class="col-md-6">
+            <div class="form-group-modern">
+              <label>Telefon Numarası</label>
+              <input type="tel" name="phone" class="form-control-modern" placeholder="05XX XXX XX XX" required>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group-modern">
+              <label>E-posta Adresi</label>
+              <input type="email" name="email" class="form-control-modern" placeholder="ornek@email.com" required>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group-modern">
+              <label>Eklemek İstedikleriniz</label>
+              <textarea name="message" class="form-control-modern" rows="3" placeholder="Sorularınız veya notlarınız..."></textarea>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="apply-btn-wrapper">
+              <button type="submit" class="gezi-apply-btn submit-btn">Başvuruyu Gönder</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </section>

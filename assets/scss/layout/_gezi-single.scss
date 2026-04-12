@@ -287,6 +287,111 @@
 	.gezi-accordion-item.is-open > .gezi-accordion-toggle { background: rgba(59, 130, 246, 0.04); }
 }
 
+/* ── Modern Apply Form ────────────────── */
+.gezi-apply-section {
+	padding: 80px 0;
+	background: var(--theme-color-service-bg);
+}
+
+.gezi-apply-card {
+	max-width: 700px;
+	margin: 0 auto;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius-lg);
+	padding: 48px;
+	box-shadow: var(--shadow-md);
+	backdrop-filter: blur(12px);
+}
+
+.gezi-apply-header {
+	text-align: center;
+	margin-bottom: 40px;
+	
+	h2 {
+		margin-bottom: 12px;
+	}
+	p {
+		color: var(--theme-color-text-muted);
+		font-size: 15px;
+		margin: 0;
+	}
+}
+
+.gezi-modern-form {
+	.form-group-modern {
+		margin-bottom: 24px;
+		
+		label {
+			display: block;
+			font-size: 13px;
+			font-weight: 600;
+			color: var(--theme-color-text-muted);
+			margin-bottom: 8px;
+			letter-spacing: 0.3px;
+		}
+	}
+
+	.form-control-modern {
+		display: block;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid var(--glass-border);
+		color: var(--theme-color-text-main);
+		border-radius: var(--radius-sm);
+		padding: 14px 18px;
+		font-size: 15px;
+		transition: all 0.3s ease;
+		
+		&:focus {
+			outline: none;
+			border-color: var(--theme-brand-primary);
+			box-shadow: 0 0 0 4px rgba(198, 53, 39, 0.15);
+			background: rgba(255, 255, 255, 0.05);
+		}
+		
+		&::placeholder {
+			color: rgba(138, 138, 154, 0.6);
+		}
+	}
+	
+	textarea.form-control-modern {
+		resize: vertical;
+		min-height: 120px;
+	}
+	
+	.apply-btn-wrapper {
+		margin-top: 10px;
+		text-align: center;
+	}
+	
+	.submit-btn {
+		width: 100%;
+		padding: 16px 32px;
+		font-size: 16px;
+		border-radius: var(--radius-sm);
+		border: none;
+		cursor: pointer;
+	}
+}
+
+/* Light theme overrides for form */
+[data-theme="light"] {
+	.gezi-modern-form .form-control-modern {
+		background: #fff;
+		border-color: rgba(0, 0, 0, 0.1);
+		
+		&:focus {
+			border-color: var(--theme-brand-primary);
+			background: #fff;
+		}
+		
+		&::placeholder {
+			color: #aaa;
+		}
+	}
+}
+
 /* ── Responsive ───────────────────────── */
 @media (max-width: 991px) {
 	.gezi-info-grid { grid-template-columns: repeat(2, 1fr); }
@@ -314,8 +419,10 @@
 	.gezi-acc-icon { width: 30px; height: 30px; border-radius: 6px; i { font-size: 15px; } }
 	.gezi-acc-label { font-size: 14px; }
 	.gezi-accordion-body { padding: 0 18px 0 60px; }
-	.gezi-accordion-item.is-open > .gezi-accordion-body { padding: 0 18px 20px 60px; }
 	.gezi-content { padding: 28px 0 60px; }
+	
+	.gezi-apply-section { padding: 40px 0; }
+	.gezi-apply-card { padding: 24px 16px; }
 }
 
 @media (max-width: 480px) {
