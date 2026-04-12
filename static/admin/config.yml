@@ -19,6 +19,7 @@ slug:
 _gezi_fields: &gezi_fields
   - { label: "Başlık", name: "title", widget: "string" }
   - { label: "Program Durumu", name: "status", widget: "select", options: ["aktif", "pasif"], default: "aktif", hint: "Aktif programlar başvuya açıktır. Pasif programlar 'Geçmiş Program' olarak gösterilir ve başvuru formu gizlenir." }
+  - { label: "Yayın Tarihi", name: "publishDate", widget: "datetime", required: false, hint: "Bu tarihe kadar içerik sitede görünmez. Boş bırakırsanız hemen yayınlanır." }
   - { label: "Program Tarihi", name: "date", widget: "datetime" }
   - { label: "Görsel", name: "image", widget: "image" }
   - { label: "Süre", name: "duration", widget: "string", hint: "Örn: 2 Gün 1 Gece" }
