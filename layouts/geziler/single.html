@@ -70,7 +70,7 @@
       </div>
       {{ if not $isPast }}
         {{ if .Site.Data.company.web3forms_access_key }}
-        <a href="#basvuru-formu" class="gezi-apply-btn js-scroll-trigger">Başvur</a>
+        <a href="#basvuru-formu" class="gezi-apply-btn js-scroll-trigger" onclick="showApplyForm(event)">Başvur</a>
         {{ else }}
         <a href="{{ "contact" | relURL }}" class="gezi-apply-btn">Başvur</a>
         {{ end }}
@@ -177,7 +177,7 @@
 
 <!-- Başvuru Formu (Native Web3Forms) — only for active programs -->
 {{ if and (not $isPast) .Site.Data.company.web3forms_access_key }}
-<section class="gezi-apply-section" id="basvuru-formu">
+<section class="gezi-apply-section" id="basvuru-formu" style="display: none;">
   <div class="container">
     <div class="gezi-apply-card">
       <div class="gezi-apply-header">
@@ -232,6 +232,20 @@
 {{ end }}
 
 <script>
+function showApplyForm(e) {
+  if (e) e.preventDefault();
+  const formSection = document.getElementById('basvuru-formu');
+  if (formSection) {
+    // Show the form
+    formSection.style.display = 'block';
+    
+    // Tiny delay to ensure the browser paints the display:block before scrolling
+    setTimeout(() => {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  }
+}
+
 function toggleAccordion(btn) {
   var item = btn.parentElement;
   var wasOpen = item.classList.contains('is-open');
