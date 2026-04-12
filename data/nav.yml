@@ -1,4 +1,7 @@
 menu:
+  - name: "Hakkımızda"
+    url: "/hakkimizda/"
+    open_in_new_tab: false
   - name: "Yurtiçi Geziler"
     url: "/yurtici-geziler/"
     open_in_new_tab: false
@@ -7,9 +10,6 @@ menu:
     open_in_new_tab: false
   - name: "Yurtdışı Eğitim Programları"
     url: "/yurtdisi-egitim/"
-    open_in_new_tab: false
-  - name: "Bireysel Hazırlık"
-    url: "/bireysel-hazirlik/"
     open_in_new_tab: false
   - name: "Afterschool ve Yaz Okulu"
     url: "/afterschool/"

@@ -12,6 +12,9 @@ menu:
   - name: "Yurtdışı Eğitim"
     url: "/yurtdisi-egitim/"
     open_in_new_tab: false
+  - name: "Bireysel Hazırlık"
+    url: "/bireysel-hazirlik/"
+    open_in_new_tab: false
   - name: "İletişim"
     url: "/contact/"
     open_in_new_tab: false
