@@ -77,10 +77,17 @@
             <!-- Modern Grid -->
             <div class="row gezi-grid" id="gezi-grid-container">
                 {{ range .Pages }}
-                    {{ $manualStatus := .Params.status | default "aktif" }}
-                    {{ $isPast := false }}
-                    {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
-                    {{ $isActive := and (eq $manualStatus "aktif") (not $isPast) }}
+                    {{ $manualStatus := .Params.status }}
+                    {{ $isActive := false }}
+                    {{ if $manualStatus }}
+                      {{/* CMS status explicitly set — trust it fully */}}
+                      {{ $isActive = eq $manualStatus "aktif" }}
+                    {{ else }}
+                      {{/* No status set — fall back to date-based logic */}}
+                      {{ $isPast := false }}
+                      {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
+                      {{ $isActive = not $isPast }}
+                    {{ end }}
                     {{ $statusLabel := cond $isActive "aktif" "gecmis" }}
                     <div class="col-lg-4 col-md-6 col-sm-12 gezi-grid-item" 
                          data-location="{{ .Params.location | default "" }}" 
