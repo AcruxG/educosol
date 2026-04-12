@@ -1,17 +1,12 @@
-seo_options:
-  site_title: EduCoSol
-  description: EduCoSol - Eğitim Danışmanlık Çözümleri. Yurtiçi ve yurtdışı geziler, eğitim programları, bireysel hazırlık ve yaz okulu hizmetleri.
-  twitter_image: 
-  twitter_site: 
-  image: 
-favicon: /images/favicon.ico
-company_name: EduCoSol
 contact:
-  address: "İstanbul, Türkiye"
-  phone: ""
+  address: İstanbul, Türkiye
+  phone: "532111222333"
   mobile: ""
   web_address: educosol.com
-  email: "info@educosol.com"
+  email: info@educosol.com
+developed_by_statement: "[EduCoSol](https://educosol.com) - Eğitim Danışmanlık Çözümleri"
+company_name: EduCoSol
+default_tally_id: VLMNxE
 social_media:
   facebook: ""
   twitter: ""
@@ -19,6 +14,13 @@ social_media:
   google: ""
   instagram: "#"
 copyright_start_year: "2024"
-copyright_statement: "Tüm Hakları Saklıdır."
-developed_by_statement: "[EduCoSol](https://educosol.com) - Eğitim Danışmanlık Çözümleri"
+favicon: /images/favicon.ico
+copyright_statement: Tüm Hakları Saklıdır.
 google_maps_api_key: ""
+seo_options:
+  site_title: EduCoSol
+  description: EduCoSol - Eğitim Danışmanlık Çözümleri. Yurtiçi ve yurtdışı
+    geziler, eğitim programları, bireysel hazırlık ve yaz okulu hizmetleri.
+  twitter_image: null
+  twitter_site: null
+  image: null
