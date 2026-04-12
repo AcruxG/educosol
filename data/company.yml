@@ -5,8 +5,8 @@ contact:
   web_address: educosol.com
   email: info@educosol.com
 developed_by_statement: "[EduCoSol](https://educosol.com) - Eğitim Danışmanlık Çözümleri"
-company_name: EduCoSol
 default_tally_id: VLMNxE
+company_name: EduCoSol
 social_media:
   facebook: ""
   twitter: ""
@@ -14,6 +14,7 @@ social_media:
   google: ""
   instagram: "#"
 copyright_start_year: "2024"
+web3forms_access_key: 6f570245-b193-467a-b808-bd911452fdf7
 favicon: /images/favicon.ico
 copyright_statement: Tüm Hakları Saklıdır.
 google_maps_api_key: ""
