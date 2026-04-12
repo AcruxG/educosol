@@ -58,8 +58,7 @@
         <p class="gezi-location"><i class="tf-ion-ios-location"></i> {{ . }}</p>
         {{ end }}
       </div>
-      {{ $tallyID := .Params.tally_id | default .Site.Data.company.default_tally_id }}
-      {{ if $tallyID }}
+      {{ if .Site.Data.company.web3forms_access_key }}
       <a href="#basvuru-formu" class="gezi-apply-btn js-scroll-trigger">Başvur</a>
       {{ else }}
       <a href="{{ "contact" | relURL }}" class="gezi-apply-btn">Başvur</a>
@@ -164,19 +163,54 @@
   </div>
 </section>
 
-<!-- Başvuru Formu (Tally Embed) -->
-{{ $tallyID := .Params.tally_id | default .Site.Data.company.default_tally_id }}
-{{ if $tallyID }}
-<section class="gezi-apply-form" id="basvuru-formu" style="padding: 60px 0; background: var(--theme-color-service-bg); margin-top: 40px; border-top: 1px solid var(--glass-border);">
+<!-- Başvuru Formu (Native Web3Forms) -->
+{{ if .Site.Data.company.web3forms_access_key }}
+<section class="gezi-apply-form contact-form" id="basvuru-formu" style="padding: 60px 0; background: var(--theme-color-service-bg); margin-top: 40px; border-top: 1px solid var(--glass-border);">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 offset-md-1" style="margin: 0 auto;">
-        <div class="text-center" style="margin-bottom: 30px;">
+      <div class="col-md-8 offset-md-2" style="margin: 0 auto;">
+        <div class="text-center" style="margin-bottom: 40px;">
           <h2 class="gezi-section-title">Hemen Başvur</h2>
           <p style="color: var(--theme-color-text-muted); margin-top: 10px;">Aşağıdaki formu doldurarak <strong>{{ .Title }}</strong> programına başvurabilirsiniz.</p>
         </div>
-        <iframe data-tally-src="https://tally.so/embed/{{ $tallyID }}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&program_adi={{ .Title | urlquery }}" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="Başvuru Formu"></iframe>
-        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" class="native-apply-form">
+          <!-- Web3Forms Access Key & Config -->
+          <input type="hidden" name="access_key" value="{{ .Site.Data.company.web3forms_access_key }}">
+          <input type="hidden" name="Başvurulan_Program" value="{{ .Title }}">
+          <input type="hidden" name="subject" value="Yeni Başvuru: {{ .Title }}">
+          <!-- Honeypot Spam Protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Öğrenci Adı Soyadı" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="tel" name="phone" class="form-control" placeholder="Telefon Numarası" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group margin-top-20">
+                <input type="email" name="email" class="form-control" placeholder="E-posta Adresi" required>
+              </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 20px;">
+              <div class="form-group">
+                <textarea name="message" class="form-control" rows="4" placeholder="Eklemek istedikleriniz / Sorularınız..."></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="contact-btn text-center" style="margin-top: 30px;">
+                <button type="submit" class="btn btn-default btn-main">Başvuruyu Gönder</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
       </div>
     </div>
   </div>
