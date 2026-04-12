@@ -142,6 +142,68 @@
 			}
 		}
 	}
+
+	.nav-social-item {
+		display: flex;
+		align-items: center;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	.nav-social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: var(--radius-sm);
+		color: rgba(255, 255, 255, 0.75);
+		transition: all 0.25s ease;
+		text-decoration: none !important;
+
+		&:hover {
+			color: #fff;
+			background: rgba(255, 255, 255, 0.08);
+		}
+	}
+
+	.nav-social-divider {
+		width: 1px;
+		height: 20px;
+		background: rgba(255, 255, 255, 0.15);
+		margin: 0 6px;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+} /* end .menu */
+
+/* Light theme social icon overrides */
+[data-theme="light"] .menu {
+	.nav-social-link {
+		color: rgba(26, 26, 46, 0.7);
+
+		&:hover {
+			color: var(--theme-brand-primary);
+			background: rgba(0, 0, 0, 0.04);
+		}
+	}
+
+	.nav-social-divider {
+		background: rgba(0, 0, 0, 0.12);
+	}
+
+	.nav-theme-toggle-item .nav-theme-btn {
+		color: rgba(26, 26, 46, 0.85);
+
+		&:hover {
+			color: var(--theme-brand-primary);
+			background: rgba(0, 0, 0, 0.04);
+		}
+	}
 }
 
 /* Page header for sub-pages */
