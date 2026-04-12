@@ -1,7 +1,7 @@
 ---
 title: Avrupa Müzeler ve Sanat Turu
 status: aktif
-date: 2026-06-15T09:00:00+03:00
+date: 2027-06-15T09:00:00.000+03:00
 image: /images/portfolio/yurtdisi-geziler-card.png
 duration: 7 Gün 6 Gece
 location: Paris ve Londra
