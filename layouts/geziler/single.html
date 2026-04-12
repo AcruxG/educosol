@@ -185,7 +185,7 @@
         <p>Aşağıdaki formu doldurarak <strong>{{ .Title }}</strong> programına başvurabilirsiniz.</p>
       </div>
       
-      <form action="https://api.web3forms.com/submit" method="POST" class="gezi-modern-form">
+      <form action="https://api.web3forms.com/submit" method="POST" class="gezi-modern-form" id="gezi-form">
         <!-- Web3Forms Access Key & Config -->
         <input type="hidden" name="access_key" value="{{ .Site.Data.company.web3forms_access_key }}">
         <input type="hidden" name="Başvurulan_Program" value="{{ .Title }}">
@@ -254,5 +254,44 @@ function toggleAccordion(btn) {
   });
   if (!wasOpen) item.classList.add('is-open');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('gezi-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('.submit-btn');
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = 'Gönderiliyor...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(async (response) => {
+        if (response.ok) {
+          // Native browser alert as requested
+          alert("Teşekkür ederiz! Başvurunuz başarıyla alınmıştır.");
+          form.reset();
+          document.getElementById('basvuru-formu').style.display = 'none'; // hide form again
+        } else {
+          let json = await response.json();
+          alert("Bir hata oluştu: " + (json.message || "Bilinmeyen hata"));
+        }
+      })
+      .catch(error => {
+        alert("Bağlantı hatası oluştu. Lütfen tekrar deneyiniz.");
+      })
+      .finally(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      });
+    });
+  }
+});
 </script>
 {{ end }}
