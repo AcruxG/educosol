@@ -5,33 +5,115 @@
     {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }} 
 
     <!-- Gezi Programları Listesi -->
-    <section class="portfolio section">
+    <section class="gezi-modern-list section" style="background: var(--theme-color-body-bg); padding-bottom: 80px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="section-title">Gezi Programlarımız</h2>
+                    <h2 class="section-title" style="margin-bottom: 10px;">Gezi Programlarımız</h2>
+                    <p class="section-subtitle" style="color: var(--theme-color-text-muted); margin-bottom: 40px; font-size: 16px;">Tüm güncel eğitim, kamp ve gezi programlarımızı inceleyin.</p>
                 </div>
             </div>
-            <div class="row">
+
+            <!-- Dynamic Arrays for Filters -->
+            {{ $locations := slice }}
+            {{ $schools := slice }}
+            {{ $targets := slice }}
+            
+            {{ range .Pages }}
+                {{ if .Params.location }}{{ $locations = $locations | append .Params.location }}{{ end }}
+                {{ if .Params.school }}{{ $schools = $schools | append .Params.school }}{{ end }}
+                {{ if .Params.target_group }}{{ $targets = $targets | append .Params.target_group }}{{ end }}
+            {{ end }}
+            
+            <!-- Unique lists -->
+            {{ $locations = $locations | uniq }}
+            {{ $schools = $schools | uniq }}
+            {{ $targets = $targets | uniq }}
+
+            <!-- Filter Bar -->
+            <div class="gezi-filter-bar">
+                <div class="gezi-filter-group">
+                    <label>Konum</label>
+                    <select id="filter-location" class="gezi-filter-select">
+                        <option value="all">Tüm Konumlar</option>
+                        {{ range $locations }}
+                        <option value="{{ . }}">{{ . }}</option>
+                        {{ end }}
+                    </select>
+                </div>
+                <div class="gezi-filter-group">
+                    <label>Hedef Kitle</label>
+                    <select id="filter-target" class="gezi-filter-select">
+                        <option value="all">Tüm Gruplar</option>
+                        {{ range $targets }}
+                        <option value="{{ . }}">{{ . }}</option>
+                        {{ end }}
+                    </select>
+                </div>
+                <div class="gezi-filter-group">
+                    <label>Okul Tipi</label>
+                    <select id="filter-school" class="gezi-filter-select">
+                        <option value="all">Tüm Okullar</option>
+                        {{ range $schools }}
+                        <option value="{{ . }}">{{ . }}</option>
+                        {{ end }}
+                    </select>
+                </div>
+                <div class="gezi-filter-actions">
+                    <button class="gezi-filter-reset" onclick="resetFilters()">
+                        <i class="tf-ion-android-refresh"></i> Temizle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modern Grid -->
+            <div class="row gezi-grid" id="gezi-grid-container">
                 {{ range .Pages }}
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="portfolio-list">
-                            <a class="gezi-card-link" href="{{ .RelPermalink }}" style="display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 15px; overflow: hidden; border: 1px solid #ebebeb; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 30px; position: relative;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
-                                <!-- Image Container -->
-                                <div class="gezi-img-container" style="height: 220px; overflow: hidden; position: relative;">
-                                    <img src="{{ with .Params.image }}{{ . | strings.TrimPrefix "/" | relURL }}{{ else }}{{ "/images/portfolio/trip-1.jpg" | strings.TrimPrefix "/" | relURL }}{{ end }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                    <div class="col-lg-4 col-md-6 col-sm-12 gezi-grid-item" 
+                         data-location="{{ .Params.location | default "" }}" 
+                         data-school="{{ .Params.school | default "" }}" 
+                         data-target="{{ .Params.target_group | default "" }}">
+                        
+                        <div class="gezi-card-modern">
+                            <a href="{{ .RelPermalink }}" class="gezi-card-link">
+                                <!-- Image View -->
+                                <div class="gezi-card-img-wrap">
+                                    <img src="{{ with .Params.image }}{{ . | strings.TrimPrefix "/" | relURL }}{{ else }}{{ "/images/portfolio/trip-1.jpg" | strings.TrimPrefix "/" | relURL }}{{ end }}" alt="{{ .Title }}" loading="lazy">
+                                    {{ with .Params.duration }}
+                                    <div class="gezi-badge-duration">
+                                        <i class="tf-ion-android-time"></i> {{ . }}
+                                    </div>
+                                    {{ end }}
+                                </div>
+                                
+                                <!-- Content Body -->
+                                <div class="gezi-card-content">
+                                    <h3 class="gezi-card-title">{{ .Title }}</h3>
                                     
-                                    <!-- Floating Duration/Status Badge -->
-                                    <div style="position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px); color: #007bff; border-radius: 5px; padding: 6px 12px; font-size: 12px; font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 5px;">
-                                        <i class="tf-ion-android-time"></i> {{ with .Params.duration }}{{ . }}{{ else }}Program{{ end }}
+                                    <div class="gezi-card-date">
+                                        <i class="tf-ion-ios-calendar-outline"></i> 
+                                        <span>{{ with .Params.date }}{{ . | time.Format "02 Jan 2006" }}{{ end }}</span>
+                                    </div>
+                                    
+                                    <div class="gezi-card-pills">
+                                        {{ if .Params.target_group }}
+                                        <span class="gezi-pill pill-orange">
+                                            <i class="tf-ion-ios-people"></i> {{ .Params.target_group }}
+                                        </span>
+                                        {{ end }}
+                                        
+                                        {{ if .Params.school }}
+                                        <span class="gezi-pill pill-blue">
+                                            <i class="tf-ion-university"></i> {{ .Params.school }}
+                                        </span>
+                                        {{ end }}
                                     </div>
                                 </div>
-                                <!-- Content Container -->
-                                <div class="gezi-content" style="padding: 25px 20px;">
-                                    <h3 class="gezi-title" style="color: #222; font-size: 18px; font-weight: 700; margin: 0 0 15px 0; line-height: 1.4;">{{ .Title }}</h3>
-                                    <div class="gezi-meta" style="color: #888; font-size: 13px; display: flex; align-items: center; gap: 5px;">
-                                        <i class="tf-ion-ios-calendar-outline" style="font-size: 15px;"></i> 
-                                        <span>{{ with .Params.date }}{{ . | time.Format "02 Jan 2006" }}{{ end }}</span>
+
+                                <!-- Floating Corner Button -->
+                                <div class="gezi-card-action">
+                                    <div class="action-circle">
+                                        <i class="tf-ion-android-arrow-forward"></i>
                                     </div>
                                 </div>
                             </a>
@@ -39,7 +121,74 @@
                     </div>
                 {{ end }}
             </div>
+            
+            <!-- No Results Default State -->
+            <div id="gezi-no-results" style="display: none;">
+                <div class="no-results-content">
+                    <i class="tf-ion-android-sad"></i>
+                    <h4>Sonuç Bulunamadı</h4>
+                    <p>Seçilen filtrelere uygun gezi bulunamadı. Lütfen filtrelerinizi değiştirerek tekrar deneyin.</p>
+                    <button class="btn btn-main mt-3" onclick="resetFilters()">Filtreleri Temizle</button>
+                </div>
+            </div>
+            
         </div>
     </section>
 </div>
+
+<!-- JS Script for Vanilla Filtering -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectLoc = document.getElementById('filter-location');
+        const selectTarget = document.getElementById('filter-target');
+        const selectSchool = document.getElementById('filter-school');
+        
+        const items = document.querySelectorAll('.gezi-grid-item');
+        const noResults = document.getElementById('gezi-no-results');
+        
+        function filterGrid() {
+            const locVal = selectLoc.value;
+            const targetVal = selectTarget.value;
+            const schoolVal = selectSchool.value;
+            
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+                const itemLoc = item.dataset.location;
+                const itemTarget = item.dataset.target;
+                const itemSchool = item.dataset.school;
+                
+                const matchLoc = (locVal === 'all' || itemLoc === locVal);
+                const matchTarget = (targetVal === 'all' || itemTarget === targetVal);
+                const matchSchool = (schoolVal === 'all' || itemSchool === schoolVal);
+                
+                if (matchLoc && matchTarget && matchSchool) {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
+                    visibleCount++;
+                } else {
+                    item.style.opacity = '0';
+                    item.style.display = 'none';
+                }
+            });
+            
+            if (visibleCount === 0) {
+                noResults.style.display = 'flex';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+        
+        selectLoc.addEventListener('change', filterGrid);
+        selectTarget.addEventListener('change', filterGrid);
+        selectSchool.addEventListener('change', filterGrid);
+        
+        window.resetFilters = function() {
+            selectLoc.value = 'all';
+            selectTarget.value = 'all';
+            selectSchool.value = 'all';
+            filterGrid();
+        }
+    });
+</script>
 {{ end }}
