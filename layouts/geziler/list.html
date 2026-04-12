@@ -160,32 +160,59 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const selectStatus = document.getElementById('filter-status');
-        const selectLoc = document.getElementById('filter-location');
+        const selectLoc    = document.getElementById('filter-location');
         const selectTarget = document.getElementById('filter-target');
         const selectSchool = document.getElementById('filter-school');
-        
-        const items = document.querySelectorAll('.gezi-grid-item');
+
+        const items     = document.querySelectorAll('.gezi-grid-item');
         const noResults = document.getElementById('gezi-no-results');
-        
+
+        const STORAGE_KEY = 'gezi-filter-state';
+
+        // ── Restore saved state (from back-navigation) ──────────
+        function restoreState() {
+            try {
+                var saved = sessionStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    var state = JSON.parse(saved);
+                    selectStatus.value = state.status || 'aktif';
+                    selectLoc.value    = state.loc    || 'all';
+                    selectTarget.value = state.target || 'all';
+                    selectSchool.value = state.school || 'all';
+                    return;
+                }
+            } catch(e) {}
+            // First visit — default to aktif
+            selectStatus.value = 'aktif';
+        }
+
+        // ── Persist current state ─────────────────────────────
+        function saveState() {
+            try {
+                sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
+                    status: selectStatus.value,
+                    loc:    selectLoc.value,
+                    target: selectTarget.value,
+                    school: selectSchool.value
+                }));
+            } catch(e) {}
+        }
+
+        // ── Apply filter to grid ──────────────────────────────
         function filterGrid() {
-            const statusVal = selectStatus.value;
-            const locVal = selectLoc.value;
-            const targetVal = selectTarget.value;
-            const schoolVal = selectSchool.value;
-            
-            let visibleCount = 0;
-            
-            items.forEach(item => {
-                const itemStatus = item.dataset.status;
-                const itemLoc = item.dataset.location;
-                const itemTarget = item.dataset.target;
-                const itemSchool = item.dataset.school;
-                
-                const matchStatus = (statusVal === 'all' || itemStatus === statusVal);
-                const matchLoc = (locVal === 'all' || itemLoc === locVal);
-                const matchTarget = (targetVal === 'all' || itemTarget === targetVal);
-                const matchSchool = (schoolVal === 'all' || itemSchool === schoolVal);
-                
+            var statusVal = selectStatus.value;
+            var locVal    = selectLoc.value;
+            var targetVal = selectTarget.value;
+            var schoolVal = selectSchool.value;
+
+            var visibleCount = 0;
+
+            items.forEach(function(item) {
+                var matchStatus = (statusVal === 'all' || item.dataset.status   === statusVal);
+                var matchLoc    = (locVal    === 'all' || item.dataset.location === locVal);
+                var matchTarget = (targetVal === 'all' || item.dataset.target   === targetVal);
+                var matchSchool = (schoolVal === 'all' || item.dataset.school   === schoolVal);
+
                 if (matchStatus && matchLoc && matchTarget && matchSchool) {
                     item.style.display = 'block';
                     item.style.opacity = '1';
@@ -195,29 +222,32 @@
                     item.style.display = 'none';
                 }
             });
-            
-            if (visibleCount === 0) {
-                noResults.style.display = 'flex';
-            } else {
-                noResults.style.display = 'none';
-            }
+
+            noResults.style.display = (visibleCount === 0) ? 'flex' : 'none';
         }
-        
-        selectStatus.addEventListener('change', filterGrid);
-        selectLoc.addEventListener('change', filterGrid);
-        selectTarget.addEventListener('change', filterGrid);
-        selectSchool.addEventListener('change', filterGrid);
-        
-        // Apply default filter (aktif) on page load
-        filterGrid();
-        
-        window.resetFilters = function() {
-            selectStatus.value = 'all';
-            selectLoc.value = 'all';
-            selectTarget.value = 'all';
-            selectSchool.value = 'all';
+
+        function onFilterChange() {
+            saveState();
             filterGrid();
         }
+
+        selectStatus.addEventListener('change', onFilterChange);
+        selectLoc.addEventListener('change',    onFilterChange);
+        selectTarget.addEventListener('change', onFilterChange);
+        selectSchool.addEventListener('change', onFilterChange);
+
+        // Restore + apply on every page load (including back-nav)
+        restoreState();
+        filterGrid();
+
+        window.resetFilters = function() {
+            selectStatus.value = 'aktif';
+            selectLoc.value    = 'all';
+            selectTarget.value = 'all';
+            selectSchool.value = 'all';
+            saveState();
+            filterGrid();
+        };
     });
 </script>
 {{ end }}
