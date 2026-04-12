@@ -1,6 +1,6 @@
 ---
 title: "Ankara ve Kurtuluş Savaşı Destanı Gezisi "
-status: aktif
+status: pasif
 date: 2027-06-02T08:36:00.000+03:00
 image: /images/portfolio/ankara-gezi.png
 duration: 2 Gün 1 Gece
