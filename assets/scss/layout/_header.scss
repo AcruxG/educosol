@@ -47,6 +47,34 @@
 	}
 }
 
+/* ── Light theme nav overrides ─────────── */
+[data-theme="light"] {
+	.navigation {
+		.menu li a {
+			color: rgba(26, 26, 46, 0.85);
+
+			&:hover {
+				color: var(--theme-brand-primary);
+				background: rgba(0, 0, 0, 0.04);
+			}
+		}
+
+		.nav-theme-btn {
+			color: rgba(26, 26, 46, 0.85);
+
+			&:hover {
+				color: var(--theme-brand-primary);
+				background: rgba(0, 0, 0, 0.04);
+			}
+		}
+	}
+
+	.sticky-header {
+		background: rgba(255, 255, 255, 0.9);
+		border-bottom-color: rgba(0, 0, 0, 0.08);
+	}
+}
+
 .menu {
 	margin-bottom: 0;
 	display: flex;
