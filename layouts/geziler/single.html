@@ -176,7 +176,7 @@
 </section>
 
 <!-- Başvuru Formu (Native Web3Forms) — only for active programs -->
-{{ if and $isActive .Site.Data.company.web3forms_access_key }}
+{{ if and (not $isPast) .Site.Data.company.web3forms_access_key }}
 <section class="gezi-apply-section" id="basvuru-formu">
   <div class="container">
     <div class="gezi-apply-card">

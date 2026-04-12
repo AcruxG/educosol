@@ -3,6 +3,12 @@ languageCode: tr
 title: EduCoSol - Eğitim Danışmanlık Çözümleri
 defaultContentLanguage: tr
 
+frontmatter:
+  date:
+    - date
+  publishDate:
+    - publishDate
+
 ignoreFiles:
   - public/js/build.js
   - node_modules/
