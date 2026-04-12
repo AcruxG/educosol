@@ -49,6 +49,12 @@
 </section>
 
 <!-- Program Detayları heading + Başvur -->
+<!-- Status Logic -->
+{{ $manualStatus := .Params.status | default "aktif" }}
+{{ $isPast := false }}
+{{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
+{{ $isActive := and (eq $manualStatus "aktif") (not $isPast) }}
+
 <section class="gezi-content">
   <div class="container">
     <div class="gezi-content-header">
@@ -57,11 +63,18 @@
         {{ with .Params.location }}
         <p class="gezi-location"><i class="tf-ion-ios-location"></i> {{ . }}</p>
         {{ end }}
+        {{ if not $isActive }}
+        <span class="gezi-status-badge status-past"><i class="tf-ion-android-time"></i> Geçmiş Program</span>
+        {{ else }}
+        <span class="gezi-status-badge status-active"><i class="tf-ion-android-checkmark-circle"></i> Aktif Program</span>
+        {{ end }}
       </div>
-      {{ if .Site.Data.company.web3forms_access_key }}
-      <a href="#basvuru-formu" class="gezi-apply-btn js-scroll-trigger">Başvur</a>
-      {{ else }}
-      <a href="{{ "contact" | relURL }}" class="gezi-apply-btn">Başvur</a>
+      {{ if $isActive }}
+        {{ if .Site.Data.company.web3forms_access_key }}
+        <a href="#basvuru-formu" class="gezi-apply-btn js-scroll-trigger">Başvur</a>
+        {{ else }}
+        <a href="{{ "contact" | relURL }}" class="gezi-apply-btn">Başvur</a>
+        {{ end }}
       {{ end }}
     </div>
 
@@ -163,8 +176,8 @@
   </div>
 </section>
 
-<!-- Başvuru Formu (Native Web3Forms) -->
-{{ if .Site.Data.company.web3forms_access_key }}
+<!-- Başvuru Formu (Native Web3Forms) — only for active programs -->
+{{ if and $isActive .Site.Data.company.web3forms_access_key }}
 <section class="gezi-apply-section" id="basvuru-formu">
   <div class="container">
     <div class="gezi-apply-card">
@@ -177,6 +190,7 @@
         <!-- Web3Forms Access Key & Config -->
         <input type="hidden" name="access_key" value="{{ .Site.Data.company.web3forms_access_key }}">
         <input type="hidden" name="Başvurulan_Program" value="{{ .Title }}">
+        <input type="hidden" name="Program_Durumu" value="Aktif">
         <input type="hidden" name="subject" value="Yeni Başvuru: {{ .Title }}">
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">

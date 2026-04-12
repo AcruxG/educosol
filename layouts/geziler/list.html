@@ -33,6 +33,14 @@
             <!-- Filter Bar -->
             <div class="gezi-filter-bar">
                 <div class="gezi-filter-group">
+                    <label>Durum</label>
+                    <select id="filter-status" class="gezi-filter-select">
+                        <option value="all">Tümü</option>
+                        <option value="aktif" selected>Aktif Programlar</option>
+                        <option value="gecmis">Geçmiş Programlar</option>
+                    </select>
+                </div>
+                <div class="gezi-filter-group">
                     <label>Konum</label>
                     <select id="filter-location" class="gezi-filter-select">
                         <option value="all">Tüm Konumlar</option>
@@ -69,12 +77,18 @@
             <!-- Modern Grid -->
             <div class="row gezi-grid" id="gezi-grid-container">
                 {{ range .Pages }}
+                    {{ $manualStatus := .Params.status | default "aktif" }}
+                    {{ $isPast := false }}
+                    {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
+                    {{ $isActive := and (eq $manualStatus "aktif") (not $isPast) }}
+                    {{ $statusLabel := cond $isActive "aktif" "gecmis" }}
                     <div class="col-lg-4 col-md-6 col-sm-12 gezi-grid-item" 
                          data-location="{{ .Params.location | default "" }}" 
                          data-school="{{ .Params.school | default "" }}" 
-                         data-target="{{ .Params.target_group | default "" }}">
+                         data-target="{{ .Params.target_group | default "" }}"
+                         data-status="{{ $statusLabel }}">
                         
-                        <div class="gezi-card-modern">
+                        <div class="gezi-card-modern {{ if not $isActive }}gezi-card-past{{ end }}">
                             <a href="{{ .RelPermalink }}" class="gezi-card-link">
                                 <!-- Image View -->
                                 <div class="gezi-card-img-wrap">
@@ -83,6 +97,12 @@
                                     <div class="gezi-badge-duration">
                                         <i class="tf-ion-android-time"></i> {{ . }}
                                     </div>
+                                    {{ end }}
+                                    <!-- Status Badge -->
+                                    {{ if $isActive }}
+                                    <div class="gezi-badge-status badge-active">Aktif</div>
+                                    {{ else }}
+                                    <div class="gezi-badge-status badge-past">Geçmiş Program</div>
                                     {{ end }}
                                 </div>
                                 
@@ -139,6 +159,7 @@
 <!-- JS Script for Vanilla Filtering -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const selectStatus = document.getElementById('filter-status');
         const selectLoc = document.getElementById('filter-location');
         const selectTarget = document.getElementById('filter-target');
         const selectSchool = document.getElementById('filter-school');
@@ -147,6 +168,7 @@
         const noResults = document.getElementById('gezi-no-results');
         
         function filterGrid() {
+            const statusVal = selectStatus.value;
             const locVal = selectLoc.value;
             const targetVal = selectTarget.value;
             const schoolVal = selectSchool.value;
@@ -154,15 +176,17 @@
             let visibleCount = 0;
             
             items.forEach(item => {
+                const itemStatus = item.dataset.status;
                 const itemLoc = item.dataset.location;
                 const itemTarget = item.dataset.target;
                 const itemSchool = item.dataset.school;
                 
+                const matchStatus = (statusVal === 'all' || itemStatus === statusVal);
                 const matchLoc = (locVal === 'all' || itemLoc === locVal);
                 const matchTarget = (targetVal === 'all' || itemTarget === targetVal);
                 const matchSchool = (schoolVal === 'all' || itemSchool === schoolVal);
                 
-                if (matchLoc && matchTarget && matchSchool) {
+                if (matchStatus && matchLoc && matchTarget && matchSchool) {
                     item.style.display = 'block';
                     item.style.opacity = '1';
                     visibleCount++;
@@ -179,11 +203,16 @@
             }
         }
         
+        selectStatus.addEventListener('change', filterGrid);
         selectLoc.addEventListener('change', filterGrid);
         selectTarget.addEventListener('change', filterGrid);
         selectSchool.addEventListener('change', filterGrid);
         
+        // Apply default filter (aktif) on page load
+        filterGrid();
+        
         window.resetFilters = function() {
+            selectStatus.value = 'all';
             selectLoc.value = 'all';
             selectTarget.value = 'all';
             selectSchool.value = 'all';
