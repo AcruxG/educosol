@@ -11,20 +11,30 @@ content_blocks:
 
 ## Kullanım Koşulları
 
-Bu web sitesine erişerek ve kullanarak aşağıdaki koşulları kabul etmiş olursunuz.
+EduCoSol Education Consultancy Solutions ("**EduCoSol**" veya "**Şirket**") web sitesine (www.educosol.com) hoş geldiniz. Web sitemizi ziyaret etmekle veya kullanmakla, aşağıda belirtilen şartları okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz.
 
-### Genel Hükümler
+### 1. Genel Hükümler
 
-EduCoSol web sitesindeki tüm içerikler bilgilendirme amaçlı olup, herhangi bir taahhüt niteliği taşımamaktadır. İçerikler önceden bildirim yapılmaksızın değiştirilebilir.
+Web sitemizde yer alan tüm bilgiler, içerikler, tavsiyeler ve makaleler tamamen genel bilgilendirme amacıyla sunulmaktadır. EduCoSol, sitede yer alan bilgilerin güncel, doğru ve eksiksiz olması için makul çabayı gösterir ancak bu konuda herhangi bir hukuki taahhüt veya garanti vermez. Önceden haber vermeksizin site içeriğinde değişiklik veya düzeltme yapma hakkını saklı tutar.
 
-### Fikri Mülkiyet
+### 2. Fikri Mülkiyet Hakları
 
-Web sitesindeki tüm logo, metin, görsel ve diğer içerikler EduCoSol'a aittir ve telif hakkı ile korunmaktadır. İzinsiz kullanımı yasaktır.
+www.educosol.com adresinde yer alan tüm yazılı metinler, grafikler, logolar, resimler, tasarımlar, arayüzler ve yazılım kodları başta olmak üzere tüm içeriklerin mülkiyeti ve fikri mülkiyet hakları EduCoSol'a veya lisans verenlerine aittir. Bu içerikler, 5846 sayılı Fikir ve Sanat Eserleri Kanunu ve uluslararası mevzuat ile korunmaktadır. Önceden yazılı izin alınmaksızın web sitesi içeriğinin kısmen veya tamamen kopyalanması, çoğaltılması, dağıtılması, yayımlanması veya ticari amaçlarla kullanılması kesinlikle yasaktır.
 
-### Sorumluluk Sınırlaması
+### 3. Sorumluluk Sınırlaması
 
-EduCoSol, web sitesindeki bilgilerin doğruluğu ve güncelliği konusunda garanti vermemektedir. Web sitesinin kesintisiz ve hatasız çalışacağına dair herhangi bir taahhütte bulunmamaktadır.
+Kullanıcıların web sitemizde yer alan bilgilere dayanarak alacakları kararların tüm sorumluluğu kendilerine aittir. Web sitesinin kullanımından doğabilecek veya siteye erişimin sağlanamamasından kaynaklanabilecek (bilgisayar virüsleri, sistem arızaları vb. dahil) herhangi bir doğrudan veya dolaylı maddi/manevi zarardan EduCoSol sorumlu tutulamaz.
 
-### Uygulanacak Hukuk
+### 4. Dış Bağlantılar (Yönlendirmeler)
 
-Bu koşullar Türkiye Cumhuriyeti hukukuna tabidir. Uyuşmazlıklarda İstanbul Mahkemeleri ve İcra Daireleri yetkilidir.
+EduCoSol web sitesi, kullanım kolaylığı veya ek bilgi sağlamak amacıyla üçüncü şahıslara ait diğer web sitelerine bağlantılar (linkler) içerebilir. Bu bağlantılı web sitelerinin içerikleri veya gizlilik uygulamaları EduCoSol'un kontrolünde değildir ve EduCoSol bu siteler hakkında hiçbir sorumluluk kabul etmez. Bağlantı verilen sitelere erişimde risk tamamen Kullanıcıya aittir.
+
+### 5. Koşullarda Değişiklik
+
+EduCoSol, bu "Kullanım Koşulları" metnini herhangi bir bildirimde bulunmaksızın güncelleyebilir veya değiştirebilir. Yapılan değişiklikler web sitesinde yayımlandığı andan itibaren geçerli sayılır. Bu nedenle sitemizi her ziyaret ettiğinizde bu sayfayı kontrol etmeniz önerilir.
+
+### 6. Uyuşmazlıkların Çözümü ve Yetkili Mahkeme
+
+Sitenin kullanımından doğan veya bu Kullanım Koşulları ile ilgili her türlü uyuşmazlığın çözümünde Türkiye Cumhuriyeti kanunları uygulanacaktır. Olası tüm hukuki ihtilaflarda İstanbul Mahkemeleri ve İcra Daireleri münhasıran yetkilidir.
+
+İletişim ve sorularınız için **info@educosol.com** adresi üzerinden bize ulaşabilirsiniz.
