@@ -2,4 +2,18 @@
     <!-- Loop through any structures in the front-matter and render them -->
     {{ partial "bookshop_bindings" `.Params.content_blocks` }}
     {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+
+    {{ if .Content }}
+    <section class="page-wrapper" style="padding: 50px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="content">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ end }}
 {{ end }}
