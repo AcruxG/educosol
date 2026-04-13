@@ -191,6 +191,10 @@
         <input type="hidden" name="Başvurulan_Program" value="{{ .Title }}">
         <input type="hidden" name="Program_Durumu" value="Aktif">
         <input type="hidden" name="subject" value="Yeni Başvuru: {{ .Title }}">
+        <input type="hidden" name="Kademe" value="{{ .Params.target_group | default "Belirtilmemiş" }}">
+        <input type="hidden" name="İlgili_Okul" value="{{ .Params.school | default "Tüm Okullar" }}">
+        <input type="hidden" name="Son_Başvuru" value="{{ with .Params.deadline }}{{ . | time.Format "02.01.2006" }}{{ else }}Belirtilmemiş{{ end }}">
+        <input type="hidden" name="Program_Tarihi" value="{{ with .Params.date }}{{ . | time.Format "02.01.2006" }}{{ else }}Belirtilmemiş{{ end }}">
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
