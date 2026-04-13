@@ -34,4 +34,3 @@ Yurtdışı gezi, dil okulu veya lise/üniversite başvuru süreçleri kapsamın
 
 Verdiğim açık rızaların tamamını veya bir kısmını, **herhangi bir gerekçe göstermeksizin ve ücretsiz** olarak her zaman geri çekme hakkına sahip olduğumu bilmekteyim. Bu hakkımı kullanmak için **info@educosol.com** adresine yazılı olarak başvurabilirim.
 
-> **Önemli Not:** Açık rızamı geri çekmem, geri çekme tarihinden önceki dönem için gerçekleştirilen işlemlerin hukuka uygunluğunu etkilemez. Ayrıca bazı temel hizmetlerin sunulabilmesi için KVKK'nın 5. ve 6. maddeleri kapsamında rızama gerek duyulmaksızın işlenmesi zorunlu veriler bulunmakta olup bu tür işlemelerin devam edeceğini kabul ediyorum.
