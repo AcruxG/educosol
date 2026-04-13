@@ -11,19 +11,27 @@ content_blocks:
 
 ## Açık Rıza Beyanı
 
-EduCoSol Education Consultancy Solutions ("EduCoSol") tarafından, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında hazırlanan Aydınlatma Metni'ni okuduğumu ve anladığımı,
+EduCoSol Education Consultancy Solutions ("**EduCoSol**" veya "**Şirket**") tarafından sunulan eğitim danışmanlığı, yurtiçi/yurtdışı gezi organizasyonu, dil okulu ve lise yerleştirme, bireysel hazırlık ve benzeri hizmetlerden yararlanmak amacıyla ya da iletişim kanalları aracılığıyla EduCoSol ile paylaştığım kişisel verilerimin, **6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK")** ve ilgili yasal mevzuat kapsamında işlenmesine; EduCoSol tarafından hazırlanan **KVKK Aydınlatma Metni**'ni okuyup anladığımı beyan ederek aşağıdaki koşullar dahilinde **açık rızamı** veriyorum.
 
-Bu kapsamda, aşağıda belirtilen kişisel verilerimin işlenmesine **açık rızam** ile onay veriyorum:
+### 1. Kişisel Verilerin İşlenmesine Rıza
 
-### Rıza Verilen İşlemler
+Aşağıda sayılan kişisel verilerimin belirtilen amaçlar doğrultusunda EduCoSol tarafından işlenmesine onay veriyorum:
 
-1. **İletişim bilgilerimin** (ad, soyad, e-posta, telefon) eğitim danışmanlığı hizmetleri kapsamında kullanılması
-2. **Eğitim bilgilerimin** uygun program ve gezi önerilerinin sunulması amacıyla işlenmesi
-3. **Bilgilendirme ve pazarlama** amaçlı elektronik ileti gönderilmesi
-4. **Üçüncü taraf hizmet sağlayıcılarla** (gezi organizatörleri, eğitim kurumları) paylaşılması
+- **Kimlik Bilgileri** (ad, soyad, doğum tarihi, T.C. Kimlik No): Kayıt ve başvuru süreçlerinin yürütülmesi, gezi ve sigorta işlemleri.
+- **İletişim Bilgileri** (e-posta, telefon, adres): Hizmetlere ilişkin bilgilendirme, randevu ve geri bildirim yazışmaları.
+- **Eğitim Bilgileri** (okul, sınıf, akademik geçmiş, dil sertifikaları): Uygun program ve gezi içeriklerinin önerilmesi, danışmanlık süreçlerinin kişiselleştirilmesi.
+- **Sağlık ve Özel Nitelikli Veriler** (yalnızca yurtdışı gezi ve seyahat organizasyonları kapsamında; alerji, kronik hastalık gibi zorunlu bilgiler): Seyahat güvenliği ve sigorta süreçleri.
 
-### Rızanın Geri Çekilmesi
+### 2. Ticari Elektronik İleti Gönderilmesine Rıza
 
-Açık rızamı dilediğim zaman, herhangi bir gerekçe göstermeksizin **info@educosol.com** adresine yazılı başvuru yaparak geri çekebileceğimi biliyorum.
+EduCoSol tarafından düzenlenen etkinlikler, yeni eğitim fırsatları, kampanyalar, duyurular ve tanıtım içerikleri hakkında **e-posta, SMS veya diğer elektronik kanallar** aracılığıyla ticari elektronik ileti gönderilmesine onay veriyorum.
 
-Rızanın geri çekilmesi, geri çekilme tarihine kadar yapılan işlemlerin hukuka uygunluğunu etkilemez.
+### 3. Yurt Dışına Veri Aktarımına Rıza
+
+Yurtdışı gezi, dil okulu veya lise/üniversite başvuru süreçleri kapsamında; kişisel verilerimin yurt dışındaki ilgili eğitim kurumlarına, acentelere, konsolosluklara ve hizmet sağlayıcılara aktarılmasına onay veriyorum.
+
+### 4. Rızanın Geri Çekilmesi
+
+Verdiğim açık rızaların tamamını veya bir kısmını, **herhangi bir gerekçe göstermeksizin ve ücretsiz** olarak her zaman geri çekme hakkına sahip olduğumu bilmekteyim. Bu hakkımı kullanmak için **info@educosol.com** adresine yazılı olarak başvurabilirim.
+
+> **Önemli Not:** Açık rızamı geri çekmem, geri çekme tarihinden önceki dönem için gerçekleştirilen işlemlerin hukuka uygunluğunu etkilemez. Ayrıca bazı temel hizmetlerin sunulabilmesi için KVKK'nın 5. ve 6. maddeleri kapsamında rızama gerek duyulmaksızın işlenmesi zorunlu veriler bulunmakta olup bu tür işlemelerin devam edeceğini kabul ediyorum.
