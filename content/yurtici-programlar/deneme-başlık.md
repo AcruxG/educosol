@@ -1,12 +1,17 @@
 ---
-title: deneme
-date: 2026-04-06T17:36:00.000+03:00
-image: /images/portfolio/portfolio-img3.jpg
-duration: 7 Gün 6 Gece 15 gün
-location: Paris ve Londra
+title: Deneme başlık
+program_tipi: Gezi
+status: aktif
+date: 2027-04-06T17:33:00.000+03:00
+image: /images/portfolio/bireysel-hazirlik-card.png
+duration: 2 Gün 1 Gece
+location: Ankara
 target_group: Ortaokul ve Lise Öğrencileri
-program_amaci: |
-  Bu örnek programın amacı öğrencilere kültürel ve tarihi zenginliklerimizi yaşayarak öğrenme fırsatı sunmaktır.
+school: XY Okulu
+deadline: 2027-04-12T19:12:00.000+03:00
+program_amaci: >
+  Bu örnek programın amacı öğrencilere kültürel ve tarihi zenginliklerimizi
+  yaşayarak öğrenme fırsatı sunmaktır.
 gezi_plani: |
   **1. Gün:**
   - 08:00 Okuldan hareket
@@ -28,4 +33,4 @@ onemli_notlar: |
 odeme_detaylari: |
   - Erken kayıtta %10 indirim.
 ---
-Güzel
+Güzel içerik

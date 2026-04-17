@@ -1,0 +1,46 @@
+<section class="stats-strip-section">
+    <div class="container">
+        <div class="stats-strip">
+            {{ range .stats }}
+                {{ partial "bookshop" (slice "simple/stat-item" .) }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    function animateCounter(el) {
+        var raw = el.dataset.target;
+        var suffix = raw.replace(/[\d]/g, '');
+        var target = parseInt(raw, 10);
+        var duration = 1600;
+        var start = null;
+
+        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+        function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var current = Math.round(easeOut(progress) * target);
+            el.textContent = current + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.stat-item-value').forEach(animateCounter);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.stats-strip').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>

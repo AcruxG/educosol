@@ -1,0 +1,15 @@
+<section class="service-grid-section">
+    <div class="container">
+        <div class="service-grid-header">
+            <span class="service-grid-eyebrow">Hizmetlerimiz</span>
+            <h2 class="service-grid-title">{{ .heading | default "Eğitimde Bütünsel Çözümler" }}</h2>
+            {{ with .subheading }}<p class="service-grid-subtitle">{{ . }}</p>{{ end }}
+        </div>
+
+        <div class="service-grid">
+            {{ range .services }}
+                {{ partial "bookshop" (slice "simple/service-card" .) }}
+            {{ end }}
+        </div>
+    </div>
+</section>

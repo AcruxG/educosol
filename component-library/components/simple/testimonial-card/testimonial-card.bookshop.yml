@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - testimonial-card
+  label: Testimonial Card
+  description: Modern quote card with author
+  icon: format_quote
+  tags: []
+
+blueprint:
+  quote: "Bu programa katılan öğrencilerimizden aldığımız geri bildirimler olağanüstü."
+  author_name: "Ayşe Yılmaz"
+  author_role: "Okul Müdürü, A Koleji"
+  author_image: "/images/team/team1.jpg"
+
+_inputs:

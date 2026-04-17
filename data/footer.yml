@@ -3,14 +3,11 @@ menu:
   - name: "Ana Sayfa"
     url: "/"
     open_in_new_tab: false
-  - name: "Yurtiçi Geziler"
-    url: "/yurtici-geziler/"
+  - name: "Yurtiçi Programlar"
+    url: "/yurtici-programlar/"
     open_in_new_tab: false
-  - name: "Yurtdışı Geziler"
-    url: "/yurtdisi-geziler/"
-    open_in_new_tab: false
-  - name: "Yurtdışı Eğitim"
-    url: "/yurtdisi-egitim/"
+  - name: "Yurtdışı Programlar"
+    url: "/yurtdisi-programlar/"
     open_in_new_tab: false
   - name: "Bireysel Hazırlık"
     url: "/bireysel-hazirlik/"

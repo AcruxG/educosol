@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="section-title" style="margin-bottom: 10px;">Gezi Programlarımız</h2>
+                    <h2 class="section-title" style="margin-bottom: 10px;">{{ .Title }}ımız</h2>
                     <p class="section-subtitle" style="color: var(--theme-color-text-muted); margin-bottom: 40px; font-size: 16px;">Tüm güncel eğitim, kamp ve gezi programlarımızı inceleyin.</p>
                 </div>
             </div>
@@ -18,17 +18,20 @@
             {{ $locations := slice }}
             {{ $schools := slice }}
             {{ $targets := slice }}
-            
+            {{ $programTypes := slice }}
+
             {{ range .Pages }}
                 {{ if .Params.location }}{{ $locations = $locations | append .Params.location }}{{ end }}
                 {{ if .Params.school }}{{ $schools = $schools | append .Params.school }}{{ end }}
                 {{ if .Params.target_group }}{{ $targets = $targets | append .Params.target_group }}{{ end }}
+                {{ if .Params.program_tipi }}{{ $programTypes = $programTypes | append .Params.program_tipi }}{{ end }}
             {{ end }}
-            
+
             <!-- Unique lists -->
             {{ $locations = $locations | uniq }}
             {{ $schools = $schools | uniq }}
             {{ $targets = $targets | uniq }}
+            {{ $programTypes = $programTypes | uniq }}
 
             <!-- Filter Bar -->
             <div class="gezi-filter-bar">
@@ -67,10 +70,14 @@
                         {{ end }}
                     </select>
                 </div>
-                <div class="gezi-filter-actions">
-                    <button class="gezi-filter-reset" onclick="resetFilters()">
-                        <i class="tf-ion-android-refresh"></i> Temizle
-                    </button>
+                <div class="gezi-filter-group">
+                    <label>Program Tipi</label>
+                    <select id="filter-program-type" class="gezi-filter-select">
+                        <option value="all">Tüm Tipler</option>
+                        {{ range $programTypes }}
+                        <option value="{{ . }}">{{ . }}</option>
+                        {{ end }}
+                    </select>
                 </div>
             </div>
 
@@ -82,10 +89,11 @@
                     {{ $isPast := false }}
                     {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}
                     {{ $statusLabel := cond $isPast "gecmis" "aktif" }}
-                    <div class="col-lg-4 col-md-6 col-sm-12 gezi-grid-item" 
-                         data-location="{{ .Params.location | default "" }}" 
-                         data-school="{{ .Params.school | default "" }}" 
+                    <div class="col-lg-4 col-md-6 col-sm-12 gezi-grid-item"
+                         data-location="{{ .Params.location | default "" }}"
+                         data-school="{{ .Params.school | default "" }}"
                          data-target="{{ .Params.target_group | default "" }}"
+                         data-program-type="{{ .Params.program_tipi | default "" }}"
                          data-status="{{ $statusLabel }}">
                         
                         <div class="gezi-card-modern {{ if $isPast }}gezi-card-past{{ end }}">
@@ -116,6 +124,11 @@
                                     </div>
                                     
                                     <div class="gezi-card-pills">
+                                        {{ if .Params.program_tipi }}
+                                        <span class="gezi-pill pill-green">
+                                            <i class="tf-ion-ios-bookmarks"></i> {{ .Params.program_tipi }}
+                                        </span>
+                                        {{ end }}
                                         {{ if .Params.target_group }}
                                         <span class="gezi-pill pill-orange">
                                             <i class="tf-ion-ios-people"></i> {{ .Params.target_group }}
@@ -164,6 +177,7 @@
         const selectLoc    = document.getElementById('filter-location');
         const selectTarget = document.getElementById('filter-target');
         const selectSchool = document.getElementById('filter-school');
+        const selectProgramType = document.getElementById('filter-program-type');
 
         const items     = document.querySelectorAll('.gezi-grid-item');
         const noResults = document.getElementById('gezi-no-results');
@@ -180,6 +194,7 @@
                     selectLoc.value    = state.loc    || 'all';
                     selectTarget.value = state.target || 'all';
                     selectSchool.value = state.school || 'all';
+                    selectProgramType.value = state.programType || 'all';
                     return;
                 }
             } catch(e) {}
@@ -194,7 +209,8 @@
                     status: selectStatus.value,
                     loc:    selectLoc.value,
                     target: selectTarget.value,
-                    school: selectSchool.value
+                    school: selectSchool.value,
+                    programType: selectProgramType.value
                 }));
             } catch(e) {}
         }
@@ -205,6 +221,7 @@
             var locVal    = selectLoc.value;
             var targetVal = selectTarget.value;
             var schoolVal = selectSchool.value;
+            var programTypeVal = selectProgramType.value;
 
             var visibleCount = 0;
 
@@ -213,8 +230,9 @@
                 var matchLoc    = (locVal    === 'all' || item.dataset.location === locVal);
                 var matchTarget = (targetVal === 'all' || item.dataset.target   === targetVal);
                 var matchSchool = (schoolVal === 'all' || item.dataset.school   === schoolVal);
+                var matchProgramType = (programTypeVal === 'all' || item.dataset.programType === programTypeVal);
 
-                if (matchStatus && matchLoc && matchTarget && matchSchool) {
+                if (matchStatus && matchLoc && matchTarget && matchSchool && matchProgramType) {
                     item.style.display = 'block';
                     item.style.opacity = '1';
                     visibleCount++;
@@ -236,6 +254,7 @@
         selectLoc.addEventListener('change',    onFilterChange);
         selectTarget.addEventListener('change', onFilterChange);
         selectSchool.addEventListener('change', onFilterChange);
+        selectProgramType.addEventListener('change', onFilterChange);
 
         // Restore + apply on every page load (including back-nav)
         restoreState();
@@ -246,6 +265,7 @@
             selectLoc.value    = 'all';
             selectTarget.value = 'all';
             selectSchool.value = 'all';
+            selectProgramType.value = 'all';
             saveState();
             filterGrid();
         };

@@ -1,0 +1,20 @@
+spec:
+  structures:
+    - content_blocks
+  label: Testimonial Carousel
+  description: Modern testimonial slider
+  icon: format_quote
+  tags: []
+
+blueprint:
+  heading: "Görüşler"
+  subheading: "Bizimle yol alan öğrenci ve kurumlardan"
+  testimonials: [bookshop:simple/testimonial-card]
+
+preview:
+  testimonials:
+    - bookshop:simple/testimonial-card
+    - bookshop:simple/testimonial-card
+    - bookshop:simple/testimonial-card
+
+_inputs:

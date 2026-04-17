@@ -2,17 +2,11 @@ menu:
   - name: "Hakkımızda"
     url: "/hakkimizda/"
     open_in_new_tab: false
-  - name: "Yurtiçi Geziler"
-    url: "/yurtici-geziler/"
+  - name: "Yurtiçi Programlar"
+    url: "/yurtici-programlar/"
     open_in_new_tab: false
-  - name: "Yurtdışı Geziler"
-    url: "/yurtdisi-geziler/"
-    open_in_new_tab: false
-  - name: "Yurtdışı Eğitim Programları"
-    url: "/yurtdisi-egitim/"
-    open_in_new_tab: false
-  - name: "Afterschool ve Yaz Okulu"
-    url: "/afterschool/"
+  - name: "Yurtdışı Programlar"
+    url: "/yurtdisi-programlar/"
     open_in_new_tab: false
   - name: "İletişim"
     url: "/contact/"

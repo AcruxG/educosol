@@ -1,0 +1,19 @@
+spec:
+  structures:
+    - content_blocks
+  label: Stats Strip
+  description: Trust strip with numeric stats and labels
+  icon: insights
+  tags: []
+
+blueprint:
+  stats: [bookshop:simple/stat-item]
+
+preview:
+  stats:
+    - bookshop:simple/stat-item
+    - bookshop:simple/stat-item
+    - bookshop:simple/stat-item
+    - bookshop:simple/stat-item
+
+_inputs:

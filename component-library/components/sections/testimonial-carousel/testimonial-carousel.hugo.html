@@ -1,0 +1,15 @@
+<section class="modern-testimonial-section">
+    <div class="container">
+        <div class="modern-testimonial-header">
+            <span class="modern-testimonial-eyebrow">Referanslarımız</span>
+            <h2 class="modern-testimonial-title">{{ .heading | default "Görüşler" }}</h2>
+            {{ with .subheading }}<p class="modern-testimonial-subtitle">{{ . }}</p>{{ end }}
+        </div>
+
+        <div class="modern-testimonial-carousel testimonial-slider">
+            {{ range .testimonials }}
+                {{ partial "bookshop" (slice "simple/testimonial-card" .) }}
+            {{ end }}
+        </div>
+    </div>
+</section>

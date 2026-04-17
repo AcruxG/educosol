@@ -1,0 +1,13 @@
+spec:
+  structures:
+    - stat-item
+  label: Stat Item
+  description: Single number + label
+  icon: numbers
+  tags: []
+
+blueprint:
+  value: "25+"
+  label: "Ülke"
+
+_inputs:

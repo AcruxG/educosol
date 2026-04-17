@@ -1,0 +1,21 @@
+spec:
+  structures:
+    - content_blocks
+  label: Service Grid
+  description: Modern grid of service cards with icons, short copy and CTAs
+  icon: view_module
+  tags: []
+
+blueprint:
+  heading: "Hizmetlerimiz"
+  subheading: "Öğrencilerinize sunduğumuz eğitim çözümleri"
+  services: [bookshop:simple/service-card]
+
+preview:
+  services:
+    - bookshop:simple/service-card
+    - bookshop:simple/service-card
+    - bookshop:simple/service-card
+    - bookshop:simple/service-card
+
+_inputs:

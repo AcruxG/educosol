@@ -1,0 +1,19 @@
+spec:
+  structures:
+    - service-card
+  label: Service Card
+  description: Modern card with icon, heading, copy and CTA
+  icon: dashboard_customize
+  tags: []
+
+blueprint:
+  icon: "tf-ion-ios-paperplane"
+  heading: "Service Heading"
+  content: "Short descriptive copy about the service."
+  link:
+    url: "/"
+    content: "Detaylı Bilgi"
+
+_inputs:
+  icon:
+    comment: Themefisher icon class (e.g. tf-ion-ios-paperplane, tf-ion-earth, tf-ion-ios-book, tf-ion-ios-people)

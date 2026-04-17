@@ -535,9 +535,17 @@
 }
 
 /* Gezi Modern Card */
+.gezi-grid {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
 .gezi-grid-item {
 	transition: opacity 0.3s ease, margin 0.3s ease;
 	margin-bottom: 30px;
+	display: flex;
+	float: none;
 }
 
 .gezi-card-modern {
@@ -661,6 +669,12 @@
 		background: rgba(59, 130, 246, 0.1);
 		color: #2563eb;
 		border-color: rgba(59, 130, 246, 0.2);
+	}
+
+	&.pill-green {
+		background: rgba(229, 105, 16, 0.12);
+		color: #E56910;
+		border-color: rgba(229, 105, 16, 0.28);
 	}
 }
 

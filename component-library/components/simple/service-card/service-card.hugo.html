@@ -1,0 +1,18 @@
+{{ $url := "#" }}
+{{ $label := "Detaylı Bilgi" }}
+{{ with .link }}
+  {{ $url = .url | default $url }}
+  {{ $label = .content | default $label }}
+{{ end }}
+<a href="{{ $url }}" class="service-card">
+    <div class="service-card-glow"></div>
+    <div class="service-card-icon">
+        <i class="{{ .icon | default "tf-ion-ios-paperplane" }}"></i>
+    </div>
+    <h3 class="service-card-heading">{{ .heading }}</h3>
+    <p class="service-card-copy">{{ .content }}</p>
+    <span class="service-card-cta">
+        {{ $label }}
+        <i class="tf-ion-android-arrow-forward"></i>
+    </span>
+</a>

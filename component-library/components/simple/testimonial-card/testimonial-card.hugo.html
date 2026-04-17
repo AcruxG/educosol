@@ -1,0 +1,13 @@
+<div class="modern-testimonial-card">
+    <div class="modern-testimonial-quote-mark">"</div>
+    <p class="modern-testimonial-quote">{{ .quote }}</p>
+    <div class="modern-testimonial-author">
+        {{ with .author_image }}
+        <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.author_name }}" class="modern-testimonial-avatar">
+        {{ end }}
+        <div class="modern-testimonial-author-info">
+            <div class="modern-testimonial-author-name">{{ .author_name }}</div>
+            <div class="modern-testimonial-author-role">{{ .author_role }}</div>
+        </div>
+    </div>
+</div>

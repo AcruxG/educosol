@@ -1,5 +1,6 @@
 ---
 title: Avrupa Müzeler ve Sanat Turu
+program_tipi: Gezi
 status: aktif
 date: 2027-06-15T09:00:00.000+03:00
 image: /images/portfolio/yurtdisi-geziler-card.png
