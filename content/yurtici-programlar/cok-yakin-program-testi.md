@@ -1,5 +1,5 @@
 ---
-title: Cok yakın program TEsti
+title: Cok yakın program Testi
 status: aktif
 publishDate: ""
 date: 2026-04-23T05:25:00.000+03:00
