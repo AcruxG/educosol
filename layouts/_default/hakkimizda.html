@@ -12,8 +12,9 @@
     <h1 class="hk-hero-title">Eğitimde <span class="hk-gradient-text">Güvenilir</span> Ortak</h1>
     <p class="hk-hero-sub">Öğrencilerin sınırları aşmasına yardımcı olan, kurumların eğitim kalitesini yükselten ve her adımda yanınızda olan bir ekibiz.</p>
     <div class="hk-hero-cta-row">
-      <a href="/contact/" class="hk-btn hk-btn--primary">İletişime Geçin <i class="tf-ion-ios-arrow-right"></i></a>
-      <a href="/yurtici-programlar/" class="hk-btn hk-btn--ghost">Programlarımız</a>
+      <a href="{{ "contact/" | relURL }}" class="hk-btn hk-btn--primary">İletişime Geçin <i class="tf-ion-ios-arrow-right"></i></a>
+      <a href="{{ "yurtici-programlar/" | relURL }}" class="hk-btn hk-btn--ghost"><i class="tf-ion-ios-home-outline"></i> Yurtiçi Programlarımız</a>
+      <a href="{{ "yurtdisi-programlar/" | relURL }}" class="hk-btn hk-btn--ghost"><i class="tf-ion-ios-paperplane-outline"></i> Yurtdışı Programlarımız</a>
     </div>
   </div>
 </section>
@@ -165,43 +166,37 @@
 
       <div class="hk-stat-item">
         <div class="hk-stat-icon"><i class="tf-ion-earth"></i></div>
-        <div class="hk-stat-value" data-target="25">0</div>
-        <div class="hk-stat-suffix">+</div>
+        <div class="hk-stat-figure"><span class="hk-stat-value" data-target="25">0</span><span class="hk-stat-suffix">+</span></div>
         <div class="hk-stat-label">Ülke</div>
       </div>
 
       <div class="hk-stat-item">
         <div class="hk-stat-icon"><i class="tf-ion-ios-people"></i></div>
-        <div class="hk-stat-value" data-target="500">0</div>
-        <div class="hk-stat-suffix">+</div>
+        <div class="hk-stat-figure"><span class="hk-stat-value" data-target="500">0</span><span class="hk-stat-suffix">+</span></div>
         <div class="hk-stat-label">Öğrenci</div>
       </div>
 
       <div class="hk-stat-item">
         <div class="hk-stat-icon"><i class="tf-ion-ios-star-outline"></i></div>
-        <div class="hk-stat-value" data-target="10">0</div>
-        <div class="hk-stat-suffix">+</div>
+        <div class="hk-stat-figure"><span class="hk-stat-value" data-target="10">0</span><span class="hk-stat-suffix">+</span></div>
         <div class="hk-stat-label">Yıl Tecrübe</div>
       </div>
 
       <div class="hk-stat-item">
         <div class="hk-stat-icon"><i class="tf-ion-university"></i></div>
-        <div class="hk-stat-value" data-target="40">0</div>
-        <div class="hk-stat-suffix">+</div>
+        <div class="hk-stat-figure"><span class="hk-stat-value" data-target="40">0</span><span class="hk-stat-suffix">+</span></div>
         <div class="hk-stat-label">Partner Okul</div>
       </div>
 
       <div class="hk-stat-item">
         <div class="hk-stat-icon"><i class="tf-ion-ios-location-outline"></i></div>
-        <div class="hk-stat-value" data-target="80">0</div>
-        <div class="hk-stat-suffix">+</div>
+        <div class="hk-stat-figure"><span class="hk-stat-value" data-target="80">0</span><span class="hk-stat-suffix">+</span></div>
         <div class="hk-stat-label">Program Rotası</div>
       </div>
 
       <div class="hk-stat-item">
         <div class="hk-stat-icon"><i class="tf-ion-ios-ribbon-outline"></i></div>
-        <div class="hk-stat-value" data-target="98">0</div>
-        <div class="hk-stat-suffix">%</div>
+        <div class="hk-stat-figure"><span class="hk-stat-value" data-target="98">0</span><span class="hk-stat-suffix">%</span></div>
         <div class="hk-stat-label">Memnuniyet</div>
       </div>
 
@@ -254,8 +249,8 @@
     <h2 class="hk-cta-title">Birlikte Bir Şey İnşa Edelim</h2>
     <p class="hk-cta-sub">Okulunuz veya çocuğunuz için doğru programı bulmak ister misiniz? Ücretsiz danışmanlık için bize ulaşın.</p>
     <div class="hk-hero-cta-row">
-      <a href="/contact/" class="hk-btn hk-btn--primary">İletişime Geçin <i class="tf-ion-ios-arrow-right"></i></a>
-      <a href="/yurtdisi-programlar/" class="hk-btn hk-btn--ghost">Yurtdışı Programlar</a>
+      <a href="{{ "contact/" | relURL }}" class="hk-btn hk-btn--primary">İletişime Geçin <i class="tf-ion-ios-arrow-right"></i></a>
+      <a href="{{ "yurtdisi-programlar/" | relURL }}" class="hk-btn hk-btn--ghost">Yurtdışı Programlar</a>
     </div>
   </div>
 </section>
@@ -266,7 +261,6 @@
   function animateCounters(section) {
     section.querySelectorAll('.hk-stat-value').forEach(function(el) {
       var target = parseInt(el.dataset.target, 10);
-      var suffix = el.nextElementSibling ? el.nextElementSibling.textContent : '';
       var duration = 1800;
       var start = null;
       function ease(t){ return 1 - Math.pow(1 - t, 3); }

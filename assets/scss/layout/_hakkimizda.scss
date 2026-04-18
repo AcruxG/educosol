@@ -495,7 +495,15 @@ $accent-glow:  rgba(229, 105, 16, 0.22);
   margin-bottom: 12px;
 }
 
-.hk-stat-value {
+/* value + suffix share one gradient wrapper so they are always inline */
+.hk-stat-figure {
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.hk-stat-value,
+.hk-stat-suffix {
   font-family: 'Poppins', 'Inter', sans-serif;
   font-size: clamp(32px, 3.5vw, 52px);
   font-weight: 900;
@@ -504,36 +512,7 @@ $accent-glow:  rgba(229, 105, 16, 0.22);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.hk-stat-suffix {
-  font-family: 'Poppins', 'Inter', sans-serif;
-  font-size: clamp(22px, 2.5vw, 36px);
-  font-weight: 900;
-  line-height: 1;
-  background: linear-gradient(135deg, $accent 0%, $accent-dark 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  margin-left: -2px;
-  margin-bottom: 8px;
-}
-
-/* Inline the value+suffix on the same row */
-.hk-stat-item {
-  .hk-stat-value,
-  .hk-stat-suffix {
-    display: inline;
-    line-height: 1.1;
-  }
-
-  /* wrap them together */
-  > div:nth-child(2),
-  > div:nth-child(3) {
-    display: inline;
-  }
+  display: inline;
 }
 
 .hk-stat-label {
@@ -673,9 +652,8 @@ $accent-glow:  rgba(229, 105, 16, 0.22);
   justify-content: center;
 }
 
-/* ── Light mode overrides ─────────────────────────────────────── */
-[data-theme="light"],
-body:not([data-theme="dark"]) {
+/* ── Light mode overrides (only when data-theme="light") ─────── */
+[data-theme="light"] {
   .hk-hero-bg-grid {
     background-image:
       linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
@@ -683,7 +661,7 @@ body:not([data-theme="dark"]) {
   }
 
   .hk-btn--ghost {
-    border-color: rgba(0,0,0,0.15);
+    border-color: rgba(0,0,0,0.18);
     color: var(--theme-color-text-main);
 
     &:hover {
