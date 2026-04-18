@@ -1,0 +1,62 @@
+<section class="about-strip-section">
+  <div class="about-strip-bg-glow"></div>
+  <div class="container">
+    <div class="about-strip-grid">
+
+      <!-- Left: text -->
+      <div class="about-strip-left">
+        <span class="about-strip-eyebrow">Hakkımızda</span>
+        <h2 class="about-strip-heading">{{ .heading }}</h2>
+        <p class="about-strip-body">{{ .body }}</p>
+        {{ if .cta_text }}
+        <a href="{{ .cta_url | relURL }}" class="about-strip-cta">
+          {{ .cta_text }} <i class="tf-ion-ios-arrow-right"></i>
+        </a>
+        {{ end }}
+      </div>
+
+      <!-- Right: stats 2x2 grid -->
+      <div class="about-strip-stats">
+        {{ range .stats }}
+        <div class="about-stat-item">
+          {{ with .icon }}<div class="about-stat-icon"><i class="{{ . }}"></i></div>{{ end }}
+          <div class="about-stat-value" data-target="{{ .value }}">{{ .value }}</div>
+          <div class="about-stat-label">{{ .label }}</div>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+    function animateCounter(el) {
+        var raw = el.dataset.target;
+        var suffix = raw.replace(/[\d]/g, '');
+        var target = parseInt(raw, 10);
+        var duration = 1600;
+        var start = null;
+        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+        function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            el.textContent = Math.round(easeOut(progress) * target) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.about-stat-value').forEach(animateCounter);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.about-strip-stats').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>

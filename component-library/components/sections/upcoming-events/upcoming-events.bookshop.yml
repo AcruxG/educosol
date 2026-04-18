@@ -1,0 +1,15 @@
+spec:
+  structures:
+    - content_blocks
+  label: Upcoming Events
+  description: Shows next 3 upcoming programs based on registration deadline
+  icon: event
+  tags: []
+
+blueprint:
+  heading: "Yaklaşan Etkinlikler"
+  subheading: "Kayıt olmak için son şansınızı kaçırmayın."
+
+preview:
+  heading: "Yaklaşan Etkinlikler"
+  subheading: "Kayıt olmak için son şansınızı kaçırmayın."

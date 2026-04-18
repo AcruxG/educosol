@@ -1,4 +1,5 @@
 <div class="stat-item">
+    {{ with .icon }}<div class="stat-item-icon"><i class="{{ . }}"></i></div>{{ end }}
     <div class="stat-item-value" data-target="{{ .value }}">{{ .value }}</div>
     <div class="stat-item-label">{{ .label }}</div>
 </div>

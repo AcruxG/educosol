@@ -4,22 +4,8 @@ content_blocks:
   - _bookshop_name: sections/video-hero
     heading: "Eğitimde Dönüşümün"
     subheading: "Güvenilir Adresi"
+    subtitle: "Yurtiçi gezilerden uluslararası kampüs programlarına — öğrencilerinizin ufkunu birlikte genişletelim."
     background_video: /video/altvideo
-
-  - _bookshop_name: sections/stats-strip
-    stats:
-      - _bookshop_name: simple/stat-item
-        value: "25+"
-        label: "Ülke"
-      - _bookshop_name: simple/stat-item
-        value: "500+"
-        label: "Öğrenci"
-      - _bookshop_name: simple/stat-item
-        value: "10+"
-        label: "Yıl Tecrübe"
-      - _bookshop_name: simple/stat-item
-        value: "40+"
-        label: "Partner Okul"
 
   - _bookshop_name: sections/service-grid
     heading: "Eğitimde Bütünsel Çözümler"
@@ -39,20 +25,10 @@ content_blocks:
         link:
           url: "/yurtdisi-programlar/"
           content: "Programları Gör"
-      - _bookshop_name: simple/service-card
-        icon: "tf-ion-ios-people"
-        heading: "Bireysel Hazırlık"
-        content: "Kişiye özel akademik çalışma, portfolyo desteği ve motivasyon odaklı mentörlük."
-        link:
-          url: "/bireysel-hazirlik/"
-          content: "Detaylı Bilgi"
-      - _bookshop_name: simple/service-card
-        icon: "tf-ion-ios-chatboxes"
-        heading: "Danışmanlık"
-        content: "Üniversite başvurusundan vize sürecine, eğitim yol haritanız için uzman rehberlik."
-        link:
-          url: "/contact/"
-          content: "İletişime Geç"
+
+  - _bookshop_name: sections/upcoming-events
+    heading: "Yaklaşan Etkinlikler"
+    subheading: "Kayıt olmak için son şansınızı kaçırmayın."
 
   - _bookshop_name: sections/testimonial-carousel
     heading: "Velilerin ve Kurumların Sesinden"
@@ -84,6 +60,25 @@ content_blocks:
         image_alt: B Okulları
       - image: /images/c-universitesi.svg
         image_alt: C Üniversitesi
+
+  - _bookshop_name: sections/about-strip
+    heading: "Eğitimde Güvenilir Ortak"
+    body: "EduCoSol, öğrencilere ve eğitim kurumlarına yönelik bütünsel çözümler sunan öncü bir eğitim danışmanlığı platformudur. Yurtiçi kültürel gezilerden uluslararası kampüs programlarına, afterschool kulüplerden bireysel akademik hazırlığa kadar geniş bir hizmet yelpazesiyle faaliyet gösteriyoruz. Amacımız; öğrencilerin sınıf ötesinde gerçek dünya deneyimleri kazanmalarını sağlamak ve onları global vizyonla donanmış bireyler olarak geleceğe hazırlamaktır."
+    cta_text: "İletişime Geçin"
+    cta_url: "/contact/"
+    stats:
+      - value: "25+"
+        label: "Ülke"
+        icon: "tf-ion-earth"
+      - value: "500+"
+        label: "Öğrenci"
+        icon: "tf-ion-ios-people"
+      - value: "10+"
+        label: "Yıl Tecrübe"
+        icon: "tf-ion-ios-star-outline"
+      - value: "40+"
+        label: "Partner Okul"
+        icon: "tf-ion-university"
 
   - _bookshop_name: sections/contact
     heading: Bize Ulaşın

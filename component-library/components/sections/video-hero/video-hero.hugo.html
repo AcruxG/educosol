@@ -4,14 +4,16 @@
       Your browser does not support the video tag.
     </video>
     <div class="container">
-      <div class="row">
-        <div class="col-md-7 col-sm-10">
-          <span class="hero-eyebrow">Eğitim &amp; Danışmanlık</span>
-          <h1>{{ .heading }} <br>{{ .subheading }}</h1>
-          {{ if .cta_text }}
-            <a href="{{ .cta_url | strings.TrimPrefix "/" | relURL }}" class="btn btn-main" style="margin-top: 28px;">{{ .cta_text }}</a>
-          {{ end }}
+      <div class="hero-content-wrap">
+        <span class="hero-eyebrow">Eğitim &amp; Danışmanlık</span>
+        <h1 class="hero-title">{{ .heading }} <br>{{ .subheading }}</h1>
+        {{ with .subtitle }}<p class="hero-sub">{{ . }}</p>{{ end }}
+        <div class="hero-cta-group">
+          <a href="#hizmetlerimiz" class="btn btn-outline hero-btn-secondary">Hizmetlerimizi Keşfet</a>
         </div>
       </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="hero-scroll-mouse"><div class="hero-scroll-dot"></div></div>
     </div>
   </header>

@@ -1,0 +1,18 @@
+spec:
+  structures:
+    - content_blocks
+  label: About Strip
+  description: Hakkımızda section with text on left and stats on right
+  icon: info
+  tags: []
+
+blueprint:
+  heading: ""
+  body: ""
+  cta_text: ""
+  cta_url: ""
+  stats: []
+
+preview:
+  heading: "Eğitimde Güvenilir Ortak"
+  body: "EduCoSol, öğrencilere ve kurumlara bütünsel eğitim çözümleri sunar."
