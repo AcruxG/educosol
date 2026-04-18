@@ -26,10 +26,6 @@ content_blocks:
           url: "/yurtdisi-programlar/"
           content: "Programları Gör"
 
-  - _bookshop_name: sections/upcoming-events
-    heading: "Yaklaşan Etkinlikler"
-    subheading: "Kayıt olmak için son şansınızı kaçırmayın."
-
   - _bookshop_name: sections/testimonial-carousel
     heading: "Velilerin ve Kurumların Sesinden"
     subheading: "Bizimle yol alan öğrenci, veli ve okul yöneticilerinin deneyimleri."

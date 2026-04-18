@@ -1,5 +1,9 @@
 {{ define "main" }}
-        <!-- Loop through any structures in the front-matter and render them -->
-        {{ partial "bookshop_bindings" `.Params.content_blocks` }}
-        {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+    {{ partial "bookshop_bindings" `.Params.content_blocks` }}
+    {{ range .Params.content_blocks }}
+        {{ partial "bookshop" (slice ._bookshop_name .) }}
+        {{ if eq ._bookshop_name "sections/service-grid" }}
+            {{ partial "upcoming-events.html" $ }}
+        {{ end }}
+    {{ end }}
 {{ end }}
