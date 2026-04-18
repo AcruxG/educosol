@@ -1,0 +1,102 @@
+/* ── Partner / Client Logo Marquee ─────────────────────────────── */
+
+.partner-marquee-section {
+  padding: 60px 0 40px;
+}
+
+.partner-marquee-heading {
+  margin-bottom: 48px;
+}
+
+/* Overflow hidden + edge-fade gradient */
+.partner-marquee-wrapper {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+/* Scrolling track — width is determined by content */
+@keyframes partner-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.partner-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: max-content;
+  animation: partner-marquee 28s linear infinite;
+
+  /* Pause on hover so users can read logos */
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Individual logo card */
+.partner-logo-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--theme-glass-bg);
+  border: 1px solid var(--theme-glass-border);
+  border-radius: 16px;
+  padding: 28px 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-width: 180px;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--theme-brand-primary, #C63527);
+    box-shadow: 0 16px 40px rgba(198, 53, 39, 0.15);
+  }
+
+  img {
+    max-width: 140px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    /* keep SVG logos visible in both themes */
+    filter: brightness(var(--logo-brightness, 1));
+  }
+}
+
+/* Light mode: slightly dim logos so they don't clash */
+[data-theme="light"] .partner-logo-item img,
+body:not([data-theme="dark"]) .partner-logo-item img {
+  --logo-brightness: 0.9;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  /* Hide the duplicate set when animation is off */
+  .partner-logo-item[aria-hidden="true"] {
+    display: none;
+  }
+}
