@@ -15,6 +15,8 @@ commit_templates:
   - label: Custom message
     template_string: '{message}'
 
+collections_config_override: true
+
 collections_config:
   yurtici_programlar:
     path: content/yurtici-programlar
@@ -104,10 +106,24 @@ collections_config:
           paths:
             uploads: images/portfolio
 
+  bireysel_hazirlik:
+    path: content/bireysel-hazirlik
+    url: "/bireysel-hazirlik/[slug]/"
+    name: Bireysel Hazırlık
+    icon: school
+    glob:
+      - "!_index.md"
+    _enabled_editors:
+      - content
+
   pages:
     path: content
     url: "/[slug]/"
+    name: Sayfalar
     icon: text_ad
+    glob:
+      - "*.md"
+      - "!_index.md"
     _enabled_editors:
       - visual
     schemas:
@@ -196,6 +212,8 @@ collections_config:
                 - key: image
   data:
     path: data
+    name: Global Ayarlar
+    icon: settings
     disable_url: true
     _inputs:
       google_maps_api_key:
