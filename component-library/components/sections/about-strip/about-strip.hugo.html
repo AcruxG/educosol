@@ -9,7 +9,7 @@
         <h2 class="about-strip-heading">{{ .heading }}</h2>
         <p class="about-strip-body">{{ .body }}</p>
         {{ if .cta_text }}
-        <a href="{{ .cta_url | relURL }}" class="about-strip-cta">
+        <a href="{{ .cta_url | strings.TrimPrefix "/" | relURL }}" class="about-strip-cta">
           {{ .cta_text }} <i class="tf-ion-ios-arrow-right"></i>
         </a>
         {{ end }}
