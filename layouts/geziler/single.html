@@ -3,7 +3,7 @@
 <section class="gezi-hero">
   {{ with .Params.image }}
   <div class="gezi-hero-img">
-    <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}">
+    <img src="{{ . | strings.TrimPrefix (urls.Parse site.BaseURL).Path | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}">
     <div class="gezi-hero-overlay">
       <div class="container">
         <h1>{{ $.Title }}</h1>

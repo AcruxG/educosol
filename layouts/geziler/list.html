@@ -100,7 +100,7 @@
                             <a href="{{ .RelPermalink }}" class="gezi-card-link">
                                 <!-- Image View -->
                                 <div class="gezi-card-img-wrap">
-                                    <img src="{{ with .Params.image }}{{ . | strings.TrimPrefix "/" | relURL }}{{ else }}{{ "/images/portfolio/trip-1.jpg" | strings.TrimPrefix "/" | relURL }}{{ end }}" alt="{{ .Title }}" loading="lazy">
+                                    <img src="{{ with .Params.image }}{{ . | strings.TrimPrefix (urls.Parse site.BaseURL).Path | strings.TrimPrefix "/" | relURL }}{{ else }}{{ "images/portfolio/trip-1.jpg" | relURL }}{{ end }}" alt="{{ .Title }}" loading="lazy">
                                     {{ with .Params.duration }}
                                     <div class="gezi-badge-duration">
                                         <i class="tf-ion-android-time"></i> {{ . }}

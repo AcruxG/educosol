@@ -33,7 +33,7 @@
       <a href="{{ .RelPermalink }}" class="event-card">
         <div class="event-card-image">
           {{ if .Params.image }}
-          <img src="{{ .Params.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}" loading="lazy">
+          <img src="{{ .Params.image | strings.TrimPrefix (urls.Parse site.BaseURL).Path | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}" loading="lazy">
           {{ else }}
           <div class="event-card-image-placeholder"></div>
           {{ end }}
