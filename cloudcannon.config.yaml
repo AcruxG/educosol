@@ -16,6 +16,94 @@ commit_templates:
     template_string: '{message}'
 
 collections_config:
+  yurtici_programlar:
+    path: content/yurtici-programlar
+    url: "/yurtici-programlar/[slug]/"
+    name: Yurtiçi Programlar
+    icon: flight_takeoff
+    glob:
+      - "!_index.md"
+    _enabled_editors:
+      - content
+    _inputs:
+      program_tipi:
+        type: select
+        options:
+          values:
+            - Gezi
+            - Afterschool
+            - Eğitim Programı
+      status:
+        type: select
+        options:
+          values:
+            - aktif
+            - pasif
+      target_group:
+        type: text
+        label: Hedef Kitle
+      school:
+        type: text
+        label: Okul
+      location:
+        type: text
+        label: Konum
+      duration:
+        type: text
+        label: Süre
+      deadline:
+        type: datetime
+        label: Son Kayıt Tarihi
+      image:
+        type: image
+        options:
+          paths:
+            uploads: images/portfolio
+
+  yurtdisi_programlar:
+    path: content/yurtdisi-programlar
+    url: "/yurtdisi-programlar/[slug]/"
+    name: Yurtdışı Programlar
+    icon: public
+    glob:
+      - "!_index.md"
+    _enabled_editors:
+      - content
+    _inputs:
+      program_tipi:
+        type: select
+        options:
+          values:
+            - Gezi
+            - Yaz Okulu
+            - Eğitim Programı
+      status:
+        type: select
+        options:
+          values:
+            - aktif
+            - pasif
+      target_group:
+        type: text
+        label: Hedef Kitle
+      school:
+        type: text
+        label: Okul
+      location:
+        type: text
+        label: Konum
+      duration:
+        type: text
+        label: Süre
+      deadline:
+        type: datetime
+        label: Son Kayıt Tarihi
+      image:
+        type: image
+        options:
+          paths:
+            uploads: images/portfolio
+
   pages:
     path: content
     url: "/[slug]/"
