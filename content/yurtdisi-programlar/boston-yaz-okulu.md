@@ -3,7 +3,7 @@ title: Boston Harvard Kampüsü Yaz Okulu
 program_tipi: Yaz Okulu
 status: aktif
 date: 2027-07-05T09:00:00.000+03:00
-image: /images/portfolio/portfolio-img3.jpg
+image: /educosol/images/portfolio/portfolio-img3.jpg
 duration: 4 Hafta
 location: Boston, ABD
 target_group: Lise Öğrencileri

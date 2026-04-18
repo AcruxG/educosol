@@ -1,7 +1,7 @@
 ---
 title: "Birebir Akademik Kariyer ve Sınav Danışmanlığı"
 date: 2026-04-01T09:00:00+03:00
-image: /images/portfolio/bireysel-hazirlik-card.png
+image: /educosol/images/portfolio/bireysel-hazirlik-card.png
 duration: "Esnek (Yıl Boyunca)"
 location: "Online & Yüz Yüze"
 target_group: "Sınava Hazırlanan Öğrenciler"

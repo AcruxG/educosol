@@ -3,7 +3,7 @@ title: "Ankara ve Kurtuluş Savaşı Destanı Gezisi "
 program_tipi: Gezi
 status: aktif
 date: 2027-06-02T08:36:00.000+03:00
-image: /images/portfolio/ankara-gezi.png
+image: /educosol/images/portfolio/ankara-gezi.png
 duration: 2 Gün 1 Gece
 location: Ankara Tandoğan
 target_group: Ortaokul

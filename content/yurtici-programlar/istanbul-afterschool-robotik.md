@@ -3,7 +3,7 @@ title: İstanbul Afterschool Robotik & Kodlama Kulübü
 program_tipi: Afterschool
 status: aktif
 date: 2026-10-15T16:00:00.000+03:00
-image: /images/portfolio/portfolio-img1.jpg
+image: /educosol/images/portfolio/portfolio-img1.jpg
 duration: 12 Hafta
 location: İstanbul
 target_group: Ortaokul Öğrencileri

@@ -3,7 +3,7 @@ title: Kapadokya ve Peri Bacaları Doğa ve Tarih Kampı
 program_tipi: Gezi
 status: aktif
 date: 2027-04-03T10:00:00.000+03:00
-image: /images/portfolio/kapadokya-gezi.png
+image: /educosol/images/portfolio/kapadokya-gezi.png
 duration: 3 Gün 2 Gece
 location: Nevşehir
 target_group: Lise Öğrencileri

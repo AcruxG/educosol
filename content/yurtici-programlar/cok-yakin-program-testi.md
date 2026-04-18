@@ -4,7 +4,7 @@ status: aktif
 program_tipi: Gezi
 publishDate: ""
 date: 2026-04-23T05:25:00.000+03:00
-image: /images/portfolio/hizmet-bireysel.jpg
+image: /educosol/images/portfolio/hizmet-bireysel.jpg
 duration: 4 gün 2 Gece
 location: Ankara
 target_group: Lise

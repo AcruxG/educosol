@@ -3,7 +3,7 @@ title: Avrupa Müzeler ve Sanat Turu
 program_tipi: Gezi
 status: aktif
 date: 2027-06-15T09:00:00.000+03:00
-image: /images/portfolio/yurtdisi-geziler-card.png
+image: /educosol/images/portfolio/yurtdisi-geziler-card.png
 duration: 7 Gün 6 Gece
 location: Paris ve Londra
 target_group: Lise Öğrencileri

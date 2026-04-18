@@ -3,7 +3,7 @@ title: Ankara Afterschool İngilizce Konuşma Kulübü
 program_tipi: Afterschool
 status: aktif
 date: 2026-11-03T17:00:00.000+03:00
-image: /images/portfolio/portfolio-img2.jpg
+image: /educosol/images/portfolio/portfolio-img2.jpg
 duration: 10 Hafta
 location: Ankara
 target_group: Lise Öğrencileri
