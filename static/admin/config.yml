@@ -36,30 +36,16 @@ _gezi_fields: &gezi_fields
   - { label: "Ödeme Detayları", name: "odeme_detaylari", widget: "markdown" }
 
 collections:
-  - name: "yurtici-geziler"
-    label: "🏔️ Yurtiçi Geziler"
-    folder: "content/yurtici-geziler"
+  - name: "yurtici-programlar"
+    label: "🏔️ Yurtiçi Programlar"
+    folder: "content/yurtici-programlar"
     create: true
     slug: "{{slug}}"
     fields: *gezi_fields
 
-  - name: "yurtdisi-geziler"
-    label: "✈️ Yurtdışı Geziler"
-    folder: "content/yurtdisi-geziler"
-    create: true
-    slug: "{{slug}}"
-    fields: *gezi_fields
-
-  - name: "yurtdisi-egitim"
-    label: "🎓 Yurtdışı Eğitim"
-    folder: "content/yurtdisi-egitim"
-    create: true
-    slug: "{{slug}}"
-    fields: *gezi_fields
-
-  - name: "afterschool"
-    label: "☀️ Afterschool & Yaz Okulu"
-    folder: "content/afterschool"
+  - name: "yurtdisi-programlar"
+    label: "✈️ Yurtdışı Programlar"
+    folder: "content/yurtdisi-programlar"
     create: true
     slug: "{{slug}}"
     fields: *gezi_fields
