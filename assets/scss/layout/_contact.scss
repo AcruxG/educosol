@@ -132,6 +132,225 @@
 	}
 }
 
+/* =============================================
+   Modern Contact Form (contact page)
+   ============================================= */
+
+$cf-accent:      #E56910;
+$cf-accent-dark: #C63527;
+$cf-accent-soft: rgba(229, 105, 16, 0.1);
+
+.contact-form-section {
+  padding: 72px 0 96px;
+}
+
+.cf-form {
+  margin-top: 40px;
+}
+
+.cf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* A field that spans both columns */
+.cf-field--full {
+  grid-column: 1 / -1;
+}
+
+/* ── Field wrapper ── */
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Label ── */
+.cf-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--theme-color-text-main);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.cf-required {
+  color: $cf-accent;
+  margin-left: 2px;
+}
+
+/* ── Inputs & Textarea ── */
+.cf-input {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--theme-glass-bg);
+  border: 1px solid var(--theme-glass-border);
+  border-radius: 12px;
+  color: var(--theme-color-text-main);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+
+  &::placeholder {
+    color: var(--theme-color-text-muted);
+    opacity: 0.6;
+  }
+
+  &:focus {
+    border-color: $cf-accent;
+    box-shadow: 0 0 0 3px rgba(229, 105, 16, 0.12);
+  }
+}
+
+.cf-textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+/* ── Select wrapper ── */
+.cf-select-wrap {
+  position: relative;
+}
+
+.cf-select {
+  width: 100%;
+  padding: 13px 40px 13px 16px;
+  background: var(--theme-glass-bg);
+  border: 1px solid var(--theme-glass-border);
+  border-radius: 12px;
+  color: var(--theme-color-text-main);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    border-color: $cf-accent;
+    box-shadow: 0 0 0 3px rgba(229, 105, 16, 0.12);
+  }
+
+  option {
+    background: var(--theme-color-body-bg);
+    color: var(--theme-color-text-main);
+  }
+}
+
+.cf-select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--theme-color-text-muted);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.cf-select:focus ~ .cf-select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+  color: $cf-accent;
+}
+
+/* ── Inline error message ── */
+.cf-error {
+  font-size: 12px;
+  color: #e53e3e;
+  display: none;
+}
+
+.cf-field--invalid {
+  .cf-input,
+  .cf-select {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 56, 56, 0.1);
+  }
+
+  .cf-error {
+    display: block;
+  }
+}
+
+/* ── Submit row ── */
+.cf-submit-row {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cf-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 36px;
+  background: linear-gradient(135deg, $cf-accent 0%, $cf-accent-dark 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(229, 105, 16, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(229, 105, 16, 0.45);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  i { font-size: 16px; }
+}
+
+/* ── Success / Error banners ── */
+.cf-msg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+
+  i { font-size: 22px; flex-shrink: 0; }
+
+  &--success {
+    background: rgba(56, 161, 105, 0.1);
+    border: 1px solid rgba(56, 161, 105, 0.3);
+    color: #38a169;
+  }
+
+  &--error {
+    background: rgba(229, 56, 56, 0.08);
+    border: 1px solid rgba(229, 56, 56, 0.25);
+    color: #e53e3e;
+  }
+}
+
+/* Light mode */
+[data-theme="light"] {
+  .cf-input,
+  .cf-select {
+    background: #fff;
+    border-color: rgba(0,0,0,0.12);
+  }
+}
+
 /* ============================================= */
 
 .contact-form{

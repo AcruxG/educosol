@@ -1,32 +1,211 @@
-<!-- Contact From Study Sections 
+<!-- İletişim Formu
     =========================-->
-<section class="contact-form">
-    <div class="container">
-        <div class="row">
-            {{ partial "bookshop" (slice "generic/heading" .heading )}}
-            <form class="" method="post">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group margin-0">
-                        <input type="text" class="form-control" placeholder="Name">
-                    </div>
-                </div>
-                <div class="col-md-6 margin-0">
-                    <div class="form-group">
-                        <textarea class="form-control " rows="3" placeholder="Message"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="contact-btn text-center">
-                        <input class="btn btn-default btn-main" type="submit" value="{{ .button_content }}">
-                    </div>
-                </div>
-            </form>
-        </div>
+<section class="contact-form-section">
+  <div class="container">
+    <div class="row">
+      {{ partial "bookshop" (slice "generic/heading" .heading )}}
     </div>
+
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="cf-form"
+      id="contact-form"
+      novalidate
+    >
+      <!-- Web3Forms hidden fields -->
+      <input type="hidden" name="access_key" value="{{ .Site.Data.company.web3forms_access_key }}">
+      <input type="hidden" name="subject" id="hidden-subject" value="">
+      <input type="hidden" name="from_name" value="EduCoSol Web Sitesi">
+      <input type="hidden" name="redirect" value="false">
+
+      <div class="cf-grid">
+
+        <!-- Ad Soyad -->
+        <div class="cf-field">
+          <label class="cf-label" for="cf-name">Ad Soyad <span class="cf-required">*</span></label>
+          <input
+            type="text"
+            id="cf-name"
+            name="name"
+            class="cf-input"
+            placeholder="Adınızı ve soyadınızı girin"
+            required
+          >
+          <span class="cf-error">Bu alan zorunludur.</span>
+        </div>
+
+        <!-- E-posta -->
+        <div class="cf-field">
+          <label class="cf-label" for="cf-email">E-posta <span class="cf-required">*</span></label>
+          <input
+            type="email"
+            id="cf-email"
+            name="email"
+            class="cf-input"
+            placeholder="ornek@email.com"
+            required
+          >
+          <span class="cf-error">Geçerli bir e-posta adresi girin.</span>
+        </div>
+
+        <!-- Telefon -->
+        <div class="cf-field">
+          <label class="cf-label" for="cf-phone">Telefon</label>
+          <input
+            type="tel"
+            id="cf-phone"
+            name="phone"
+            class="cf-input"
+            placeholder="+90 5XX XXX XX XX"
+          >
+        </div>
+
+        <!-- Konu (dropdown) -->
+        <div class="cf-field">
+          <label class="cf-label" for="cf-konu">Konu <span class="cf-required">*</span></label>
+          <div class="cf-select-wrap">
+            <select id="cf-konu" name="konu" class="cf-select" required>
+              <option value="" disabled selected>Konu seçin…</option>
+              <option value="Yurtiçi Program Bilgisi">Yurtiçi Program Bilgisi</option>
+              <option value="Yurtdışı Program Bilgisi">Yurtdışı Program Bilgisi</option>
+              <option value="Bireysel Hazırlık">Bireysel Hazırlık</option>
+              <option value="Okul / Kurum İşbirliği">Okul / Kurum İşbirliği</option>
+              <option value="Fiyat Teklifi">Fiyat Teklifi</option>
+              <option value="Diğer">Diğer</option>
+            </select>
+            <i class="cf-select-arrow tf-ion-ios-arrow-down"></i>
+          </div>
+          <span class="cf-error">Lütfen bir konu seçin.</span>
+        </div>
+
+        <!-- Diğer Konu (gizli, Diğer seçilince açılır) -->
+        <div class="cf-field cf-field--full" id="cf-diger-wrap" style="display:none;">
+          <label class="cf-label" for="cf-diger">Konuyu belirtin <span class="cf-required">*</span></label>
+          <input
+            type="text"
+            id="cf-diger"
+            name="konu_diger"
+            class="cf-input"
+            placeholder="Konunuzu kısaca yazın"
+          >
+          <span class="cf-error">Lütfen konuyu belirtin.</span>
+        </div>
+
+        <!-- Mesaj -->
+        <div class="cf-field cf-field--full">
+          <label class="cf-label" for="cf-mesaj">Mesajınız <span class="cf-required">*</span></label>
+          <textarea
+            id="cf-mesaj"
+            name="message"
+            class="cf-input cf-textarea"
+            rows="5"
+            placeholder="Mesajınızı buraya yazın…"
+            required
+          ></textarea>
+          <span class="cf-error">Lütfen mesajınızı yazın.</span>
+        </div>
+
+      </div><!-- /.cf-grid -->
+
+      <!-- Honeypot anti-spam -->
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <div class="cf-submit-row">
+        <button type="submit" class="cf-submit-btn" id="cf-submit-btn">
+          <span class="cf-submit-label">Mesaj Gönder</span>
+          <i class="tf-ion-ios-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Success / Error messages -->
+      <div class="cf-msg cf-msg--success" id="cf-success" style="display:none;">
+        <i class="tf-ion-ios-checkmark-circle-outline"></i>
+        <strong>Mesajınız iletildi!</strong> En kısa sürede size dönüş yapacağız.
+      </div>
+      <div class="cf-msg cf-msg--error" id="cf-error-msg" style="display:none;">
+        <i class="tf-ion-ios-close-circle-outline"></i>
+        <strong>Bir hata oluştu.</strong> Lütfen tekrar deneyin veya bize doğrudan e-posta gönderin.
+      </div>
+
+    </form>
+  </div>
 </section>
+
+<script>
+(function () {
+  var konuSel   = document.getElementById('cf-konu');
+  var digerWrap = document.getElementById('cf-diger-wrap');
+  var digerInp  = document.getElementById('cf-diger');
+  var hiddenSub = document.getElementById('hidden-subject');
+  var form      = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('cf-submit-btn');
+  var successEl = document.getElementById('cf-success');
+  var errorEl   = document.getElementById('cf-error-msg');
+
+  /* ── Show/hide "Diğer" free-text field ── */
+  konuSel.addEventListener('change', function () {
+    var isDiger = konuSel.value === 'Diğer';
+    digerWrap.style.display = isDiger ? 'block' : 'none';
+    digerInp.required = isDiger;
+  });
+
+  /* ── On submit: set hidden subject, validate, then AJAX send ── */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    /* Basic HTML5 validation pass */
+    var valid = true;
+    form.querySelectorAll('[required]').forEach(function (el) {
+      var field = el.closest('.cf-field');
+      if (!el.value.trim()) {
+        valid = false;
+        if (field) field.classList.add('cf-field--invalid');
+      } else {
+        if (field) field.classList.remove('cf-field--invalid');
+      }
+    });
+    if (!valid) return;
+
+    /* Build the subject line */
+    var konu = konuSel.value === 'Diğer' ? digerInp.value.trim() : konuSel.value;
+    hiddenSub.value = 'İletişim Formu: ' + konu;
+
+    /* Disable button while sending */
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.cf-submit-label').textContent = 'Gönderiliyor…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.success) {
+        form.reset();
+        digerWrap.style.display = 'none';
+        successEl.style.display = 'flex';
+        errorEl.style.display   = 'none';
+      } else {
+        throw new Error('api error');
+      }
+    })
+    .catch(function () {
+      errorEl.style.display   = 'flex';
+      successEl.style.display = 'none';
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.querySelector('.cf-submit-label').textContent = 'Mesaj Gönder';
+    });
+  });
+
+  /* ── Clear invalid state on user input ── */
+  form.querySelectorAll('input, select, textarea').forEach(function (el) {
+    el.addEventListener('input', function () {
+      var field = el.closest('.cf-field');
+      if (field && el.value.trim()) field.classList.remove('cf-field--invalid');
+    });
+  });
+})();
+</script>
