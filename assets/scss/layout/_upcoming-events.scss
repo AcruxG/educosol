@@ -24,18 +24,13 @@ $accent-glow: rgba(229, 105, 16, 0.25);
     }
 }
 
-/* Header row */
+/* Header — stacked vertically, left-aligned */
 .upcoming-events-header {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
     margin-bottom: 56px;
-    gap: 24px;
-
-    @media (max-width: 767px) {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
 
 .upcoming-events-eyebrow {
@@ -45,7 +40,7 @@ $accent-glow: rgba(229, 105, 16, 0.25);
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: $accent;
-    margin-bottom: 12px;
+    margin: 0;
 }
 
 .upcoming-events-title {

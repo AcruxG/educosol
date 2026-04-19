@@ -23,6 +23,7 @@
       <h2 class="upcoming-events-title">Yaklaşan Etkinlikler</h2>
       <p class="upcoming-events-subtitle">Kayıt olmak için son şansınızı kaçırmayın.</p>
     </div>
+
     <div class="upcoming-events-grid">
       {{ range $upcoming }}
       {{ $dl := time (printf "%v" .Params.deadline) }}
