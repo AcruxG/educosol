@@ -4,17 +4,17 @@ content_blocks:
   - _bookshop_name: sections/slider-hero
     slider_items:
       - _bookshop_name: simple/slider-item
-        background_image: /images/slider/bg-1.jpg
+        background_image: /images/header/yurtdisi-egitim-hero.png
         heading: "Eğitimde Dönüşümün"
         subheading: "Güvenilir Adresi"
         content: "Yurtiçi gezilerden uluslararası kampüs programlarına — öğrencilerinizin ufkunu birlikte genişletelim."
       - _bookshop_name: simple/slider-item
-        background_image: /images/slider/bg-2.jpg
+        background_image: /images/portfolio/kapadokya-gezi.png
         heading: "Yurtiçi Programlar"
         subheading: "Kültürel Zenginlik"
         content: "Türkiye'nin kültürel zenginliklerini müfredatla buluşturan geziler ve kulüpler."
       - _bookshop_name: simple/slider-item
-        background_image: /images/slider/bg-3.jpg
+        background_image: /images/header/yurtdisi-geziler-hero.png
         heading: "Yurtdışı Programlar"
         subheading: "Global Vizyon"
         content: "Avrupa kültür turlarından ABD kampüs ziyaretlerine, yaz okullarından dil eğitimine."
