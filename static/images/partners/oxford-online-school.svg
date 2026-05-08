@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="Oxford Online School">
+  <style>
+    .brand { font-family: 'Poppins','Inter','Segoe UI',sans-serif; font-weight: 800; letter-spacing: 1px; }
+    .sub { font-family: 'Inter','Segoe UI',sans-serif; font-weight: 600; letter-spacing: 4px; }
+  </style>
+  <g transform="translate(160 60)" text-anchor="middle">
+    <text class="brand" y="-4" font-size="36" fill="#1a1a2e">OXFORD</text>
+    <text class="sub" y="26" font-size="12" fill="#E56910">ONLINE SCHOOL</text>
+  </g>
+</svg>

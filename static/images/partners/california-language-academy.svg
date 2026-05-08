@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="California Language Academy">
+  <style>
+    .brand { font-family: 'Poppins','Inter','Segoe UI',sans-serif; font-weight: 800; }
+    .sub { font-family: 'Inter','Segoe UI',sans-serif; font-weight: 600; letter-spacing: 3px; }
+  </style>
+  <g transform="translate(160 56)" text-anchor="middle">
+    <text class="brand" y="-6" font-size="44" fill="#1a1a2e">CLA</text>
+    <text class="sub" y="20" font-size="11" fill="#E56910">CALIFORNIA LANGUAGE</text>
+    <text class="sub" y="38" font-size="11" fill="#E56910">ACADEMY</text>
+  </g>
+</svg>

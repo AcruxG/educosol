@@ -62,12 +62,14 @@ content_blocks:
     background_image: ""
     heading: Partnerlerimiz
     client_logos:
-      - image: /images/a-koleji.svg
-        image_alt: A Koleji
-      - image: /images/b-okullari.svg
-        image_alt: B Okulları
-      - image: /images/c-universitesi.svg
-        image_alt: C Üniversitesi
+      - image: /images/partners/yom-okullari.svg
+        image_alt: YÖM Okulları
+      - image: /images/partners/american-international-university.svg
+        image_alt: American International University
+      - image: /images/partners/california-language-academy.svg
+        image_alt: California Language Academy
+      - image: /images/partners/oxford-online-school.svg
+        image_alt: Oxford Online School
 
   - _bookshop_name: sections/about-strip
     heading: "Eğitimde Güvenilir Ortak"
