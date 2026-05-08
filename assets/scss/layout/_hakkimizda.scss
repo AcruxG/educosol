@@ -16,13 +16,31 @@ $accent-glow:  rgba(229, 105, 16, 0.22);
 .hk-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11px;
+  gap: 10px;
+  padding: 9px 18px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
   color: $accent;
-  margin-bottom: 14px;
+  background: $accent-soft;
+  border: 1px solid rgba(229, 105, 16, 0.22);
+  border-radius: 999px;
+  margin-bottom: 20px;
+
+  i {
+    font-size: 16px;
+  }
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $accent;
+    box-shadow: 0 0 0 4px rgba(229, 105, 16, 0.18);
+    flex: none;
+  }
 }
 
 .hk-gradient-text {
