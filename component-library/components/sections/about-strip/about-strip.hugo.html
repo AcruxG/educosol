@@ -1,7 +1,7 @@
 <section class="about-strip-section">
   <div class="about-strip-bg-glow"></div>
   <div class="container">
-    <div class="about-strip-grid">
+    <div class="about-strip-grid {{ if not .stats }}about-strip-grid--single{{ end }}">
 
       <!-- Left: text -->
       <div class="about-strip-left">
@@ -16,6 +16,7 @@
       </div>
 
       <!-- Right: stats 2x2 grid -->
+      {{ if .stats }}
       <div class="about-strip-stats">
         {{ range .stats }}
         <div class="about-stat-item">
@@ -25,6 +26,7 @@
         </div>
         {{ end }}
       </div>
+      {{ end }}
 
     </div>
   </div>

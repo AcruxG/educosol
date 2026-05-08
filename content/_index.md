@@ -1,11 +1,23 @@
 ---
 title: Ana Sayfa
 content_blocks:
-  - _bookshop_name: sections/video-hero
-    heading: "Eğitimde Dönüşümün"
-    subheading: "Güvenilir Adresi"
-    subtitle: "Yurtiçi gezilerden uluslararası kampüs programlarına — öğrencilerinizin ufkunu birlikte genişletelim."
-    background_video: /video/altvideo
+  - _bookshop_name: sections/slider-hero
+    slider_items:
+      - _bookshop_name: simple/slider-item
+        background_image: /images/slider/bg-1.jpg
+        heading: "Eğitimde Dönüşümün"
+        subheading: "Güvenilir Adresi"
+        content: "Yurtiçi gezilerden uluslararası kampüs programlarına — öğrencilerinizin ufkunu birlikte genişletelim."
+      - _bookshop_name: simple/slider-item
+        background_image: /images/slider/bg-2.jpg
+        heading: "Yurtiçi Programlar"
+        subheading: "Kültürel Zenginlik"
+        content: "Türkiye'nin kültürel zenginliklerini müfredatla buluşturan geziler ve kulüpler."
+      - _bookshop_name: simple/slider-item
+        background_image: /images/slider/bg-3.jpg
+        heading: "Yurtdışı Programlar"
+        subheading: "Global Vizyon"
+        content: "Avrupa kültür turlarından ABD kampüs ziyaretlerine, yaz okullarından dil eğitimine."
 
   - _bookshop_name: sections/service-grid
     heading: "Eğitimde Bütünsel Çözümler"
@@ -62,19 +74,7 @@ content_blocks:
     body: "EduCoSol, öğrencilere ve eğitim kurumlarına yönelik bütünsel çözümler sunan öncü bir eğitim danışmanlığı platformudur. Yurtiçi kültürel gezilerden uluslararası kampüs programlarına, afterschool kulüplerden bireysel akademik hazırlığa kadar geniş bir hizmet yelpazesiyle faaliyet gösteriyoruz. Amacımız; öğrencilerin sınıf ötesinde gerçek dünya deneyimleri kazanmalarını sağlamak ve onları global vizyonla donanmış bireyler olarak geleceğe hazırlamaktır."
     cta_text: "İletişime Geçin"
     cta_url: "/contact/"
-    stats:
-      - value: "25+"
-        label: "Ülke"
-        icon: "tf-ion-earth"
-      - value: "500+"
-        label: "Öğrenci"
-        icon: "tf-ion-ios-people"
-      - value: "10+"
-        label: "Yıl Tecrübe"
-        icon: "tf-ion-ios-star-outline"
-      - value: "40+"
-        label: "Partner Okul"
-        icon: "tf-ion-university"
+    stats: []
 
   - _bookshop_name: sections/contact
     heading: Bize Ulaşın
