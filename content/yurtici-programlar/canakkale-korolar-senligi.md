@@ -3,7 +3,7 @@ title: Çanakkale Korolar Şenliği
 program_tipi: Etkinlik
 status: aktif
 date: 2026-03-18T10:00:00.000+03:00
-image: /educosol/images/portfolio/portfolio-img4.jpg
+image: /educosol/images/portfolio/canakkale-koro.jpg
 duration: 2 Gün
 location: Çanakkale
 target_group: Ortaokul ve Lise Öğrencileri

@@ -3,7 +3,7 @@ title: Arden Kamp
 program_tipi: Kamp
 status: aktif
 date: 2027-07-15T09:00:00.000+03:00
-image: /educosol/images/portfolio/yurtdisi-egitim-card.png
+image: /educosol/images/portfolio/arden-kamp.jpg
 duration: 2 Hafta
 location: İngiltere
 target_group: Ortaokul ve Lise Öğrencileri

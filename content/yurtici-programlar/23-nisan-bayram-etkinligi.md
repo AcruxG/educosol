@@ -3,7 +3,7 @@ title: 23 Nisan Bayram Etkinliği
 program_tipi: Etkinlik
 status: aktif
 date: 2026-04-23T10:00:00.000+03:00
-image: /educosol/images/portfolio/portfolio-img2.jpg
+image: /educosol/images/portfolio/23-nisan.jpg
 duration: 1 Gün
 location: Türkiye
 target_group: İlkokul ve Ortaokul Öğrencileri
