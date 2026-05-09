@@ -1,5 +1,5 @@
 ---
-title: YÖM Okulları Göztepe Yaz Okulu
+title: YÖM Yaz Okulu
 status: aktif
 program_tipi: Yaz Okulu
 publishDate: 2026-05-02T20:10:00.000+03:00

@@ -1,5 +1,5 @@
 ---
-title: Boston Harvard Kampüsü Yaz Okulu
+title: ABD Yaz Okulu
 program_tipi: Yaz Okulu
 status: aktif
 date: 2027-07-05T09:00:00.000+03:00
