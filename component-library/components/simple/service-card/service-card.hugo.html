@@ -4,6 +4,7 @@
   {{ $url = .url | default $url }}
   {{ $label = .content | default $label }}
 {{ end }}
+{{ if ne $url "#" }}{{ $url = $url | strings.TrimPrefix (urls.Parse site.BaseURL).Path | strings.TrimPrefix "/" | relURL }}{{ end }}
 <a href="{{ $url }}" class="service-card">
     <div class="service-card-glow"></div>
     <div class="service-card-icon">

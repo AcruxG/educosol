@@ -26,16 +26,30 @@ content_blocks:
       - _bookshop_name: simple/service-card
         icon: "tf-ion-earth"
         heading: "Yurtiçi Programlar"
-        content: "Türkiye'nin kültürel zenginliklerini müfredatla buluşturan geziler ve okul sonrası kulüpler."
+        content: "Türkiye'nin kültürel zenginliklerini müfredatla buluşturan etkinlik ve geziler."
         link:
           url: "/yurtici-programlar/"
           content: "Programları Gör"
       - _bookshop_name: simple/service-card
         icon: "tf-ion-ios-paperplane"
         heading: "Yurtdışı Programlar"
-        content: "Avrupa kültür turlarından ABD kampüs ziyaretlerine, yaz okullarından dil eğitimine."
+        content: "Avrupa kültür turlarından ABD kampüs ziyaretlerine uzanan yurtdışı programları."
         link:
           url: "/yurtdisi-programlar/"
+          content: "Programları Gör"
+      - _bookshop_name: simple/service-card
+        icon: "tf-ion-ios-sunny"
+        heading: "Yaz Okulu"
+        content: "Yurtiçi ve yurtdışı yaz okulu programlarıyla akademik gelişim ve dil pratiği."
+        link:
+          url: "/yaz-okulu/"
+          content: "Programları Gör"
+      - _bookshop_name: simple/service-card
+        icon: "tf-ion-ios-bookmarks"
+        heading: "Afterschool"
+        content: "Okul sonrası kulüpler ve özel eğitim programlarıyla öğrencilerin ilgi alanlarını geliştirin."
+        link:
+          url: "/afterschool/"
           content: "Programları Gör"
 
   - _bookshop_name: sections/testimonial-carousel
