@@ -84,8 +84,7 @@
             <!-- Modern Grid -->
             <div class="row gezi-grid" id="gezi-grid-container">
                 {{ range .Pages }}
-                {{ $tip := .Params.program_tipi | default "" }}
-                {{ if and (ne (.Params.status | default "aktif") "pasif") (ne $tip "Yaz Okulu") (ne $tip "Afterschool") }}
+                {{ if ne (.Params.status | default "aktif") "pasif" }}
                     {{/* Date-based aktif/geçmiş badge */}}
                     {{ $isPast := false }}
                     {{ if .Params.date }}{{ if lt (time .Params.date) now }}{{ $isPast = true }}{{ end }}{{ end }}

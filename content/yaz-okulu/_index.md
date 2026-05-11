@@ -1,7 +1,8 @@
 ---
 title: Yaz Okulu
-type: program-tipi
-program_filter: Yaz Okulu
+type: geziler
+cascade:
+  type: geziler
 seo_options:
   description: EduCoSol Yaz Okulu programları - Yurtiçi ve yurtdışı yaz okulu seçenekleri.
 content_blocks:

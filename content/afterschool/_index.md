@@ -1,7 +1,8 @@
 ---
 title: Afterschool
-type: program-tipi
-program_filter: Afterschool
+type: geziler
+cascade:
+  type: geziler
 seo_options:
   description: EduCoSol Afterschool programları - okul sonrası kulüpler ve eğitim programları.
 content_blocks:

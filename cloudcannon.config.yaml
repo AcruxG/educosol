@@ -30,12 +30,11 @@ collections_config:
     _inputs:
       program_tipi:
         type: select
-        label: Kategori (üst menüde hangi sekmede görüneceğini belirler)
+        label: Program Tipi
         options:
           values:
-            - Yaz Okulu
-            - Afterschool
             - Etkinlik
+            - Gezi
       status:
         type: select
         options:
@@ -75,12 +74,11 @@ collections_config:
     _inputs:
       program_tipi:
         type: select
-        label: Kategori (üst menüde hangi sekmede görüneceğini belirler)
+        label: Program Tipi
         options:
           values:
-            - Yaz Okulu
-            - Afterschool
             - Etkinlik
+            - Gezi
       status:
         type: select
         options:
@@ -118,27 +116,79 @@ collections_config:
     _enabled_editors:
       - content
 
-  yaz_okulu_index:
+  yaz_okulu:
     path: content/yaz-okulu
-    name: Yaz Okulu (Sayfa)
+    url: "/yaz-okulu/[slug]/"
+    name: Yaz Okulu
     icon: wb_sunny
-    url: "/yaz-okulu/"
-    disable_url: true
     glob:
-      - "_index.md"
+      - "!_index.md"
     _enabled_editors:
       - content
+    _inputs:
+      status:
+        type: select
+        options:
+          values:
+            - aktif
+            - pasif
+      target_group:
+        type: text
+        label: Hedef Kitle
+      school:
+        type: text
+        label: Okul
+      location:
+        type: text
+        label: Konum
+      duration:
+        type: text
+        label: Süre
+      deadline:
+        type: datetime
+        label: Son Kayıt Tarihi
+      image:
+        type: image
+        options:
+          paths:
+            uploads: images/portfolio
 
-  afterschool_index:
+  afterschool:
     path: content/afterschool
-    name: Afterschool (Sayfa)
-    icon: nightlight
-    url: "/afterschool/"
-    disable_url: true
+    url: "/afterschool/[slug]/"
+    name: Afterschool
+    icon: school
     glob:
-      - "_index.md"
+      - "!_index.md"
     _enabled_editors:
       - content
+    _inputs:
+      status:
+        type: select
+        options:
+          values:
+            - aktif
+            - pasif
+      target_group:
+        type: text
+        label: Hedef Kitle
+      school:
+        type: text
+        label: Okul
+      location:
+        type: text
+        label: Konum
+      duration:
+        type: text
+        label: Süre
+      deadline:
+        type: datetime
+        label: Son Kayıt Tarihi
+      image:
+        type: image
+        options:
+          paths:
+            uploads: images/portfolio
 
   pages:
     path: content
