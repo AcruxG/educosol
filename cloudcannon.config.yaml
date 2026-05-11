@@ -30,11 +30,12 @@ collections_config:
     _inputs:
       program_tipi:
         type: select
+        label: Kategori (üst menüde hangi sekmede görüneceğini belirler)
         options:
           values:
-            - Gezi
+            - Yaz Okulu
             - Afterschool
-            - Eğitim Programı
+            - Etkinlik
       status:
         type: select
         options:
@@ -74,11 +75,12 @@ collections_config:
     _inputs:
       program_tipi:
         type: select
+        label: Kategori (üst menüde hangi sekmede görüneceğini belirler)
         options:
           values:
-            - Gezi
             - Yaz Okulu
-            - Eğitim Programı
+            - Afterschool
+            - Etkinlik
       status:
         type: select
         options:
@@ -113,6 +115,28 @@ collections_config:
     icon: school
     glob:
       - "!_index.md"
+    _enabled_editors:
+      - content
+
+  yaz_okulu_index:
+    path: content/yaz-okulu
+    name: Yaz Okulu (Sayfa)
+    icon: wb_sunny
+    url: "/yaz-okulu/"
+    disable_url: true
+    glob:
+      - "_index.md"
+    _enabled_editors:
+      - content
+
+  afterschool_index:
+    path: content/afterschool
+    name: Afterschool (Sayfa)
+    icon: nightlight
+    url: "/afterschool/"
+    disable_url: true
+    glob:
+      - "_index.md"
     _enabled_editors:
       - content
 

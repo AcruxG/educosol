@@ -9,6 +9,12 @@ menu:
   - name: "Yurtdışı Programlar"
     url: "/yurtdisi-programlar/"
     open_in_new_tab: false
+  - name: "Yaz Okulu"
+    url: "/yaz-okulu/"
+    open_in_new_tab: false
+  - name: "Afterschool"
+    url: "/afterschool/"
+    open_in_new_tab: false
   - name: "Bireysel Hazırlık"
     url: "/bireysel-hazirlik/"
     open_in_new_tab: false

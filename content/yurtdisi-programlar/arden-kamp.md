@@ -1,6 +1,6 @@
 ---
 title: Arden Kamp
-program_tipi: Kamp
+program_tipi: Yaz Okulu
 status: aktif
 date: 2027-07-15T09:00:00.000+03:00
 image: /educosol/images/portfolio/arden-kamp.jpg
