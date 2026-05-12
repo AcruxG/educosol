@@ -1,22 +1,19 @@
 menu:
-  - name: "Hakkımızda"
-    url: "/hakkimizda/"
+  - name: Hakkımızda
+    url: /hakkimizda/
     open_in_new_tab: false
-  - name: "Yurtiçi Programlar"
-    url: "/yurtici-programlar/"
+  - name: Yurtiçi Programlar
+    url: /yurtici-programlar/
     open_in_new_tab: false
-  - name: "Yurtdışı Programlar"
-    url: "/yurtdisi-programlar/"
+  - name: Yurtdışı Programlar
+    url: /yurtdisi-programlar/
     open_in_new_tab: false
-  - name: "Yaz Okulu"
-    url: "/yaz-okulu/"
+  - name: Yaz Okulu
+    url: /yaz-okulu/
     open_in_new_tab: false
-  - name: "Afterschool"
-    url: "/afterschool/"
-    open_in_new_tab: false
-  - name: "İletişim"
-    url: "/contact/"
+  - name: İletişim
+    url: /contact/
     open_in_new_tab: false
 logo:
-  image: "/images/logo-educosol.png"
-  alt: "EduCoSol"
+  image: /images/logo-educosol.png
+  alt: EduCoSol
