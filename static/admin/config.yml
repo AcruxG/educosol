@@ -51,6 +51,20 @@ collections:
     slug: "{{slug}}"
     fields: *gezi_fields
 
+  - name: "yaz-okulu"
+    label: "☀️ Yaz Okulu"
+    folder: "content/yaz-okulu"
+    create: true
+    slug: "{{slug}}"
+    fields: *gezi_fields
+
+  - name: "afterschool"
+    label: "🏫 Afterschool"
+    folder: "content/afterschool"
+    create: true
+    slug: "{{slug}}"
+    fields: *gezi_fields
+
   - name: "bireysel-hazirlik"
     label: "📋 Bireysel Hazırlık"
     folder: "content/bireysel-hazirlik"
