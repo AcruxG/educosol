@@ -11,6 +11,9 @@ menu:
   - name: Yaz Okulu
     url: /yaz-okulu/
     open_in_new_tab: false
+  - name: Afterschool
+    url: /afterschool/
+    open_in_new_tab: false
   - name: İletişim
     url: /contact/
     open_in_new_tab: false
